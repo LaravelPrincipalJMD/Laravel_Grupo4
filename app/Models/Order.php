@@ -9,7 +9,7 @@ class Order extends Model
 {
     use HasFactory;
     public function user(){
-        return $this->hasOne(User::class)->withTimestamps();
+        return $this->belongsTo(User::class)->withTimestamps();
    }
    public function product(){
     return $this->hasMany(Product::class)->withTimestamps();

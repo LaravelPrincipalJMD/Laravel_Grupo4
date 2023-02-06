@@ -15,6 +15,6 @@ class Product extends Model
         return $this->hasMany(Line::class)->withTimestamps();
     }
     public function order(){
-        return $this->hasOne(Order::class)->withTimestamps();
+        return $this->hasMany(Order::class)->withTimestamps();
     }
 }

@@ -14,7 +14,10 @@ class User extends Authenticatable
         return $this->hasOne(Cart::class);
    }
    public function order(){
-      return $this->hasMany(Order::class,'user_id','order_id')->withTimestamps();
+      return $this->hasMany(Order::class)->withTimestamps();
+   }
+   public function adress(){
+      return $this->hasMany(Adress::class)->withTimestamps();
    }
 }
  // use HasApiTokens, HasFactory, Notifiable;
