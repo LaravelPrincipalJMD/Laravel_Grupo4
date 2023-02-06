@@ -2785,3 +2785,32 @@ Stack trace:
 [stacktrace]
 #0 {main}
 "} 
+[2023-02-06 09:59:57] local.ERROR: Command "migrate:resert" is not defined.
+
+Did you mean one of these?
+    migrate
+    migrate:fresh
+    migrate:install
+    migrate:refresh
+    migrate:reset
+    migrate:rollback
+    migrate:status
+    queue:restart {"exception":"[object] (Symfony\\Component\\Console\\Exception\\CommandNotFoundException(code: 0): Command \"migrate:resert\" is not defined.
+
+Did you mean one of these?
+    migrate
+    migrate:fresh
+    migrate:install
+    migrate:refresh
+    migrate:reset
+    migrate:rollback
+    migrate:status
+    queue:restart at C:\\Users\\DAW\\Desktop\\Laravel_Grupo4\\vendor\\symfony\\console\\Application.php:702)
+[stacktrace]
+#0 C:\\Users\\DAW\\Desktop\\Laravel_Grupo4\\vendor\\symfony\\console\\Application.php(256): Symfony\\Component\\Console\\Application->find('migrate:resert')
+#1 C:\\Users\\DAW\\Desktop\\Laravel_Grupo4\\vendor\\symfony\\console\\Application.php(168): Symfony\\Component\\Console\\Application->doRun(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#2 C:\\Users\\DAW\\Desktop\\Laravel_Grupo4\\vendor\\laravel\\framework\\src\\Illuminate\\Console\\Application.php(102): Symfony\\Component\\Console\\Application->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#3 C:\\Users\\DAW\\Desktop\\Laravel_Grupo4\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(155): Illuminate\\Console\\Application->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#4 C:\\Users\\DAW\\Desktop\\Laravel_Grupo4\\artisan(37): Illuminate\\Foundation\\Console\\Kernel->handle(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#5 {main}
+"} 
