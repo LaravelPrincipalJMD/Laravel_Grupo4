@@ -2733,3 +2733,84 @@ Stack trace:
 [stacktrace]
 #0 {main}
 "} 
+[2023-02-06 09:44:06] local.ERROR: Uncaught InvalidArgumentException: Please provide a valid cache path. in C:\Users\DAW\Desktop\Laravel_Grupo4\vendor\laravel\framework\src\Illuminate\View\Compilers\Compiler.php:66
+Stack trace:
+#0 C:\Users\DAW\Desktop\Laravel_Grupo4\vendor\laravel\framework\src\Illuminate\View\ViewServiceProvider.php(101): Illuminate\View\Compilers\Compiler->__construct(Object(Illuminate\Filesystem\Filesystem), false, '', true, 'php')
+#1 C:\Users\DAW\Desktop\Laravel_Grupo4\vendor\laravel\framework\src\Illuminate\Container\Container.php(885): Illuminate\View\ViewServiceProvider->Illuminate\View\{closure}(Object(Illuminate\Foundation\Application), Array)
+#2 C:\Users\DAW\Desktop\Laravel_Grupo4\vendor\laravel\framework\src\Illuminate\Container\Container.php(770): Illuminate\Container\Container->build(Object(Closure))
+#3 C:\Users\DAW\Desktop\Laravel_Grupo4\vendor\laravel\framework\src\Illuminate\Foundation\Application.php(856): Illuminate\Container\Container->resolve('blade.compiler', Array, true)
+#4 C:\Users\DAW\Desktop\Laravel_Grupo4\vendor\laravel\framework\src\Illuminate\Container\Container.php(706): Illuminate\Foundation\Application->resolve('blade.compiler', Array)
+#5 C:\Users\DAW\Desktop\Laravel_Grupo4\vendor\laravel\framework\src\Illuminate\Foundation\Application.php(841): Illuminate\Container\Container->make('blade.compiler', Array)
+#6 C:\Users\DAW\Desktop\Laravel_Grupo4\vendor\laravel\framework\src\Illumite\Foundation\helpers.php(120): Illuminate\Foundation\Application->make('blade.compiler', Array)
+#7 Command line code(1): app('Illuminate\\View...')
+#8 {main}
+  thrown {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): Uncaught InvalidArgumentException: Please provide a valid cache path. in C:\\Users\\DAW\\Desktop\\Laravel_Grupo4\\vendor\\laravel\\framework\\src\\Illuminate\\View\\Compilers\\Compiler.php:66
+Stack trace:
+#0 C:\\Users\\DAW\\Desktop\\Laravel_Grupo4\\vendor\\laravel\\framework\\src\\Illuminate\\View\\ViewServiceProvider.php(101): Illuminate\\View\\Compilers\\Compiler->__construct(Object(Illuminate\\Filesystem\\Filesystem), false, '', true, 'php')
+#1 C:\\Users\\DAW\\Desktop\\Laravel_Grupo4\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Container.php(885): Illuminate\\View\\ViewServiceProvider->Illuminate\\View\\{closure}(Object(Illuminate\\Foundation\\Application), Array)
+#2 C:\\Users\\DAW\\Desktop\\Laravel_Grupo4\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Container.php(770): Illuminate\\Container\\Container->build(Object(Closure))
+#3 C:\\Users\\DAW\\Desktop\\Laravel_Grupo4\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Application.php(856): Illuminate\\Container\\Container->resolve('blade.compiler', Array, true)
+#4 C:\\Users\\DAW\\Desktop\\Laravel_Grupo4\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Container.php(706): Illuminate\\Foundation\\Application->resolve('blade.compiler', Array)
+#5 C:\\Users\\DAW\\Desktop\\Laravel_Grupo4\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Application.php(841): Illuminate\\Container\\Container->make('blade.compiler', Array)
+#6 C:\\Users\\DAW\\Desktop\\Laravel_Grupo4\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\helpers.php(120): Illuminate\\Foundation\\Application->make('blade.compiler', Array)
+#7 Command line code(1): app('Illuminate\\\\View...')
+#8 {main}
+  thrown at C:\\Users\\DAW\\Desktop\\Laravel_Grupo4\\vendor\\laravel\\framework\\src\\Illuminate\\View\\Compilers\\Compiler.php:66)
+[stacktrace]
+#0 {main}
+"} 
+[2023-02-06 09:54:06] local.ERROR: Uncaught InvalidArgumentException: Please provide a valid cache path. in C:\Users\DAW\Desktop\Laravel_Grupo4\vendor\laravel\framework\src\Illuminate\View\Compilers\Compiler.php:66
+Stack trace:
+#0 C:\Users\DAW\Desktop\Laravel_Grupo4\vendor\laravel\framework\src\Illuminate\View\ViewServiceProvider.php(101): Illuminate\View\Compilers\Compiler->__construct(Object(Illuminate\Filesystem\Filesystem), false, '', true, 'php')
+#1 C:\Users\DAW\Desktop\Laravel_Grupo4\vendor\laravel\framework\src\Illuminate\Container\Container.php(885): Illuminate\View\ViewServiceProvider->Illuminate\View\{closure}(Object(Illuminate\Foundation\Application), Array)
+#2 C:\Users\DAW\Desktop\Laravel_Grupo4\vendor\laravel\framework\src\Illuminate\Container\Container.php(770): Illuminate\Container\Container->build(Object(Closure))
+#3 C:\Users\DAW\Desktop\Laravel_Grupo4\vendor\laravel\framework\src\Illuminate\Foundation\Application.php(856): Illuminate\Container\Container->resolve('blade.compiler', Array, true)
+#4 C:\Users\DAW\Desktop\Laravel_Grupo4\vendor\laravel\framework\src\Illuminate\Container\Container.php(706): Illuminate\Foundation\Application->resolve('blade.compiler', Array)
+#5 C:\Users\DAW\Desktop\Laravel_Grupo4\vendor\laravel\framework\src\Illuminate\Foundation\Application.php(841): Illuminate\Container\Container->make('blade.compiler', Array)
+#6 C:\Users\DAW\Desktop\Laravel_Grupo4\vendor\laravel\framework\src\Illuminate\Foundation\helpers.php(120): Illuminate\Foundation\Application->make('blade.compiler', Array)
+#7 Command line code(1): app('Illuminate\\View...')
+#8 {main}
+  thrown {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): Uncaught InvalidArgumentException: Please provide a valid cache path. in C:\\Users\\DAW\\Desktop\\Laravel_Grupo4\\vendor\\laravel\\framework\\src\\Illuminate\\View\\Compilers\\Compiler.php:66
+Stack trace:
+#0 C:\\Users\\DAW\\Desktop\\Laravel_Grupo4\\vendor\\laravel\\framework\\src\\Illuminate\\View\\ViewServiceProvider.php(101): Illuminate\\View\\Compilers\\Compiler->__construct(Object(Illuminate\\Filesystem\\Filesystem), false, '', true, 'php')
+#1 C:\\Users\\DAW\\Desktop\\Laravel_Grupo4\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Container.php(885): Illuminate\\View\\ViewServiceProvider->Illuminate\\View\\{closure}(Object(Illuminate\\Foundation\\Application), Array)
+#2 C:\\Users\\DAW\\Desktop\\Laravel_Grupo4\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Container.php(770): Illuminate\\Container\\Container->build(Object(Closure))
+#3 C:\\Users\\DAW\\Desktop\\Laravel_Grupo4\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Application.php(856): Illuminate\\Container\\Container->resolve('blade.compiler', Array, true)
+#4 C:\\Users\\DAW\\Desktop\\Laravel_Grupo4\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Container.php(706): Illuminate\\Foundation\\Application->resolve('blade.compiler', Array)
+#5 C:\\Users\\DAW\\Desktop\\Laravel_Grupo4\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Application.php(841): Illuminate\\Container\\Container->make('blade.compiler', Array)
+#6 C:\\Users\\DAW\\Desktop\\Laravel_Grupo4\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\helpers.php(120): Illuminate\\Foundation\\Application->make('blade.compiler', Array)
+#7 Command line code(1): app('Illuminate\\\\View...')
+#8 {main}
+  thrown at C:\\Users\\DAW\\Desktop\\Laravel_Grupo4\\vendor\\laravel\\framework\\src\\Illuminate\\View\\Compilers\\Compiler.php:66)
+[stacktrace]
+#0 {main}
+"} 
+[2023-02-06 09:59:57] local.ERROR: Command "migrate:resert" is not defined.
+
+Did you mean one of these?
+    migrate
+    migrate:fresh
+    migrate:install
+    migrate:refresh
+    migrate:reset
+    migrate:rollback
+    migrate:status
+    queue:restart {"exception":"[object] (Symfony\\Component\\Console\\Exception\\CommandNotFoundException(code: 0): Command \"migrate:resert\" is not defined.
+
+Did you mean one of these?
+    migrate
+    migrate:fresh
+    migrate:install
+    migrate:refresh
+    migrate:reset
+    migrate:rollback
+    migrate:status
+    queue:restart at C:\\Users\\DAW\\Desktop\\Laravel_Grupo4\\vendor\\symfony\\console\\Application.php:702)
+[stacktrace]
+#0 C:\\Users\\DAW\\Desktop\\Laravel_Grupo4\\vendor\\symfony\\console\\Application.php(256): Symfony\\Component\\Console\\Application->find('migrate:resert')
+#1 C:\\Users\\DAW\\Desktop\\Laravel_Grupo4\\vendor\\symfony\\console\\Application.php(168): Symfony\\Component\\Console\\Application->doRun(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#2 C:\\Users\\DAW\\Desktop\\Laravel_Grupo4\\vendor\\laravel\\framework\\src\\Illuminate\\Console\\Application.php(102): Symfony\\Component\\Console\\Application->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#3 C:\\Users\\DAW\\Desktop\\Laravel_Grupo4\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(155): Illuminate\\Console\\Application->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#4 C:\\Users\\DAW\\Desktop\\Laravel_Grupo4\\artisan(37): Illuminate\\Foundation\\Console\\Kernel->handle(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#5 {main}
+"} 
