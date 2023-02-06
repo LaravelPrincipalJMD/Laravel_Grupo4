@@ -13,8 +13,13 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('carts', function (Blueprint $table) {
+        Schema::create('adresses', function (Blueprint $table) {
             $table->id();
+            $table->string('city');
+            $table->integer('area_code');
+            $table->string('street');
+            $table->integer('number');
+            $table->string('floor_number');
             $table->foreignId('user_id')->references('id')->on('users');
             $table->timestamps();
         });
@@ -27,6 +32,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('carts');
+        Schema::dropIfExists('adresses');
     }
 };

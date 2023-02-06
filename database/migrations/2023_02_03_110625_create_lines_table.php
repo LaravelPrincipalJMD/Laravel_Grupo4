@@ -14,9 +14,8 @@ return new class extends Migration
     public function up()
     {
         Schema::create('lines', function (Blueprint $table) {
-            $table->id('line_id');
+            $table->id();
             $table->string('size');
-            $table->foreignId('product_id')->references('id')->on('product');
             $table->timestamps();
         });
     }
