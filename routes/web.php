@@ -14,6 +14,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+<<<<<<< HEAD
 
 
 Route::get('/admin', [ ProductsController::class, 'products']);
@@ -23,3 +24,8 @@ Route::post('admin', [ ProductsController::class, 'crear' ]) -> name('admin.crea
 Route::get('editar/{id}', [ProductsController::class, 'editar'])->name('admin.editar');
 
 Route::put('editar/{id}', [ProductsController::class, 'actualizar'])->name('admin.actualizar');
+=======
+Route::get('/', function () {
+    return view('index');
+});
+>>>>>>> 3d595da17309b4556c12c496d1a756dd35e49b70
