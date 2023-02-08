@@ -1,0 +1,35 @@
+@media (min-width: 992px) {
+    #mainNav {
+      padding-top: 0.75rem;
+      padding-bottom: 0.75rem;
+      border: none;
+      background-color: #212529;
+      transition: padding-top 0.3s ease-in-out, padding-bottom 0.3s ease-in-out;
+    }
+}
+
+header.masthead {
+
+      color: #212529;
+}
+    
+.img-fluid:hover {
+    -webkit-transform:scale(1.3);transform:scale(1.3);
+    transition-property: transform;
+    transition-duration: 0.65s;
+}
+.img-fluid{
+    transition-property: transform;
+    transition-duration: 0.5s;
+}
+.timeline-image{
+    overflow:hidden;
+}
+
+.texto-desaparecer{
+  transition: opacity 0.5s,left 2s;
+  opacity:0%;
+  left:-20em;
+}
+
+/*onclick="this.nextSibling.nextSibling.classList.toggle('texto-desaparecer')"*/
