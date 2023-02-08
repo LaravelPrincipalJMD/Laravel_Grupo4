@@ -1,0 +1,148 @@
+body{
+    width: 100vw;
+    height: 100vh;
+    margin: 0;
+}
+
+header.masthead{
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    background-image: none;
+    background-color: rgb(0, 0, 30);
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+}
+
+div.container{
+    width: 90%;
+    padding: 2rem;
+    border-radius: 5%;
+}
+
+label{
+    font-weight: bold;
+}
+input:hover{
+    transform: scale(1.05);
+    transition: all 1.5s ease-out;
+    cursor: pointer;
+    box-shadow: 0 0 1rem -.1rem #ffc800;
+}
+input:not(:hover){
+    transform: scale(1);
+    transition: all 1s ease-out;
+}
+.btn:hover{
+   background-color: white;
+   color: #ffc800;
+   transition: all .5s ease-out;
+}
+.btn:not(:hover){
+    transition: all .5s ease-out;
+ }
+ h1{
+    text-shadow: white 0rem 0rem 2rem;
+
+ }
+ span{
+    text-shadow: orange 0rem 0rem 2rem;
+ }
+ a{
+    text-decoration: none;
+ }
+
+@media (min-width: 400px){
+    label{
+        font-size: 1.25rem;
+    }
+}
+
+@media (min-width: 764px){
+    div.container{
+        width: 80%;
+        height: 40rem;
+        display: flex;
+        flex-flow: column;
+        justify-content: center;
+        align-items: center;
+        padding: 1rem;
+    }
+    form{
+        width: 100%;
+        display: flex;
+        flex-flow: column;
+        align-items: center;
+    }
+    .div-container{
+        width: 65%;
+    }
+    label{
+        font-size: 1.5rem;
+    }
+}
+
+@media (min-width: 1200px){
+    div.container{
+        height: 50rem;
+        width: 50%;
+    }
+    form{
+        height: 100%;
+        display: flex;
+        flex-flow: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .div-container{
+        height: 80%;
+        display: flex;
+        flex-flow: column;
+        justify-content: space-evenly;
+        align-items: center;
+    }
+    label{
+        font-size: 1.7rem;
+    }
+    .email-sec,.ps-sec{
+        width: 100%;
+    }
+    .btn{
+        padding: 1rem 2rem;
+    }
+}
+
+@media (min-width: 1024px){
+    header.masthead{
+        padding: 3rem;
+    }
+    div.container{
+        height: 50rem;
+        width: 50%;
+    }
+    form{
+        height: 100%;
+        display: flex;
+        flex-flow: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .div-container{
+        height: 80%;
+        display: flex;
+        flex-flow: column;
+        justify-content: space-evenly;
+        align-items: center;
+    }
+    label{
+        font-size: 1.7rem;
+    }
+    .email-sec,.ps-sec{
+        width: 100%;
+    }
+    .btn{
+        padding: 1rem 2rem;
+    }
+}
