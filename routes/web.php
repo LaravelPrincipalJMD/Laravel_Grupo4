@@ -1,6 +1,5 @@
 <?php
 
-use App\Http\Controllers\UsersController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,14 +13,17 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+<<<<<<< HEAD
+
+
+Route::get('/admin', [ ProductsController::class, 'products']);
+
+Route::post('admin', [ ProductsController::class, 'crear' ]) -> name('admin.crear');
+
+Route::get('editar/{id}', [ProductsController::class, 'editar'])->name('admin.editar');
+
+Route::put('editar/{id}', [ProductsController::class, 'actualizar'])->name('admin.actualizar');
+=======
 Route::get('/', function () {
     return view('index');
 });
-Route::get('/signUp', function () {
-    return view('signup');
-})->name('signup');
-Route::get('/signIn', function () {
-    return view('signin');
-})->name('signin');
-// Route::get('/users', [UsersController::class, 'getUsers']);
-Route::post('/user', [UsersController::class, 'singup']) -> name('singup');

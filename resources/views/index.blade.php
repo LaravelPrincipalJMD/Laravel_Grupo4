@@ -1,3 +1,9 @@
+<<<<<<< HEAD
+
+@extends('template.general')
+
+@section('index')
+=======
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -38,6 +44,7 @@
                 </div>
             </div>
         </nav>
+>>>>>>> 3d595da17309b4556c12c496d1a756dd35e49b70
         <!-- Masthead-->
         <header class="masthead">
             <div class="container">
@@ -371,6 +378,8 @@
                 </form>
             </div>
         </section>
+<<<<<<< HEAD
+=======
         <!-- Footer-->
         <footer class="footer py-4">
             <div class="container">
@@ -388,6 +397,7 @@
                 </div>
             </div>
         </footer>
+>>>>>>> 3d595da17309b4556c12c496d1a756dd35e49b70
         <!-- Portfolio Modals-->
         <!-- Portfolio item 1 modal popup-->
         <div class="portfolio-modal modal fade" id="portfolioModal1" tabindex="-1" role="dialog" aria-hidden="true">
@@ -599,6 +609,13 @@
                 </div>
             </div>
         </div>
+<<<<<<< HEAD
+
+@endsection
+
+
+
+=======
         <!-- Bootstrap core JS-->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
         <!-- Core theme JS-->
@@ -610,3 +627,4 @@
         <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
     </body>
 </html>
+>>>>>>> 3d595da17309b4556c12c496d1a756dd35e49b70
