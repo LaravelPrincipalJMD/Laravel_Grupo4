@@ -1,9 +1,3 @@
-<<<<<<< HEAD
-
-@extends('template.general')
-
-@section('index')
-=======
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -43,7 +37,6 @@
                 </div>
             </div>
         </nav>
->>>>>>> 3d595da17309b4556c12c496d1a756dd35e49b70
         <!-- Masthead-->
         <header class="masthead">
             <div class="container">

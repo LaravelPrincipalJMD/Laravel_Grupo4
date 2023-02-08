@@ -1,9 +1,10 @@
 @extends('template.generalNoNav')
 
-<h2>Editing product: {{ $products->name }}</h2>
+<h2 class="text-center p-5">Editing product: {{ $products->name }}</h2>
 @if (session('mensaje'))
     <div class="alert alert-success">{{ session('mensaje') }}</div>
 @endif
+
 <form class="container" action="{{ route('admin.actualizar', $products->id) }}" method="POST">
     @method('PUT')
     {{-- Necesitamos cambiar al método PUT para editar --}}
