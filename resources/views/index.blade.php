@@ -1,9 +1,3 @@
-<<<<<<< HEAD
-
-@extends('template.general')
-
-@section('index')
-=======
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -44,7 +38,6 @@
                 </div>
             </div>
         </nav>
->>>>>>> 3d595da17309b4556c12c496d1a756dd35e49b70
         <!-- Masthead-->
         <header class="masthead">
             <div class="container">
@@ -609,14 +602,7 @@
                 </div>
             </div>
         </div>
-<<<<<<< HEAD
-
-@endsection
-
-
-
-=======
-        <!-- Bootstrap core JS-->
+        Bootstrap core JS
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
         <!-- Core theme JS-->
         <script src="js/scripts.js"></script>
@@ -627,4 +613,3 @@
         <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
     </body>
 </html>
->>>>>>> 3d595da17309b4556c12c496d1a756dd35e49b70

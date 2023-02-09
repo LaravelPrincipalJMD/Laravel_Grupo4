@@ -19,8 +19,8 @@
     <body id="page-top">
         <!-- Masthead-->
         <header class="masthead">
-        <h1>JUICE <span class="text-primary">HUB</span></h1>
             <div class="container">
+            <h1>JUICE <span class="text-primary">HUB</span></h1>
                <form action='{{route("singin")}}' method='POST'>
                @csrf
                @if (session('mensaje'))
@@ -31,7 +31,7 @@
                     <div class="col-md-4 div-container">
                         <div class="mb-3 email-sec">
                           <label for="email" class="form-label">Email</label>
-                          <input type="email" class="form-control" name="email" id="email" aria-describedby="emailHelpId" placeholder="abc@mail.com">
+                          <input type="email" class="form-control" name="email" id="email" aria-describedby="emailHelpId" placeholder="abc@gmail.com">
                         </div>
                         <div class="mb-3 ps-sec">
                           <label for="password" class="form-label">PASSWORD</label>
@@ -43,6 +43,7 @@
                </form>
             </div>
         </header>
+        <script>console.log(innerWidth)</script>
         <!-- <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script> -->
     </body>
 </html>

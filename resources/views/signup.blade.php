@@ -19,8 +19,8 @@
     <body id="page-top">
         <!-- Masthead-->
         <header class="masthead">
-            <h1>JUICE <span class="text-primary">HUB</span></h1>
             <div class="container">
+            <h1>JUICE <span class="text-primary">HUB</span></h1>
                <form action="{{route('singup')}}" method='POST'>
                @csrf
                @if (session('error'))
