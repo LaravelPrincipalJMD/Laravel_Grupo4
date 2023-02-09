@@ -24,4 +24,5 @@ Route::get('/signIn', function () {
     return view('signin');
 })->name('signin');
 // Route::get('/users', [UsersController::class, 'getUsers']);
-Route::post('/user', [UsersController::class, 'singup']) -> name('singup');
+Route::post('/up', [UsersController::class, 'signup']) -> name('singup');
+Route::post('/in', [UsersController::class, 'signin']) -> name('singin');

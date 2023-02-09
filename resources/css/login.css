@@ -87,7 +87,7 @@ input:not(:hover){
 @media (min-width: 1200px){
     div.container{
         height: 50rem;
-        width: 50%;
+        width: 40%;
     }
     form{
         height: 100%;
@@ -120,7 +120,7 @@ input:not(:hover){
     }
     div.container{
         height: 50rem;
-        width: 50%;
+        width: 35%;
     }
     form{
         height: 100%;

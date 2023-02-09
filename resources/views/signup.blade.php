@@ -14,7 +14,7 @@
         <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
         <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700" rel="stylesheet" type="text/css" />
         <!-- Core theme CSS (includes Bootstrap)-->
-        @vite(['resources/css/app.scss', 'resources/js/app.js', 'resources/css/styles.css','resources/css/login.css'])
+        @vite(['resources/css/app.scss', 'resources/js/app.js', 'resources/js/login.js', 'resources/css/styles.css','resources/css/login.css'])
     </head>
     <body id="page-top">
         <!-- Masthead-->
@@ -23,20 +23,19 @@
             <div class="container">
                <form action="{{route('singup')}}" method='POST'>
                @csrf
-
                @if (session('error'))
                   <div class="alert alert-danger" role="alert">
-                    <strong>MISSING FIELDS</strong> 
+                    <strong>{{session('error')}}</strong> 
                   </div>
                @endif
                     <div class="col-md-4 div-container">
                         <label for="name" class="form-label">NAME</label>
-                        <input type="text" class="form-control" id="name" name="name" value="" >
+                        <input type="text" class="form-control" id="name" name="name" value="{{old('name')}}">
                         <label for="surname" class="form-label">SURNAME</label>
-                        <input type="text" class="form-control" id="surname" name="surname" >
+                        <input type="text" class="form-control" id="surname" name="surname" value="{{old('surname')}}">
                         <div class="mb-3 email-sec">
-                          <label for="email" class="form-label">Email</label>
-                          <input type="email" class="form-control" name="email" id="email" aria-describedby="emailHelpId" placeholder="abc@mail.com">
+                          <label for="email" class="form-label">EMAIL</label>
+                          <input type="text" class="form-control" name="email" id="email"  placeholder="abc@mail.com">
                         </div>
                         <div class="mb-3 ps-sec">
                           <label for="password" class="form-label">PASSWORD</label>

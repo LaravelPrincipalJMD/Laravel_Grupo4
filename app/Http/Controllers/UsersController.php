@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
+
 use App\Models\User;
 use Exception;
 use Illuminate\Http\Request;
@@ -8,10 +9,17 @@ use Ramsey\Uuid\Type\Integer;
 
 class UsersController extends Controller
 {
-    public function singup(Request $request){
+    public function signup(Request $request)
+    {
         try {
 
-            $request->validate(['name' => 'required|max:10', 'email' => 'required', 'password' => 'required|max:15|min:6']);
+            $request->validate(
+                [
+                    'name' => 'required|max:10',
+                    'email' => 'required|email:gmail',
+                    'password' => 'required|max:15|min:6'
+                ]
+            );
             $newUser = new User;
             $newUser->name = $request->name;
             $newUser->surname = $request->surname;
@@ -19,21 +27,32 @@ class UsersController extends Controller
             $newUser->points = 0;
             $newUser->password = $request->password;
             $newUser->save();
-    
+
             return view('index');
         } catch (Exception $e) {
-            return back() -> with('error', $e->getMessage());
+            return back()->with('error', $e->getMessage());
         }
-        
+
     }
-    public function singIn(){
-        
+    public function signin(Request $request)
+    {
+        $user = User::where('email', $request->email)->first();
+
+        if ($user) {
+            if ($user->password == $request->password)
+                return view('index');
+            return back()->with('mensaje', 'SOMETHING WENT WRONG');
+        } else {
+            return back()->with('mensaje', 'SOMETHING WENT WRONG');
+        }
     }
-    public function getUsers(){
+    public function getUsers()
+    {
         $users = User::All();
         return view('users', @compact('users'));
     }
-    public function getUser(){
-        
+    public function getUser()
+    {
+
     }
 }

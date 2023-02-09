@@ -21,22 +21,28 @@
         <header class="masthead">
         <h1>JUICE <span class="text-primary">HUB</span></h1>
             <div class="container">
-               <form action='#' method='POST'>
+               <form action='{{route("singin")}}' method='POST'>
+               @csrf
+               @if (session('mensaje'))
+                  <div class="alert alert-danger" role="alert">
+                    <strong>{{session('mensaje')}}</strong> 
+                  </div>
+               @endif
                     <div class="col-md-4 div-container">
                         <div class="mb-3 email-sec">
-                          <label for="" class="form-label">Email</label>
-                          <input type="email" class="form-control" name="" id="" aria-describedby="emailHelpId" placeholder="abc@mail.com">
+                          <label for="email" class="form-label">Email</label>
+                          <input type="email" class="form-control" name="email" id="email" aria-describedby="emailHelpId" placeholder="abc@mail.com">
                         </div>
                         <div class="mb-3 ps-sec">
-                          <label for="" class="form-label">PASSWORD</label>
-                          <input type="password" class="form-control" name="" id="" placeholder="">
+                          <label for="password" class="form-label">PASSWORD</label>
+                          <input type="password" class="form-control" name="password" id="password" placeholder="">
                         </div>
-                        <button type="submit" class="btn btn-primary">SING UP</button>
+                        <button type="submit" class="btn btn-primary">SING IN</button>
                         <a href="{{ route('signup') }}">NOT HAVE ACCOUNT</a>
                       </div>
                </form>
             </div>
         </header>
-        <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
+        <!-- <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script> -->
     </body>
 </html>
