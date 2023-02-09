@@ -195,9 +195,9 @@
                     <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
                 </div>
                 <ul class="timeline">
-                    <li>
-                        <div class="timeline-image"><img class="rounded-circle img-fluid" src="{{URL::asset('img/about/1.jpg')}}" alt="..." /></div>
-                        <div class="timeline-panel">
+                    <li> 
+                        <div onclick= "this.nextSibling.nextSibling.classList.toggle('texto-desaparecer'); this.nextSibling.nextSibling.classList.toggle('texto-aparecer') " class="timeline-image"><img class="rounded-circle img-fluid" src="{{URL::asset('img/about/1.jpg')}}" alt="..." /></div>
+                        <div class="timeline-panel texto-desaparecer">
                             <div class="timeline-heading">
                                 <h4>2009-2011</h4>
                                 <h4 class="subheading">Our Humble Beginnings</h4>
@@ -206,8 +206,8 @@
                         </div>
                     </li>
                     <li class="timeline-inverted">
-                        <div class="timeline-image"><img class="rounded-circle img-fluid" src="{{URL::asset('img/about/2.jpg')}}" alt="..." /></div>
-                        <div class="timeline-panel">
+                        <div  onclick= "this.nextSibling.nextSibling.classList.toggle('texto-desaparecer'); this.nextSibling.nextSibling.classList.toggle('texto-aparecer') " class="timeline-image"><img class="rounded-circle img-fluid" src="{{URL::asset('img/about/2.jpg')}}" alt="..." /></div>
+                        <div class="timeline-panel texto-desaparecer">
                             <div class="timeline-heading">
                                 <h4>March 2011</h4>
                                 <h4 class="subheading">An Agency is Born</h4>
@@ -216,8 +216,8 @@
                         </div>
                     </li>
                     <li>
-                        <div class="timeline-image"><img class="rounded-circle img-fluid" src="{{URL::asset('img/about/3.jpg')}}" alt="..." /></div>
-                        <div class="timeline-panel">
+                        <div  onclick= "this.nextSibling.nextSibling.classList.toggle('texto-desaparecer'); this.nextSibling.nextSibling.classList.toggle('texto-aparecer') " class="timeline-image"><img class="rounded-circle img-fluid" src="{{URL::asset('img/about/3.jpg')}}" alt="..." /></div>
+                        <div class="timeline-panel texto-desaparecer">
                             <div class="timeline-heading">
                                 <h4>December 2015</h4>
                                 <h4 class="subheading">Transition to Full Service</h4>
@@ -226,8 +226,8 @@
                         </div>
                     </li>
                     <li class="timeline-inverted">
-                        <div class="timeline-image"><img class="rounded-circle img-fluid" src="{{URL::asset('img/about/4.jpg')}}" alt="..." /></div>
-                        <div class="timeline-panel">
+                        <div  onclick= "this.nextSibling.nextSibling.classList.toggle('texto-desaparecer'); this.nextSibling.nextSibling.classList.toggle('texto-aparecer') " class="timeline-image"><img class="rounded-circle img-fluid" src="{{URL::asset('img/about/4.jpg')}}" alt="..." /></div>
+                        <div class="timeline-panel texto-desaparecer">
                             <div class="timeline-heading">
                                 <h4>July 2020</h4>
                                 <h4 class="subheading">Phase Two Expansion</h4>

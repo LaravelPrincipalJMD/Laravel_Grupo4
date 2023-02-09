@@ -27,9 +27,13 @@ header.masthead {
 }
 
 .texto-desaparecer{
-  transition: opacity 0.5s,left 2s;
+  transition: opacity 0.5s,transform 1s;
   opacity:0%;
-  left:-20em;
+  transform: translate(0em, 10em);
 }
 
-/*onclick="this.nextSibling.nextSibling.classList.toggle('texto-desaparecer')"*/
+.texto-aparecer{
+  transition: opacity 0.5s,transform 1s;
+
+}
+
