@@ -14,7 +14,7 @@
         <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
         <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700" rel="stylesheet" type="text/css" />
         <!-- Core theme CSS (includes Bootstrap)-->
-        @vite(['resources/css/app.scss', 'resources/js/app.js', 'resources/css/styles.css','resources/css/login.css'])
+        @vite(['resources/css/app.scss', 'resources/js/app.js', 'resources/css/styles.css','resources/css/login.css','resources/js/login.js'])
     </head>
     <body id="page-top">
         <!-- Masthead-->
