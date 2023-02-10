@@ -31,7 +31,7 @@ class ProductsController extends Controller
     public function actualizar(Request $request, $id)
     {
         $request->validate([
-            'nombre' => 'required',
+            'name' => 'required',
             'description' => 'required',
             'price' => 'required',
             'stock' => 'required'
@@ -42,8 +42,18 @@ class ProductsController extends Controller
         $userUpdate->price = $request->price;
         $userUpdate->stock = $request->stock;
         $userUpdate->save();
-        return back()->with('mensaje', 'Producto actualizado');
+        return back()->with('mensaje', 'Product updated');
     }
-
-
+    public function eliminar($id)
+    {
+        $deleteProduct = Product::findOrFail($id);
+        $deleteProduct->delete();
+        return back()->with('mensaje', 'Product deleted');
+    }
+    public function buscar(Request $request)
+    {
+        $name = $request->name;
+        $products = Product::where('name', 'LIKE', '%'. $name. '%')->get();
+        return view('admin', @compact('products'));
+    }
 }
