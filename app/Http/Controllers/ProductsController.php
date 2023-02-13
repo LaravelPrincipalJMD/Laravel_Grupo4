@@ -12,6 +12,11 @@ class ProductsController extends Controller
         $products = Product::all();
         return view('admin', @compact('products'));
     }
+    public function creacion()
+    {
+        $products = Product::all();
+        return view('admin.insert', @compact('products'));
+    }
     public function crear(Request $request)
     {
         $request->validate(['name' => 'required', 'description' => 'required', 'price' => 'required', 'stock' => 'required']);

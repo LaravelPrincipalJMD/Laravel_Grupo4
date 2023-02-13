@@ -19,8 +19,6 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/admin', [ ProductsController::class, 'products']);
 
-Route::post('admin', [ ProductsController::class, 'crear' ]) -> name('admin.crear');
-
 Route::get('editar', [ProductsController::class, 'editar']) -> name('admin.editar');
 
 Route::get('borrar', [ProductsController::class, 'borrar']) -> name('admin.borrar');
@@ -31,3 +29,7 @@ Route::put('editar/{id?}', [ProductsController::class, 'actualizar']) -> name('a
 Route::delete('borrar/{id?}', [ ProductsController::class, 'eliminar' ]) -> name('admin.eliminar');
 
 Route::get('/admin/buscar', [ProductsController::class, 'buscar']) -> name('admin.detalle');
+
+Route::get('insert', [ProductsController::class, 'creacion']) -> name('admin.creacion');
+
+Route::put('insert', [ProductsController::class, 'crear']) -> name('admin.crear');

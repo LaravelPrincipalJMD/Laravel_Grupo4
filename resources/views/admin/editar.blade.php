@@ -108,7 +108,7 @@
                                                         </div>
                                                         <div class="mb-3">
                                                             <label for="exampleInputPassword1"
-                                                                class="form-label">Description</label>
+                                                                class="form-label">Description:</label>
                                                             <input name="description" type="description" class="form-control"
                                                                 id="exampleInputPassword1">
                                                         </div>
