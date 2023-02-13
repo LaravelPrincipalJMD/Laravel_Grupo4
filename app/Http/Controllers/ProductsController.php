@@ -23,10 +23,15 @@ class ProductsController extends Controller
         $newProduct->save();
         return back()->with('mensaje', 'Product added successfully');
     }
-    public function editar($id)
+    public function editar()
     {
-        $products = Product::findOrFail($id);
+        $products = Product::all();
         return view('admin.editar', @compact('products'));
+    }
+    public function borrar()
+    {
+        $products = Product::all();
+        return view('admin.borrar', @compact('products'));
     }
     public function actualizar(Request $request, $id)
     {
