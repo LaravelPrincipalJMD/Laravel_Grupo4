@@ -20,7 +20,7 @@
 
         
 
-    @vite(['resources/css/app.scss', 'resources/js/app.js', 'resources/css/styles.css', 'resources/css/index.css'])
+    @vite(['resources/css/app.scss', 'resources/js/app.js', 'resources/css/styles.css', 'resources/css/index.css', 'resources/js/about/about.js'])
 
     </head>
     <body id="page-top">
