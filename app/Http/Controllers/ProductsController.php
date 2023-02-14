@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Product;
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class ProductsController extends Controller
@@ -10,7 +11,8 @@ class ProductsController extends Controller
     public function products()
     {
         $products = Product::all();
-        return view('admin', @compact('products'));
+        $users = User::all();
+        return view('admin', @compact('products', 'users'));
     }
     public function creacion()
     {
@@ -63,7 +65,8 @@ class ProductsController extends Controller
     public function buscar(Request $request)
     {
         $name = $request->name;
+        $users = User::all();
         $products = Product::where('name', 'LIKE', '%'. $name. '%')->get();
-        return view('admin', @compact('products'));
+        return view('admin', @compact('products', 'users'));
     }
 }

@@ -6,20 +6,31 @@
             <div class="sb-sidenav-menu">
                 <div class="nav">
                     <div class="sb-sidenav-menu-heading">Principal</div>
-                    <a class="nav-link" href="admin">
-                        <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
+                    <a class="nav-link" href="../admin">
+                        <div class="sb-nav-link-icon"><i class="fa-solid fa-house-chimney"></i></div>
                         Main
                     </a>
                     <div class="sb-sidenav-menu-heading">Editing</div>
                     <a class="nav-link collapsed" href="editar" data-bs-toggle="collapse" data-bs-target="#collapseLayouts" aria-expanded="false" aria-controls="collapseLayouts">
-                        <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
-                        Edit product
+                        <div class="sb-nav-link-icon"><i class="fa-solid fa-pen-to-square"></i></i></div>
+                        Edit&nbsp; <span class="text-warning">products</span>
                         <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
                     </a>
                     <div class="collapse" id="collapseLayouts" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
                         <nav class="sb-sidenav-menu-nested nav">
-                            <a class="nav-link" href="editar">Edit a product</a>
-                            <a class="nav-link" href="borrar">Delete a product</a>
+                            <a class="nav-link" href="editar"><span class="text-warning">Edit</span>&nbsp;a product</span></a>
+                            <a class="nav-link" href="borrar"><span class="text-warning">Delete</span>&nbsp;a product</span></a>
+                        </nav>
+                    </div>
+                    <a class="nav-link collapsed" href="editar" data-bs-toggle="collapse" data-bs-target="#collapseUser" aria-expanded="false" aria-controls="collapseLayouts">
+                        <div class="sb-nav-link-icon"><i class="fa-solid fa-user-pen"></i></div>
+                        Edit&nbsp; <span class="text-warning">users</span>
+                        <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                    </a>
+                    <div class="collapse" id="collapseUser" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
+                        <nav class="sb-sidenav-menu-nested nav">
+                            <a class="nav-link" href="editarUser"><span class="text-warning">Edit</span>&nbsp;a user</span></a>
+                            <a class="nav-link" href="borrarUser"><span class="text-warning">Delete</span>&nbsp;a user</span></a>
                         </nav>
                     </div>
                     <div class="collapse" id="collapsePages" aria-labelledby="headingTwo" data-bs-parent="#sidenavAccordion">
@@ -50,9 +61,14 @@
                     </div>
                     <div class="sb-sidenav-menu-heading">Insert</div>
                     <a class="nav-link" href="insert">
-                        <div class="sb-nav-link-icon"><i class="fas fa-chart-area"></i></div>
-                        Insert a product
+                        <div class="sb-nav-link-icon"><i class="fa-solid fa-file-plus"></i></div>
+                        Insert&nbsp; <span class="text-warning">a product</span>
                     </a>
+                    <a class="nav-link" href="insertUser">
+                        <div class="sb-nav-link-icon"><i class="fa-solid fa-user-plus"></i></div>
+                        Insert&nbsp; <span class="text-warning">a user</span>
+                    </a>
+
 
                 </div>
             </div>
@@ -68,7 +84,7 @@
             <div class="container-fluid px-4">
                 <h1 class="mt-4">Dashboard</h1>
                 <ol class="breadcrumb mb-4">
-                    <li class="breadcrumb-item active">JuiceHub</li>
+                    <li class="breadcrumb-item active">Products</li>
                 </ol>
                 <div class="row">
                     <div class="col-xl-3 col-md-6">
@@ -110,6 +126,49 @@
                         </div>
                     </div>
                 </div>
+                <ol class="breadcrumb mb-4">
+                    <li class="breadcrumb-item active">Users</li>
+                </ol>
+                <div class="row">
+                    <div class="col-xl-3 col-md-6">
+                        <div class="card bg-primary text-white mb-4">
+                            <div class="card-body">Search a user</div>
+                            <div class="card-footer d-flex align-items-center justify-content-between">
+                                <form action="{{route('admin.detalleUser')}}" method="GET" class="d-inline">
+                                    <input type="text" name="name" id="name">
+                                    <button class="btn btn-info btn-sm" type="submit">Search</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-3 col-md-6">
+                        <div class="card bg-warning text-white mb-4">
+                            <div class="card-body">Edit user</div>
+                            <div class="card-footer d-flex align-items-center justify-content-between">
+                                <a class="small text-white stretched-link" href="{{route('admin.editarUser')}}">Choose a product to edit</a>
+                                <div class="small text-white"><i class="fas fa-angle-right"></i></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-3 col-md-6">
+                        <div class="card bg-success text-white mb-4">
+                            <div class="card-body">Insert user</div>
+                            <div class="card-footer d-flex align-items-center justify-content-between">
+                                <a class="small text-white stretched-link" href="insertUser">Go to create</a>
+                                <div class="small text-white"><i class="fas fa-angle-right"></i></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-3 col-md-6">
+                        <div class="card bg-danger text-white mb-4">
+                            <div class="card-body">Delete user</div>
+                            <div class="card-footer d-flex align-items-center justify-content-between">
+                                <a class="small text-white stretched-link" href="borrarUser">Go to delete</a>
+                                <div class="small text-white"><i class="fas fa-angle-right"></i></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
                 <div class="card mb-4">
                     <div class="card-header">
                         <i class="fas fa-table me-1"></i>
@@ -128,6 +187,42 @@
                                         <td>{{ $product->name }}</td>
                                         <td>{{ $product->description }}</td>
                                         <td>{{ $product->stock }}</td>
+                                        {{-- <td><a href="{{ route('admin.editar', $product) }}" class="btn btn-warning btn-sm">Edit</a></td>
+                                        <td><form action="{{ route('admin.eliminar', $product) }}" method="POST" class="d-inline">
+                                            @method('DELETE')
+                                            @csrf
+                                            <button class="btn btn-danger btn-sm" type="submit">Delete</button>
+                                            </form>
+                                        </td> --}}
+                                    </tr>
+                                @endforeach
+                            </tbody>
+                        </table>
+
+                    </div>
+                </div>
+                <div class="card mb-4">
+                    <div class="card-header">
+                        <i class="fas fa-table me-1"></i>
+                        Users
+                    </div>
+                    <div class="table-responsive">
+                        <table class="table table-white">
+                            <tbody>
+                                <tr>
+                                    <th>Name:</th>
+                                    <th>Surname:</th>
+                                    <th>Email:</th>
+                                    <th>Points:</th>
+                                    <th>Password:</th>
+                                </tr>
+                                @foreach ($users as $user)
+                                    <tr>
+                                        <td>{{ $user->name }}</td>
+                                        <td>{{ $user->surname }}</td>
+                                        <td>{{ $user->email }}</td>
+                                        <td>{{ $user->points }}</td>
+                                        <td>{{ $user->password }}</td>
                                         {{-- <td><a href="{{ route('admin.editar', $product) }}" class="btn btn-warning btn-sm">Edit</a></td>
                                         <td><form action="{{ route('admin.eliminar', $product) }}" method="POST" class="d-inline">
                                             @method('DELETE')

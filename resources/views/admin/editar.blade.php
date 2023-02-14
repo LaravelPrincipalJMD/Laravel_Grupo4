@@ -6,20 +6,31 @@
                 <div class="sb-sidenav-menu">
                     <div class="nav">
                         <div class="sb-sidenav-menu-heading">Principal</div>
-                        <a class="nav-link" href="admin">
-                            <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
+                        <a class="nav-link" href="../admin">
+                            <div class="sb-nav-link-icon"><i class="fa-solid fa-house-chimney"></i></i></div>
                             Main
                         </a>
                         <div class="sb-sidenav-menu-heading">Editing</div>
                         <a class="nav-link collapsed" href="editar" data-bs-toggle="collapse" data-bs-target="#collapseLayouts" aria-expanded="false" aria-controls="collapseLayouts">
-                            <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
-                            Edit product
+                            <div class="sb-nav-link-icon"><i class="fa-solid fa-pen-to-square"></i></div>
+                            Edit&nbsp; <span class="text-warning">products</span>
                             <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
                         </a>
                         <div class="collapse" id="collapseLayouts" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
                             <nav class="sb-sidenav-menu-nested nav">
-                                <a class="nav-link" href="editar">Edit a product</a>
-                                <a class="nav-link" href="borrar">Delete a product</a>
+                                <a class="nav-link" href="editar"><span class="text-warning">Edit</span>&nbsp;a product</span></a>
+                                <a class="nav-link" href="borrar"><span class="text-warning">Delete</span>&nbsp;a product</span></a>
+                            </nav>
+                        </div>
+                        <a class="nav-link collapsed" href="editar" data-bs-toggle="collapse" data-bs-target="#collapseUser" aria-expanded="false" aria-controls="collapseLayouts">
+                            <div class="sb-nav-link-icon"><i class="fa-solid fa-user-pen"></i></div>
+                            Edit&nbsp; <span class="text-warning">users</span>
+                            <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                        </a>
+                        <div class="collapse" id="collapseUser" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
+                            <nav class="sb-sidenav-menu-nested nav">
+                                <a class="nav-link" href="editarUser"><span class="text-warning">Edit</span>&nbsp;a user</span></a>
+                                <a class="nav-link" href="borrarUser"><span class="text-warning">Delete</span>&nbsp;a user</span></a>
                             </nav>
                         </div>
                         <div class="collapse" id="collapsePages" aria-labelledby="headingTwo" data-bs-parent="#sidenavAccordion">
@@ -50,9 +61,14 @@
                         </div>
                         <div class="sb-sidenav-menu-heading">Insert</div>
                         <a class="nav-link" href="insert">
-                            <div class="sb-nav-link-icon"><i class="fas fa-chart-area"></i></div>
-                            Insert a product
+                            <div class="sb-nav-link-icon"><i class="fa-solid fa-file-plus"></i></div>
+                            Insert&nbsp; <span class="text-warning">a product</span>
                         </a>
+                        <a class="nav-link" href="insertUser">
+                            <div class="sb-nav-link-icon"><i class="fa-solid fa-user-plus"></i></div>
+                            Insert&nbsp; <span class="text-warning">a user</span>
+                        </a>
+
 
                     </div>
                 </div>
@@ -65,6 +81,7 @@
 
         <div id="layoutSidenav_content">
             <main>
+                <h2 class="px-5 pt-5 display-5">Editing <span class="text-warning">Products</span></h2>
                 <div class="table-responsive p-3">
                     <table class="table table-white">
                         <tbody>
@@ -81,10 +98,11 @@
                                     <td>{{ $product->price }}</td>
                                     <td>{{ $product->stock }}</td>
                                     <td><button type="button" class="btn btn-primary" data-bs-toggle="modal"
-                                            data-bs-target="#exampleModal">
+                                            data-bs-target="#exampleModal{{$product->id}}">
                                             Edit
-                                        </button></td>
-                                    <div class="modal fade" id="exampleModal" tabindex="-1"
+                                        </button>
+                                    </td>
+                                    <div class="modal fade" id="exampleModal{{$product->id}}" tabindex="-1"
                                         aria-labelledby="exampleModalLabel" aria-hidden="true">
                                         <div class="modal-dialog modal-dialog-centered">
                                             <div class="modal-content">
@@ -103,26 +121,26 @@
                                                         <div class="mb-3">
                                                             <label for="exampleInputEmail1" class="form-label">Name:</label>
                                                             <input name="name" type="text" class="form-control"
-                                                                id="exampleInputEmail1" aria-describedby="emailHelp">
+                                                                id="exampleInputEmail1" aria-describedby="emailHelp" value="{{$product->name}}">
                                                             <div id="emailHelp" class="form-text"></div>
                                                         </div>
                                                         <div class="mb-3">
                                                             <label for="exampleInputPassword1"
                                                                 class="form-label">Description:</label>
                                                             <input name="description" type="description" class="form-control"
-                                                                id="exampleInputPassword1">
+                                                                id="exampleInputPassword1" value="{{$product->description}}">
                                                         </div>
                                                         <div class="mb-3">
                                                             <label for="exampleInputPassword1"
                                                                 class="form-label">Price:</label>
                                                             <input name="price" type="number" class="form-control"
-                                                                id="exampleInputPassword1">
+                                                                id="exampleInputPassword1" value="{{$product->price}}">
                                                         </div>
                                                         <div class="mb-3">
                                                             <label for="exampleInputPassword1"
                                                                 class="form-label">Stock:</label>
                                                             <input name="stock" type="number" class="form-control"
-                                                                id="exampleInputPassword1">
+                                                                id="exampleInputPassword1" value="{{$product->stock}}">
                                                         </div>
                                                         <button type="submit" class="btn btn-primary">Save changes</button>
                                                     </form>
@@ -141,7 +159,16 @@
                             @endforeach
                         </tbody>
                     </table>
-
+                    @if ($errors->any())
+                    <div>
+                        {!! implode('', $errors->all(':message'))!!}
+                    </div>
+                @endif
+                @if (session('mensaje'))
+                <div class="alert alert-success mt-3">
+                    {{session('mensaje')}}
+                </div>
+            @endif
                 </div>
             </main>
         @endsection
