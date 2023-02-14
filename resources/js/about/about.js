@@ -9,8 +9,8 @@ function mostrarPanel(num_elemento,altura){
     }
   }
   window.onscroll = function(){
-    mostrarPanel(0,2500);
-    mostrarPanel(1,2700);
-    mostrarPanel(2,3000);
-    mostrarPanel(3,3300);
+    mostrarPanel(0,2200);
+    mostrarPanel(1,2500);
+    mostrarPanel(2,2700);
+    mostrarPanel(3,3000);
   };
