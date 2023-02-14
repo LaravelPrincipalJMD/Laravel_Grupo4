@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Product;
+use Exception;
 use Illuminate\Http\Request;
 
 class ProductsController extends Controller
@@ -30,19 +31,23 @@ class ProductsController extends Controller
     }
     public function actualizar(Request $request, $id)
     {
-        $request->validate([
-            'nombre' => 'required',
-            'description' => 'required',
-            'price' => 'required',
-            'stock' => 'required'
-        ]);
-        $userUpdate = Product::findOrFail($id);
-        $userUpdate->name = $request->name;
-        $userUpdate->description = $request->description;
-        $userUpdate->price = $request->price;
-        $userUpdate->stock = $request->stock;
-        $userUpdate->save();
-        return back()->with('mensaje', 'Producto actualizado');
+        try{
+            $request->validate([
+                'nombre' => 'required',
+                'description' => 'required',
+                'price' => 'required',
+                'stock' => 'required'
+            ]);
+            $userUpdate = Product::findOrFail($id);
+            $userUpdate->name = $request->name;
+            $userUpdate->description = $request->description;
+            $userUpdate->price = $request->price;
+            $userUpdate->stock = $request->stock;
+            $userUpdate->save();
+            return back()->with('mensaje', 'Producto actualizado');
+        }catch(Exception $e){
+            return back()->with('mensaje', $e->getMessage());
+        }
     }
 
 

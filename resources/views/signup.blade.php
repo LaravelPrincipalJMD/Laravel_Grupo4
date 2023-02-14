@@ -21,7 +21,7 @@
         <header class="masthead">
             <div class="container">
             <h1>JUICE <span class="text-primary">HUB</span></h1>
-               <form action="{{route('singup')}}" method='POST'>
+               <form action="{{route('register')}}" method='POST'>
                @csrf
                @if (session('error'))
                   <div class="alert alert-danger" role="alert">
@@ -42,7 +42,7 @@
                           <input type="password" class="form-control" name="password" id="password" placeholder="">
                         </div>
                         <button type="submit" class="btn btn-primary">SING UP</button>
-                        <a href="{{ route('signin') }}">ALREADY HAVE ACCOUNT</a>
+                        <a href="{{ route('login') }}">ALREADY HAVE ACCOUNT</a>
                       </div>
                </form>
             </div>

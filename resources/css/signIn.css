@@ -145,7 +145,7 @@ a {
 
 @media (min-width: 1024px) {
     div.container {
-        height: 30rem;
+        height: 35rem;
         width: 40%;
     }
 
@@ -191,8 +191,8 @@ a {
 
 @media (min-width: 1900px) {
     div.container {
-        height: 40rem;
-        width: 35%;
+        height: 50rem;
+        width: 30%;
     }
 
     form {

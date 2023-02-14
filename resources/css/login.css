@@ -60,10 +60,6 @@ h1 {
 
 }
 
-span {
-    /* text-shadow: orange 0rem 0rem 2rem,orange 0rem 0rem 2rem; */
-}
-
 a {
     text-decoration: none;
     width: 50%;
@@ -75,7 +71,7 @@ a {
         transform: scale(1);
         transition: all 1.5s ease-out;
         cursor: pointer;
-        /* box-shadow: 0 0 1rem -.1rem #ffc800; */
+        box-shadow: 0 0 1rem -.1rem #ffc800;
     }
 
     input:not(:hover) {
@@ -149,7 +145,7 @@ a {
 
 @media (min-width: 1024px) {
     div.container {
-        height: 30rem;
+        height: 35rem;
         width: 40%;
     }
 
@@ -181,7 +177,7 @@ a {
         transform: scale(1);
         transition: all 1s ease-out;
     }
-
+    
     a {
         font-size: 1rem;
     }
@@ -195,8 +191,8 @@ a {
 
 @media (min-width: 1900px) {
     div.container {
-        height: 40rem;
-        width: 35%;
+        height: 50rem;
+        width: 30%;
     }
 
     form {
