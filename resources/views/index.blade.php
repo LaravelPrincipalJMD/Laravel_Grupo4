@@ -14,8 +14,14 @@
         <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
         <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700" rel="stylesheet" type="text/css" />
         <!-- Core theme CSS (includes Bootstrap)-->
+       
+        
         <link href="../css/styles.css" rel="stylesheet" />
-        @vite(['resources/css/app.scss', 'resources/js/app.js', 'resources/css/styles.css'])
+
+        
+
+    @vite(['resources/css/app.scss', 'resources/js/app.js', 'resources/css/styles.css', 'resources/css/index.css', 'resources/js/about/about.js'])
+
     </head>
     <body id="page-top">
         <!-- Navigation-->
@@ -29,7 +35,16 @@
                 <div class="collapse navbar-collapse" id="navbarResponsive">
                     <ul class="navbar-nav text-uppercase ms-auto py-4 py-lg-0">
                         <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#portfolio">Portfolio</a></li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                              Products
+                            </a>
+                            <ul class="dropdown-menu">
+                              <li><a class="dropdown-item" href="#products">Featured products</a></li>
+                              <li><a class="dropdown-item" href="{{route('products')}}">All products</a></li>
+                            </ul>
+                          </li>
+          
                         <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
                         <li class="nav-item"><a class="nav-link" href="#team">Team</a></li>
                         <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
@@ -40,7 +55,7 @@
         <!-- Masthead-->
         <header class="masthead">
             <div class="container">
-                <div class="masthead-subheading">Welcome To Our Studio!</div>
+                <div class="masthead-subheading">Welcome To JuiceHub!</div>
                 <div class="masthead-heading text-uppercase">It's Nice To Meet You</div>
                 <a class="btn btn-primary btn-xl text-uppercase" href="#services">Tell Me More</a>
             </div>
@@ -80,101 +95,101 @@
                 </div>
             </div>
         </section>
-        <!-- Portfolio Grid-->
-        <section class="page-section bg-light" id="portfolio">
+        <!-- Products Grid-->
+        <section class="page-section bg-light" id="products">
             <div class="container">
                 <div class="text-center">
-                    <h2 class="section-heading text-uppercase">Portfolio</h2>
-                    <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
+                    <h2 class="section-heading text-uppercase">Products</h2>
+                    <h3 class="section-subheading text-muted"> The most recommended products on our website.</h3>
                 </div>
                 <div class="row">
                     <div class="col-lg-4 col-sm-6 mb-4">
-                        <!-- Portfolio item 1-->
-                        <div class="portfolio-item">
-                            <a class="portfolio-link" data-bs-toggle="modal" href="#portfolioModal1">
-                                <div class="portfolio-hover">
-                                    <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
+                        <!-- Products item 1-->
+                        <div class="products-item">
+                            <a class="products-link" data-bs-toggle="modal" href="#productsModal1">
+                                <div class="products-hover">
+                                    <div class="products-hover-content"><i class="fas fa-plus fa-3x"></i></div>
                                 </div>
-                                <img class="img-fluid" src="../assets/img/portfolio/1.jpg" alt="..." />
+                                <img class="img-fluid" src="{{URL::asset('img/Products/1.png')}}" alt="..." />
                             </a>
-                            <div class="portfolio-caption">
-                                <div class="portfolio-caption-heading">Threads</div>
-                                <div class="portfolio-caption-subheading text-muted">Illustration</div>
+                            <div class="products-caption">
+                                <div class="products-caption-heading">Small Juices</div>
+                                <div class="products-caption-subheading text-muted">Price: 2.00€</div>
                             </div>
                         </div>
                     </div>
                     <div class="col-lg-4 col-sm-6 mb-4">
-                        <!-- Portfolio item 2-->
-                        <div class="portfolio-item">
-                            <a class="portfolio-link" data-bs-toggle="modal" href="#portfolioModal2">
-                                <div class="portfolio-hover">
-                                    <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
+                        <!-- Products item 2-->
+                        <div class="products-item">
+                            <a class="products-link" data-bs-toggle="modal" href="#productsModal2">
+                                <div class="products-hover">
+                                    <div class="products-hover-content"><i class="fas fa-plus fa-3x"></i></div>
                                 </div>
-                                <img class="img-fluid" src="../assets/img/portfolio/2.jpg" alt="..." />
+                                <img class="img-fluid" src="{{URL::asset('img/Products/2.png')}}" alt="..." />
                             </a>
-                            <div class="portfolio-caption">
-                                <div class="portfolio-caption-heading">Explore</div>
-                                <div class="portfolio-caption-subheading text-muted">Graphic Design</div>
+                            <div class="products-caption">
+                                <div class="products-caption-heading">Ice drink</div>
+                                <div class="products-caption-subheading text-muted">Price: 1.50€</div>
                             </div>
                         </div>
                     </div>
                     <div class="col-lg-4 col-sm-6 mb-4">
-                        <!-- Portfolio item 3-->
-                        <div class="portfolio-item">
-                            <a class="portfolio-link" data-bs-toggle="modal" href="#portfolioModal3">
-                                <div class="portfolio-hover">
-                                    <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
+                        <!-- Products item 3-->
+                        <div class="products-item">
+                            <a class="products-link" data-bs-toggle="modal" href="#productsModal3">
+                                <div class="products-hover">
+                                    <div class="products-hover-content"><i class="fas fa-plus fa-3x"></i></div>
                                 </div>
-                                <img class="img-fluid" src="../assets/img/portfolio/3.jpg" alt="..." />
+                                <img class="img-fluid" src="{{URL::asset('img/Products/3.png')}}" alt="..." />
                             </a>
-                            <div class="portfolio-caption">
-                                <div class="portfolio-caption-heading">Finish</div>
-                                <div class="portfolio-caption-subheading text-muted">Identity</div>
+                            <div class="products-caption">
+                                <div class="products-caption-heading">Big Juices</div>
+                                <div class="products-caption-subheading text-muted">Price: 2.50€</div>
                             </div>
                         </div>
                     </div>
                     <div class="col-lg-4 col-sm-6 mb-4 mb-lg-0">
-                        <!-- Portfolio item 4-->
-                        <div class="portfolio-item">
-                            <a class="portfolio-link" data-bs-toggle="modal" href="#portfolioModal4">
-                                <div class="portfolio-hover">
-                                    <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
+                        <!-- Products item 4-->
+                        <div class="products-item">
+                            <a class="products-link" data-bs-toggle="modal" href="#productsModal4">
+                                <div class="products-hover">
+                                    <div class="products-hover-content"><i class="fas fa-plus fa-3x"></i></div>
                                 </div>
-                                <img class="img-fluid" src="../assets/img/portfolio/4.jpg" alt="..." />
+                                <img class="img-fluid" src="{{URL::asset('img/Products/4.png')}}" alt="..." />
                             </a>
-                            <div class="portfolio-caption">
-                                <div class="portfolio-caption-heading">Lines</div>
-                                <div class="portfolio-caption-subheading text-muted">Branding</div>
+                            <div class="products-caption">
+                                <div class="products-caption-heading">Sport Juices</div>
+                                <div class="products-caption-subheading text-muted">Price: 1.50€</div>
                             </div>
                         </div>
                     </div>
                     <div class="col-lg-4 col-sm-6 mb-4 mb-sm-0">
-                        <!-- Portfolio item 5-->
-                        <div class="portfolio-item">
-                            <a class="portfolio-link" data-bs-toggle="modal" href="#portfolioModal5">
-                                <div class="portfolio-hover">
-                                    <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
+                        <!-- Products item 5-->
+                        <div class="products-item">
+                            <a class="products-link" data-bs-toggle="modal" href="#productsModal5">
+                                <div class="products-hover">
+                                    <div class="products-hover-content"><i class="fas fa-plus fa-3x"></i></div>
                                 </div>
-                                <img class="img-fluid" src="../assets/img/portfolio/5.jpg" alt="..." />
+                                <img class="img-fluid" src="{{URL::asset('img/Products/5.png')}}" alt="..." />
                             </a>
-                            <div class="portfolio-caption">
-                                <div class="portfolio-caption-heading">Southwest</div>
-                                <div class="portfolio-caption-subheading text-muted">Website Design</div>
+                            <div class="products-caption">
+                                <div class="products-caption-heading">Energy drink</div>
+                                <div class="products-caption-subheading text-muted">Price: 4.00€</div>
                             </div>
                         </div>
                     </div>
                     <div class="col-lg-4 col-sm-6">
-                        <!-- Portfolio item 6-->
-                        <div class="portfolio-item">
-                            <a class="portfolio-link" data-bs-toggle="modal" href="#portfolioModal6">
-                                <div class="portfolio-hover">
-                                    <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
+                        <!-- Products item 6-->
+                        <div class="products-item">
+                            <a class="products-link" data-bs-toggle="modal" href="#productsModal6">
+                                <div class="products-hover">
+                                    <div class="products-hover-content"><i class="fas fa-plus fa-3x"></i></div>
                                 </div>
-                                <img class="img-fluid" src="../assets/img/portfolio/6.jpg" alt="..." />
+                                <img class="img-fluid" src="{{URL::asset('img/Products/6.png')}}" alt="..." />
                             </a>
-                            <div class="portfolio-caption">
-                                <div class="portfolio-caption-heading">Window</div>
-                                <div class="portfolio-caption-subheading text-muted">Photography</div>
+                            <div class="products-caption">
+                                <div class="products-caption-heading">JuiceHub Bottle</div>
+                                <div class="products-caption-subheading text-muted">Price: 3.00€</div>
                             </div>
                         </div>
                     </div>
@@ -186,57 +201,59 @@
             <div class="container">
                 <div class="text-center">
                     <h2 class="section-heading text-uppercase">About</h2>
-                    <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
+                    <h3 class="section-subheading text-muted">Fruit production process.</h3>
                 </div>
                 <ul class="timeline">
-                    <li>
-                        <div class="timeline-image"><img class="rounded-circle img-fluid" src="../assets/img/about/1.jpg" alt="..." /></div>
-                        <div class="timeline-panel">
+                    <li> 
+                        <div onclick= "this.nextSibling.nextSibling.classList.toggle('texto-desaparecer'); this.nextSibling.nextSibling.classList.toggle('texto-aparecer') " class="timeline-image"><img class="rounded-circle img-fluid" src="{{URL::asset('img/about/1.jpg')}}" alt="..." /></div>
+                        <div class="timeline-panel texto-desaparecer">
                             <div class="timeline-heading">
-                                <h4>2009-2011</h4>
-                                <h4 class="subheading">Our Humble Beginnings</h4>
+                                <h4>First step</h4>
+                                <h4 class="subheading">The fruit plantation</h4>
                             </div>
-                            <div class="timeline-body"><p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!</p></div>
+                            <div class="timeline-body"><p class="text-muted">The fruit must be harvested at the optimum moment of maturity to ensure the maximum quality and flavor of the juice.
+
+                            </p></div>
                         </div>
                     </li>
                     <li class="timeline-inverted">
-                        <div class="timeline-image"><img class="rounded-circle img-fluid" src="../assets/img/about/2.jpg" alt="..." /></div>
-                        <div class="timeline-panel">
+                        <div  onclick= "this.nextSibling.nextSibling.classList.toggle('texto-desaparecer'); this.nextSibling.nextSibling.classList.toggle('texto-aparecer') " class="timeline-image"><img class="rounded-circle img-fluid" src="{{URL::asset('img/about/2.jpg')}}" alt="..." /></div>
+                        <div class="timeline-panel texto-desaparecer">
                             <div class="timeline-heading">
-                                <h4>March 2011</h4>
-                                <h4 class="subheading">An Agency is Born</h4>
+                                <h4>Second step</h4>
+                                <h4 class="subheading">Selection of fruit</h4>
                             </div>
-                            <div class="timeline-body"><p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!</p></div>
+                            <div class="timeline-body"><p class="text-muted">The fruit arrives at the plant and is analyzed before going to the processing line to ensure that it meets all quality standards.</p></div>
                         </div>
                     </li>
                     <li>
-                        <div class="timeline-image"><img class="rounded-circle img-fluid" src="../assets/img/about/3.jpg" alt="..." /></div>
-                        <div class="timeline-panel">
+                        <div  onclick= "this.nextSibling.nextSibling.classList.toggle('texto-desaparecer'); this.nextSibling.nextSibling.classList.toggle('texto-aparecer') " class="timeline-image"><img class="rounded-circle img-fluid" src="{{URL::asset('img/about/3.jpg')}}" alt="..." /></div>
+                        <div class="timeline-panel texto-desaparecer">
                             <div class="timeline-heading">
-                                <h4>December 2015</h4>
-                                <h4 class="subheading">Transition to Full Service</h4>
+                                <h4>Third step</h4>
+                                <h4 class="subheading">Juice production</h4>
                             </div>
-                            <div class="timeline-body"><p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!</p></div>
+                            <div class="timeline-body"><p class="text-muted">At this stage, the machinery used varies depending on the type of fruit, eliminating the stone or rind. Then the extraction of the material begins and we are left with the juice of the fruit.</p></div>
                         </div>
                     </li>
                     <li class="timeline-inverted">
-                        <div class="timeline-image"><img class="rounded-circle img-fluid" src="../assets/img/about/4.jpg" alt="..." /></div>
-                        <div class="timeline-panel">
+                        <div  onclick= "this.nextSibling.nextSibling.classList.toggle('texto-desaparecer'); this.nextSibling.nextSibling.classList.toggle('texto-aparecer') " class="timeline-image"><img class="rounded-circle img-fluid" src="{{URL::asset('img/about/4.jpg')}}" alt="..." /></div>
+                        <div class="timeline-panel texto-desaparecer">
                             <div class="timeline-heading">
-                                <h4>July 2020</h4>
-                                <h4 class="subheading">Phase Two Expansion</h4>
+                                <h4>Fourth step</h4>
+                                <h4 class="subheading">Juice packaging</h4>
                             </div>
-                            <div class="timeline-body"><p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!</p></div>
+                            <div class="timeline-body"><p class="text-muted">The juice is cooled to be packaged in beverage cartons or plastic bottles, the formats in which it reaches the end consumer.</p></div>
                         </div>
                     </li>
                     <li class="timeline-inverted">
                         <div class="timeline-image">
                             <h4>
-                                Be Part
+                                
                                 <br />
-                                Of Our
+                                End of Story!
                                 <br />
-                                Story!
+                                
                             </h4>
                         </div>
                     </li>
@@ -248,14 +265,14 @@
             <div class="container">
                 <div class="text-center">
                     <h2 class="section-heading text-uppercase">Our Amazing Team</h2>
-                    <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
+                    <h3 class="section-subheading text-muted">Our team consists of three people.</h3>
                 </div>
                 <div class="row">
                     <div class="col-lg-4">
                         <div class="team-member">
-                            <img class="mx-auto rounded-circle" src="../assets/img/team/1.jpg" alt="..." />
-                            <h4>Parveen Anand</h4>
-                            <p class="text-muted">Lead Designer</p>
+                            <img class="mx-auto rounded-circle" src="{{URL::asset('img/Team/1.jpg')}}" alt="..." />
+                            <h4>Manuel Moya</h4>
+                            <p class="text-muted">Programmer</p>
                             <a class="btn btn-dark btn-social mx-2" href="#!" aria-label="Parveen Anand Twitter Profile"><i class="fab fa-twitter"></i></a>
                             <a class="btn btn-dark btn-social mx-2" href="#!" aria-label="Parveen Anand Facebook Profile"><i class="fab fa-facebook-f"></i></a>
                             <a class="btn btn-dark btn-social mx-2" href="#!" aria-label="Parveen Anand LinkedIn Profile"><i class="fab fa-linkedin-in"></i></a>
@@ -263,9 +280,9 @@
                     </div>
                     <div class="col-lg-4">
                         <div class="team-member">
-                            <img class="mx-auto rounded-circle" src="../assets/img/team/2.jpg" alt="..." />
-                            <h4>Diana Petersen</h4>
-                            <p class="text-muted">Lead Marketer</p>
+                            <img class="mx-auto rounded-circle" src="{{URL::asset('img/Team/2.jpg')}}" alt="..." />
+                            <h4>Jose Fernandez</h4>
+                            <p class="text-muted">Programmer</p>
                             <a class="btn btn-dark btn-social mx-2" href="#!" aria-label="Diana Petersen Twitter Profile"><i class="fab fa-twitter"></i></a>
                             <a class="btn btn-dark btn-social mx-2" href="#!" aria-label="Diana Petersen Facebook Profile"><i class="fab fa-facebook-f"></i></a>
                             <a class="btn btn-dark btn-social mx-2" href="#!" aria-label="Diana Petersen LinkedIn Profile"><i class="fab fa-linkedin-in"></i></a>
@@ -273,9 +290,9 @@
                     </div>
                     <div class="col-lg-4">
                         <div class="team-member">
-                            <img class="mx-auto rounded-circle" src="../assets/img/team/3.jpg" alt="..." />
-                            <h4>Larry Parker</h4>
-                            <p class="text-muted">Lead Developer</p>
+                            <img class="mx-auto rounded-circle" src="{{URL::asset('img/Team/3.jpg')}}" alt="..." />
+                            <h4>Daniel Reyes</h4>
+                            <p class="text-muted">Programmer</p>
                             <a class="btn btn-dark btn-social mx-2" href="#!" aria-label="Larry Parker Twitter Profile"><i class="fab fa-twitter"></i></a>
                             <a class="btn btn-dark btn-social mx-2" href="#!" aria-label="Larry Parker Facebook Profile"><i class="fab fa-facebook-f"></i></a>
                             <a class="btn btn-dark btn-social mx-2" href="#!" aria-label="Larry Parker LinkedIn Profile"><i class="fab fa-linkedin-in"></i></a>
@@ -387,9 +404,9 @@
                 </div>
             </div>
         </footer>
-        <!-- Portfolio Modals-->
-        <!-- Portfolio item 1 modal popup-->
-        <div class="portfolio-modal modal fade" id="portfolioModal1" tabindex="-1" role="dialog" aria-hidden="true">
+        <!-- Products Modals-->
+        <!-- Products item 1 modal popup-->
+        <div class="products-modal modal fade" id="productsModal1" tabindex="-1" role="dialog" aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content">
                     <div class="close-modal" data-bs-dismiss="modal"><img src="../assets/img/close-icon.svg" alt="Close modal" /></div>
@@ -397,19 +414,58 @@
                         <div class="row justify-content-center">
                             <div class="col-lg-8">
                                 <div class="modal-body">
-                                    <!-- Project details-->
-                                    <h2 class="text-uppercase">Project Name</h2>
-                                    <p class="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p>
-                                    <img class="img-fluid d-block mx-auto" src="../assets/img/portfolio/1.jpg" alt="..." />
-                                    <p>Use this area to describe your project. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est blanditiis dolorem culpa incidunt minus dignissimos deserunt repellat aperiam quasi sunt officia expedita beatae cupiditate, maiores repudiandae, nostrum, reiciendis facere nemo!</p>
+                                    <!-- Product details-->
+                                    <h2 class="text-uppercase">Basic Juice</h2>
+                                    <p class="item-intro text-muted">Basic fruit flavoured juices.</p>
+                                    <img class="img-fluid d-block mx-auto" src="{{URL::asset('img/Products/1.png')}}" alt="..." />
+                                    <p>The classic without sugar. With vitamin C.<br> JuiceHub juices have all the flavour and nutritional properties of fruit.</p> 
+                                    <strong>Flavours</strong><p>Orange, strawberry, peach, grape, lemon and apple.</p>
+
                                     <ul class="list-inline">
                                         <li>
-                                            <strong>Client:</strong>
-                                            Threads
+                                            <strong>Quantity:</strong>
+                                            4 x 25cL
                                         </li>
                                         <li>
-                                            <strong>Category:</strong>
-                                            Illustration
+                                            <strong>Price:</strong>
+                                            2.00 €
+                                        </li>
+
+                                    </ul>
+                                    <button class="btn btn-primary btn-xl text-uppercase" data-bs-dismiss="modal" type="button">
+                                        <i class="fas fa-xmark me-1"></i>
+                                        Close Project
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Products item 2 modal popup-->
+        <div class="products-modal modal fade" id="productsModal2" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="close-modal" data-bs-dismiss="modal"><img src="../assets/img/close-icon.svg" alt="Close modal" /></div>
+                    <div class="container">
+                        <div class="row justify-content-center">
+                            <div class="col-lg-8">
+                                <div class="modal-body">
+                                    <!-- Product details-->
+                                    <h2 class="text-uppercase">Ice drink</h2>
+                                    <p class="item-intro text-muted">Ice drink with any fruit flavor.</p>
+                                    <img class="img-fluid d-block mx-auto" src="{{URL::asset('img/Products/2.png')}}" alt="..." />
+                                    <p>A soft drink whose main base is chopped or grated ice and that can be of various flavors</p>
+                                    <strong>Flavours</strong><p>Orange, strawberry, peach, grape, lemon and apple.</p>
+                                    <ul class="list-inline">
+                                        <li>
+                                            <strong>Quantity:</strong>
+                                            1 x 50cL
+                                        </li>
+                                        <li>
+                                            <strong>Price:</strong>
+                                            1.50 €
                                         </li>
                                     </ul>
                                     <button class="btn btn-primary btn-xl text-uppercase" data-bs-dismiss="modal" type="button">
@@ -423,8 +479,8 @@
                 </div>
             </div>
         </div>
-        <!-- Portfolio item 2 modal popup-->
-        <div class="portfolio-modal modal fade" id="portfolioModal2" tabindex="-1" role="dialog" aria-hidden="true">
+        <!-- Products item 3 modal popup-->
+        <div class="products-modal modal fade" id="productsModal3" tabindex="-1" role="dialog" aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content">
                     <div class="close-modal" data-bs-dismiss="modal"><img src="../assets/img/close-icon.svg" alt="Close modal" /></div>
@@ -432,20 +488,22 @@
                         <div class="row justify-content-center">
                             <div class="col-lg-8">
                                 <div class="modal-body">
-                                    <!-- Project details-->
-                                    <h2 class="text-uppercase">Project Name</h2>
-                                    <p class="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p>
-                                    <img class="img-fluid d-block mx-auto" src="../assets/img/portfolio/2.jpg" alt="..." />
-                                    <p>Use this area to describe your project. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est blanditiis dolorem culpa incidunt minus dignissimos deserunt repellat aperiam quasi sunt officia expedita beatae cupiditate, maiores repudiandae, nostrum, reiciendis facere nemo!</p>
+                                    <!-- Product details-->
+                                    <h2 class="text-uppercase">Big Juice</h2>
+                                    <p class="item-intro text-muted">Basic fruit flavoured juices</p>
+                                    <img class="img-fluid d-block mx-auto" src="{{URL::asset('img/Products/3.png')}}" alt="..." />
+                                    <p>The classic without sugar. With vitamin C.<br> JuiceHub juices have all the flavour and nutritional properties of fruit.</p> 
+                                    <strong>Flavours</strong><p>Orange, strawberry, peach, grape, lemon and apple.</p>
                                     <ul class="list-inline">
                                         <li>
-                                            <strong>Client:</strong>
-                                            Explore
+                                            <strong>Quantity:</strong>
+                                            1 x 1 L
                                         </li>
                                         <li>
-                                            <strong>Category:</strong>
-                                            Graphic Design
+                                            <strong>Price:</strong>
+                                            2.50 €
                                         </li>
+
                                     </ul>
                                     <button class="btn btn-primary btn-xl text-uppercase" data-bs-dismiss="modal" type="button">
                                         <i class="fas fa-xmark me-1"></i>
@@ -458,8 +516,8 @@
                 </div>
             </div>
         </div>
-        <!-- Portfolio item 3 modal popup-->
-        <div class="portfolio-modal modal fade" id="portfolioModal3" tabindex="-1" role="dialog" aria-hidden="true">
+        <!-- Products item 4 modal popup-->
+        <div class="products-modal modal fade" id="productsModal4" tabindex="-1" role="dialog" aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content">
                     <div class="close-modal" data-bs-dismiss="modal"><img src="../assets/img/close-icon.svg" alt="Close modal" /></div>
@@ -467,46 +525,12 @@
                         <div class="row justify-content-center">
                             <div class="col-lg-8">
                                 <div class="modal-body">
-                                    <!-- Project details-->
-                                    <h2 class="text-uppercase">Project Name</h2>
+                                    <!-- Product details-->
+                                    <h2 class="text-uppercase">Sport Juices</h2>
                                     <p class="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p>
-                                    <img class="img-fluid d-block mx-auto" src="../assets/img/portfolio/3.jpg" alt="..." />
-                                    <p>Use this area to describe your project. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est blanditiis dolorem culpa incidunt minus dignissimos deserunt repellat aperiam quasi sunt officia expedita beatae cupiditate, maiores repudiandae, nostrum, reiciendis facere nemo!</p>
-                                    <ul class="list-inline">
-                                        <li>
-                                            <strong>Client:</strong>
-                                            Finish
-                                        </li>
-                                        <li>
-                                            <strong>Category:</strong>
-                                            Identity
-                                        </li>
-                                    </ul>
-                                    <button class="btn btn-primary btn-xl text-uppercase" data-bs-dismiss="modal" type="button">
-                                        <i class="fas fa-xmark me-1"></i>
-                                        Close Project
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- Portfolio item 4 modal popup-->
-        <div class="portfolio-modal modal fade" id="portfolioModal4" tabindex="-1" role="dialog" aria-hidden="true">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="close-modal" data-bs-dismiss="modal"><img src="../assets/img/close-icon.svg" alt="Close modal" /></div>
-                    <div class="container">
-                        <div class="row justify-content-center">
-                            <div class="col-lg-8">
-                                <div class="modal-body">
-                                    <!-- Project details-->
-                                    <h2 class="text-uppercase">Project Name</h2>
-                                    <p class="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p>
-                                    <img class="img-fluid d-block mx-auto" src="../assets/img/portfolio/4.jpg" alt="..." />
-                                    <p>Use this area to describe your project. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est blanditiis dolorem culpa incidunt minus dignissimos deserunt repellat aperiam quasi sunt officia expedita beatae cupiditate, maiores repudiandae, nostrum, reiciendis facere nemo!</p>
+                                    <img class="img-fluid d-block mx-auto" src="{{URL::asset('img/Products/4.png')}}" alt="..." />
+                                    <p>The classic without sugar. With vitamin C.<br> JuiceHub juices have all the flavour and nutritional properties of fruit.</p> 
+                                    <strong>Flavours</strong><p>Orange, strawberry, peach, grape, lemon and apple.</p>
                                     <ul class="list-inline">
                                         <li>
                                             <strong>Client:</strong>
@@ -528,8 +552,8 @@
                 </div>
             </div>
         </div>
-        <!-- Portfolio item 5 modal popup-->
-        <div class="portfolio-modal modal fade" id="portfolioModal5" tabindex="-1" role="dialog" aria-hidden="true">
+        <!-- Products item 5 modal popup-->
+        <div class="products-modal modal fade" id="productsModal5" tabindex="-1" role="dialog" aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content">
                     <div class="close-modal" data-bs-dismiss="modal"><img src="../assets/img/close-icon.svg" alt="Close modal" /></div>
@@ -537,11 +561,12 @@
                         <div class="row justify-content-center">
                             <div class="col-lg-8">
                                 <div class="modal-body">
-                                    <!-- Project details-->
-                                    <h2 class="text-uppercase">Project Name</h2>
+                                    <!-- Product details-->
+                                    <h2 class="text-uppercase">Energy drink</h2>
                                     <p class="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p>
-                                    <img class="img-fluid d-block mx-auto" src="../assets/img/portfolio/5.jpg" alt="..." />
-                                    <p>Use this area to describe your project. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est blanditiis dolorem culpa incidunt minus dignissimos deserunt repellat aperiam quasi sunt officia expedita beatae cupiditate, maiores repudiandae, nostrum, reiciendis facere nemo!</p>
+                                    <img class="img-fluid d-block mx-auto" src="{{URL::asset('img/Products/5.png')}}" alt="..." />
+                                    <p>The classic without sugar. With vitamin C.<br> JuiceHub juices have all the flavour and nutritional properties of fruit.</p> 
+                                    <strong>Flavours</strong><p>Orange, strawberry, peach, grape, lemon and apple.</p>
                                     <ul class="list-inline">
                                         <li>
                                             <strong>Client:</strong>
@@ -563,8 +588,8 @@
                 </div>
             </div>
         </div>
-        <!-- Portfolio item 6 modal popup-->
-        <div class="portfolio-modal modal fade" id="portfolioModal6" tabindex="-1" role="dialog" aria-hidden="true">
+        <!-- Products item 6 modal popup-->
+        <div class="products-modal modal fade" id="productsModal6" tabindex="-1" role="dialog" aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content">
                     <div class="close-modal" data-bs-dismiss="modal"><img src="../assets/img/close-icon.svg" alt="Close modal" /></div>
@@ -572,11 +597,13 @@
                         <div class="row justify-content-center">
                             <div class="col-lg-8">
                                 <div class="modal-body">
-                                    <!-- Project details-->
-                                    <h2 class="text-uppercase">Project Name</h2>
+                                    <!-- Product details-->
+                                    <h2 class="text-uppercase">JuiceHub Bottle
+                                    </h2>
                                     <p class="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p>
-                                    <img class="img-fluid d-block mx-auto" src="../assets/img/portfolio/6.jpg" alt="..." />
-                                    <p>Use this area to describe your project. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est blanditiis dolorem culpa incidunt minus dignissimos deserunt repellat aperiam quasi sunt officia expedita beatae cupiditate, maiores repudiandae, nostrum, reiciendis facere nemo!</p>
+                                    <img class="img-fluid d-block mx-auto" src="{{URL::asset('img/Products/6.png')}}" alt="..." />
+                                    <p>The classic without sugar. With vitamin C.<br> JuiceHub juices have all the flavour and nutritional properties of fruit.</p> 
+                                    <strong>Flavours</strong><p>Orange, watermelon sugar, peach, grape, cherry and apple.</p>
                                     <ul class="list-inline">
                                         <li>
                                             <strong>Client:</strong>
