@@ -1,0 +1,54 @@
+@media (min-width: 992px) {
+    #mainNav {
+      padding-top: 0.75rem;
+      padding-bottom: 0.75rem;
+      border: none;
+      background-color: #212529;
+      transition: padding-top 0.3s ease-in-out, padding-bottom 0.3s ease-in-out;
+    }
+}
+
+header.masthead {
+
+      color: #212529;
+}
+    
+.img-fluid:hover {
+    -webkit-transform:scale(1.3);transform:scale(1.3);
+    transition-property: transform;
+    transition-duration: 0.65s;
+}
+.img-fluid{
+    transition-property: transform;
+    transition-duration: 0.5s;
+}
+.timeline-image{
+    overflow:hidden;
+}
+
+.texto-desaparecer{
+  transition: opacity 0.5s,transform 1s;
+  opacity:0%;
+  transform: translate(0em, 10em);
+}
+
+.texto-aparecer{
+  transition: opacity 0.5s,transform 1s;
+
+}
+
+
+.dropdown-menu{
+  background-color: #212529;
+
+}
+
+.dropdown-item{
+  color:white;
+  font-family: "Montserrat", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+
+}
+.dropdown-item:hover{
+  color: #cca000;
+  background-color: #212529;
+}

@@ -28,3 +28,11 @@ Route::get('/signUp', function () {
 Route::get('/products', function () {
     return view('products');
 });
+
+Route::get('/products', function () {
+    return view('products');
+})->name('products');
+
+Route::get('/basicjuice', function () {
+    return view('products.basicjuice');
+})->name('basicjuice');
