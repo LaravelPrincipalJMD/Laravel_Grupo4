@@ -29,32 +29,41 @@
           <label for="name" class="form-label">NAME</label>
           <input type="text" class="form-control" id="name" name="name" value="{{old('name')}}">
           @error('name')
+
           <p class="text-light">{{$message}}</p>
+
           @enderror
           <label for="surname" class="form-label">SURNAME</label>
           <input type="text" class="form-control" id="surname" name="surname" value="{{old('surname')}}">
           @error('surname')
+
           <p class="text-light">{{$message}}</p>
           @enderror
           <div class="mb-3 email-sec">
             <label for="email" class="form-label">EMAIL</label>
             <input type="text" class="form-control" name="email" id="email" placeholder="abc@mail.com">
             @error('email')
+
             <p class="text-light">{{$message}}</p>
+
             @enderror
           </div>
           <div class="mb-3 ps-sec">
             <label for="password" class="form-label">PASSWORD</label>
             <input type="password" class="form-control" name="password" id="password" placeholder="">
             @error('password')
+
             <p class="text-light">{{$message}}</p>
+
             @enderror
           </div>
           <div class="mb-3 ps-sec">
             <label for="password_confirmation" class="form-label">CONFIRM PASSWORD</label>
             <input type="password" class="form-control" name="password_confirmation" id="password" placeholder="">
             @error('password_confirmation')
+
             <p class="text-light">{{$message}}</p>
+
             @enderror
           </div>
           <button type="submit" class="btn btn-primary">SING UP</button>
@@ -67,3 +76,4 @@
 </body>
 
 </html>
+
