@@ -15,10 +15,15 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+Route::get('/', function () {
+    return view('index');
+})->name('home');
 
 
 
-Route::get('/admin', [ ProductsController::class, 'products']);
+
+
+Route::get('/admin', [ ProductsController::class, 'products'])->middleware((['auth', 'isAdmin']));
 
 Route::get('editar', [ProductsController::class, 'editar']) -> name('admin.editar');
 
@@ -51,3 +56,13 @@ Route::post('insertUser', [UsersController::class, 'crearUser']) -> name('admin.
 Route::delete('borrarUser/{id?}', [ UsersController::class, 'eliminarUser' ]) -> name('admin.eliminarUser');
 
 Route::get('borrarUser', [UsersController::class, 'borrarUser']) -> name('admin.borrarUser');
+
+
+//SINGUP, SINGIN
+
+Route::get('/signUp', function () {
+    return view('index');
+})->middleware('auth');
+Route::get('/products', function () {
+    return view('products');
+});
