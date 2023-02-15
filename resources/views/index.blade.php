@@ -23,10 +23,14 @@
 
     @vite(['resources/css/app.scss', 'resources/js/app.js', 'resources/css/styles.css', 'resources/css/index.css', 'resources/js/about/about.js'])
 
+
 </head>
 
 <body id="page-top">
     <!-- Navigation-->
+
+
+
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
         <div class="container">
             <a class="navbar-brand" href="#page-top"><img src="../assets/img/navbar-logo.svg" alt="..." /></a>
@@ -37,6 +41,33 @@
             <div class="collapse navbar-collapse" id="navbarResponsive">
                 <ul class="navbar-nav text-uppercase ms-auto py-4 py-lg-0">
                     <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#portfolio">Portfolio</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#team">Team</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+                </ul>
+                @guest
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
+                </li>
+                @if (Route::has('register'))
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
+                </li>
+                @endif
+                @else
+                <div class="dropdown">
+                    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                        {{ Auth::user()->name }}
+                    </button>
+                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                        <li><a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();  document.getElementById('logout-form').submit();">{{ __('Logout')}}</a></li>
+                    </ul>
+                    <form id="logout-form" action="{{ route('logout')}}" method="POST" class="d-none">
+                        @csrf
+                        {{csrf_field()}}
+                    </form>
+
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                             Products
@@ -115,9 +146,71 @@
                     </span>
                     <h4 class="my-3">Web Security</h4>
                     <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit.</p>
+
+                </div>
+                @endguest
+            </div>
+        </div>
+
+    </nav>
+    <!-- Masthead-->
+    <header class="masthead">
+        <div class="container">
+            <div class="masthead-subheading">Welcome To Our Studio!</div>
+            <div class="masthead-heading text-uppercase">It's Nice To Meet You</div>
+            <a class="btn btn-primary btn-xl text-uppercase" href="#services">Tell Me More</a>
+        </div>
+    </header>
+    <!-- Services-->
+    <section class="page-section" id="services">
+        <div class="container">
+            <div class="text-center">
+                <h2 class="section-heading text-uppercase">Services</h2>
+                <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
+            </div>
+            <div class="row text-center">
+                <div class="col-md-4">
+                    <span class="fa-stack fa-4x">
+                        <i class="fas fa-circle fa-stack-2x text-primary"></i>
+                        <i class="fas fa-shopping-cart fa-stack-1x fa-inverse"></i>
+                    </span>
+                    <h4 class="my-3">E-Commerce</h4>
+                    <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit.</p>
+                </div>
+                <div class="col-md-4">
+                    <span class="fa-stack fa-4x">
+                        <i class="fas fa-circle fa-stack-2x text-primary"></i>
+                        <i class="fas fa-laptop fa-stack-1x fa-inverse"></i>
+                    </span>
+                    <h4 class="my-3">Responsive Design</h4>
+                    <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit.</p>
+                </div>
+                <div class="col-md-4">
+                    <span class="fa-stack fa-4x">
+                        <i class="fas fa-circle fa-stack-2x text-primary"></i>
+                        <i class="fas fa-lock fa-stack-1x fa-inverse"></i>
+                    </span>
+                    <h4 class="my-3">Web Security</h4>
+                    <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit.</p>
                 </div>
             </div>
         </div>
+    </section>
+    <!-- Portfolio Grid-->
+    <section class="page-section bg-light" id="portfolio">
+        <div class="container">
+            <div class="text-center">
+                <h2 class="section-heading text-uppercase">Portfolio</h2>
+                <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
+            </div>
+            <div class="row">
+                <div class="col-lg-4 col-sm-6 mb-4">
+                    <!-- Portfolio item 1-->
+                    <div class="portfolio-item">
+                        <a class="portfolio-link" data-bs-toggle="modal" href="#portfolioModal1">
+                            <div class="portfolio-hover">
+                                <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
+
     </section>
     <!-- Products Grid-->
     <section class="page-section bg-light" id="products">
@@ -314,7 +407,7 @@
             </div>
             @endguest
         </div>
-        <<<<<<< HEAD </div>
+        </div>
             </nav>
             <!-- Masthead-->
             <header class="masthead">
@@ -347,7 +440,7 @@
                             </span>
                             <h4 class="my-3">Responsive Design</h4>
                             <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit.</p>
-                            =======
+                       
             </section>
             <!-- Team-->
             <section class="page-section bg-light" id="team">
@@ -421,7 +514,13 @@
                                     <div class="portfolio-caption-heading">Threads</div>
                                     <div class="portfolio-caption-subheading text-muted">Illustration</div>
                                 </div>
+
                             </div>
+                            <img class="img-fluid" src="../assets/img/portfolio/1.jpg" alt="..." />
+                        </a>
+                        <div class="portfolio-caption">
+                            <div class="portfolio-caption-heading">Threads</div>
+                            <div class="portfolio-caption-subheading text-muted">Illustration</div>
                         </div>
                         <div class="col-lg-4 col-sm-6 mb-4">
                             <!-- Portfolio item 2-->
@@ -436,8 +535,15 @@
                                     <div class="portfolio-caption-heading">Explore</div>
                                     <div class="portfolio-caption-subheading text-muted">Graphic Design</div>
                                 </div>
+
                             </div>
+                            <img class="img-fluid" src="../assets/img/portfolio/2.jpg" alt="..." />
+                        </a>
+                        <div class="portfolio-caption">
+                            <div class="portfolio-caption-heading">Explore</div>
+                            <div class="portfolio-caption-subheading text-muted">Graphic Design</div>
                         </div>
+
                         <div class="col-lg-4 col-sm-6 mb-4">
                             <!-- Portfolio item 3-->
                             <div class="portfolio-item">
@@ -451,8 +557,15 @@
                                     <div class="portfolio-caption-heading">Finish</div>
                                     <div class="portfolio-caption-subheading text-muted">Identity</div>
                                 </div>
+
                             </div>
+                            <img class="img-fluid" src="../assets/img/portfolio/3.jpg" alt="..." />
+                        </a>
+                        <div class="portfolio-caption">
+                            <div class="portfolio-caption-heading">Finish</div>
+                            <div class="portfolio-caption-subheading text-muted">Identity</div>
                         </div>
+
                         <div class="col-lg-4 col-sm-6 mb-4 mb-lg-0">
                             <!-- Portfolio item 4-->
                             <div class="portfolio-item">
@@ -466,8 +579,15 @@
                                     <div class="portfolio-caption-heading">Lines</div>
                                     <div class="portfolio-caption-subheading text-muted">Branding</div>
                                 </div>
+
                             </div>
+                            <img class="img-fluid" src="../assets/img/portfolio/4.jpg" alt="..." />
+                        </a>
+                        <div class="portfolio-caption">
+                            <div class="portfolio-caption-heading">Lines</div>
+                            <div class="portfolio-caption-subheading text-muted">Branding</div>
                         </div>
+
                         <div class="col-lg-4 col-sm-6 mb-4 mb-sm-0">
                             <!-- Portfolio item 5-->
                             <div class="portfolio-item">
@@ -481,8 +601,15 @@
                                     <div class="portfolio-caption-heading">Southwest</div>
                                     <div class="portfolio-caption-subheading text-muted">Website Design</div>
                                 </div>
+
                             </div>
+                            <img class="img-fluid" src="../assets/img/portfolio/5.jpg" alt="..." />
+                        </a>
+                        <div class="portfolio-caption">
+                            <div class="portfolio-caption-heading">Southwest</div>
+                            <div class="portfolio-caption-subheading text-muted">Website Design</div>
                         </div>
+
                         <div class="col-lg-4 col-sm-6">
                             <!-- Portfolio item 6-->
                             <div class="portfolio-item">
@@ -496,10 +623,17 @@
                                     <div class="portfolio-caption-heading">Window</div>
                                     <div class="portfolio-caption-subheading text-muted">Photography</div>
                                 </div>
+
                             </div>
+                            <img class="img-fluid" src="../assets/img/portfolio/6.jpg" alt="..." />
+                        </a>
+                        <div class="portfolio-caption">
+                            <div class="portfolio-caption-heading">Window</div>
+                            <div class="portfolio-caption-subheading text-muted">Photography</div>
                         </div>
                     </div>
                 </div>
+
             </section>
             <!-- About-->
             <section class="page-section" id="about">
@@ -702,8 +836,9 @@
                     </form>
                 </div>
             </section>
-            <<<<<<< HEAD=======<!-- Footer-->
+           <!-- Footer-->
                 <footer class="footer py-4">
+
                     <div class="container">
                         <div class="row align-items-center">
                             <div class="col-lg-4 text-lg-start">Copyright &copy; Your Website 2022</div>
@@ -719,11 +854,11 @@
                         </div>
                     </div>
                 </footer>
-                <<<<<<< HEAD>>>>>>> 3d595da17309b4556c12c496d1a756dd35e49b70
+             3d595da17309b4556c12c496d1a756dd35e49b70
                     <!-- Portfolio Modals-->
                     <!-- Portfolio item 1 modal popup-->
                     <div class="portfolio-modal modal fade" id="portfolioModal1" tabindex="-1" role="dialog" aria-hidden="true">
-                        =======
+               
                         <!-- Products Modals-->
                         <!-- Products item 1 modal popup-->
                         <div class="products-modal modal fade" id="productsModal1" tabindex="-1" role="dialog" aria-hidden="true">
@@ -914,6 +1049,7 @@
                                 </div>
                             </div>
                         </div>
+
                         <!-- Products item 6 modal popup-->
                         <div class="products-modal modal fade" id="productsModal6" tabindex="-1" role="dialog" aria-hidden="true">
                             <div class="modal-dialog">
@@ -961,6 +1097,7 @@
                         <!-- * * Activate your form at https://startbootstrap.com/solution/contact-forms * *-->
                         <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
                         <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
+
 </body>
 
 </html>

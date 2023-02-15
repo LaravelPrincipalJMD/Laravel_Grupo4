@@ -18,8 +18,9 @@ return new class extends Migration
             $table->string('name');
             $table->string('surname');
             $table->string('email')->unique();
-            $table->integer('points');
+            $table->integer('points')->nullable();
             $table->string('password');
+            $table->boolean('rol')->default(0);
             $table->rememberToken();
             $table->timestamps();
         });

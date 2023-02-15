@@ -17,6 +17,7 @@
 <body id="page-top">
     @yield('nav')
     @yield('index')
+    @yield('side')
     @yield('products')
     @yield('cart')
     @yield('about')
