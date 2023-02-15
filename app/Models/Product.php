@@ -8,13 +8,16 @@ use Illuminate\Database\Eloquent\Model;
 class Product extends Model
 {
     use HasFactory;
-    public function cart(){
+    public function cart()
+    {
         return $this->belongsToMany(Cart::class)->withTimestamps();
     }
-    public function line(){
+    public function line()
+    {
         return $this->hasMany(Line::class)->withTimestamps();
     }
-    public function order(){
+    public function order()
+    {
         return $this->hasMany(Order::class)->withTimestamps();
     }
 }

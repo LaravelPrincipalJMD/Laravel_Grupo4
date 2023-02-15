@@ -65,7 +65,7 @@
                             <img class="card-img-top" src="{{URL::asset('img/Products web/1.png')}}" alt="..." />
                             <!-- Product details-->
                             <div class="card-body p-4">
-                                @@foreach ($products as $nombre)
+                                @foreach ($products as $nombre)
                                     <p> {{ $nombre }} </p>
                                 @endforeach
                                     

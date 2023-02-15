@@ -8,10 +8,12 @@ use Illuminate\Database\Eloquent\Model;
 class Order extends Model
 {
     use HasFactory;
-    public function user(){
+    public function user()
+    {
         return $this->belongsTo(User::class)->withTimestamps();
-   }
-   public function product(){
-    return $this->hasMany(Product::class)->withTimestamps();
-}
+    }
+    public function product()
+    {
+        return $this->hasMany(Product::class)->withTimestamps();
+    }
 }
