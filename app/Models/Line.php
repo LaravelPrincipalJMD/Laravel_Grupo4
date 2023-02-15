@@ -8,7 +8,8 @@ use Illuminate\Database\Eloquent\Model;
 class Line extends Model
 {
     use HasFactory;
-    public function product(){
+    public function product()
+    {
         return $this->hasMany(Product::class)->withTimestamps();
     }
 }

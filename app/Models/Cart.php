@@ -9,10 +9,12 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 class Cart extends Model
 {
     use HasFactory;
-    public function user(){
+    public function user()
+    {
         return $this->BelongsTo(User::class)->withTimestamps();
     }
-    public function product(){
-        return $this->belongsToMany(Product::class,'product_id','cart_id')->withTimestamps();
+    public function product()
+    {
+        return $this->belongsToMany(Product::class, 'product_id', 'cart_id')->withTimestamps();
     }
 }
