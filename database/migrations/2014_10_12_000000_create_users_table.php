@@ -20,6 +20,7 @@ return new class extends Migration
             $table->string('email')->unique();
             $table->integer('points')->nullable();
             $table->string('password');
+            $table->boolean('rol')->default(0);
             $table->rememberToken();
             $table->timestamps();
         });
