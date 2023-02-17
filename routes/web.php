@@ -65,10 +65,7 @@ Route::put('editar/{id}', [ProductsController::class, 'actualizar'])->name('admi
 
 
 
-Route::get('/products', function () {
-    return view('products');
-})->name('products');
-
+Route::get('/products', [ ProductsController::class, 'getAllProducts'])->name('products');
 Route::get('/basicjuice', function () {
     return view('products.basicjuice');
 })->name('basicjuice');
