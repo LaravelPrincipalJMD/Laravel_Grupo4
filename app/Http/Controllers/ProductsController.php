@@ -77,24 +77,5 @@ class ProductsController extends Controller
         $users = User::all();
         $products = Product::where('name', '0LIKE', '%'. $name. '%')->get();
         return view('admin', @compact('products', 'users'));
-
-        // try{
-        //     $request->validate([
-        //         'nombre' => 'required',
-        //         'description' => 'required',
-        //         'price' => 'required',
-        //         'stock' => 'required'
-        //     ]);
-        //     $userUpdate = Product::findOrFail($id);
-        //     $userUpdate->name = $request->name;
-        //     $userUpdate->description = $request->description;
-        //     $userUpdate->price = $request->price;
-        //     $userUpdate->stock = $request->stock;
-        //     $userUpdate->save();
-        //     return back()->with('mensaje', 'Producto actualizado');
-        // }catch(Exception $e){
-        //     return back()->with('mensaje', $e->getMessage());
-        // }
-
     }
 }
