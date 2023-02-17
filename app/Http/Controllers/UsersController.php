@@ -77,15 +77,3 @@ class UsersController extends Controller
     }
 
 }
-
-    public function getUsers()
-    {
-        $users = User::All();
-        return view('users', @compact('users'));
-    }
-    public function getUser()
-    {
-
-    }
-}
-

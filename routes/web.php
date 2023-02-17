@@ -60,15 +60,10 @@ Route::get('/', function () {
 })->name('home');
 Route::get('/admin', [ ProductsController::class, 'products']);
 Route::post('admin', [ ProductsController::class, 'crear' ]) -> name('admin.crear');
-Route::get('editar/{id}', [ProductsController::class, 'editar'])->name('admin.editar');
-Route::put('editar/{id}', [ProductsController::class, 'actualizar'])->name('admin.actualizar');
 
 
 
-Route::get('/products', function () {
-    return view('products');
-})->name('products');
-
+Route::get('/products', [ ProductsController::class, 'getAllProducts'])->name('products');
 Route::get('/basicjuice', function () {
     return view('products.basicjuice');
 })->name('basicjuice');

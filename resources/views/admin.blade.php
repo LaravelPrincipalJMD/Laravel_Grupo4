@@ -11,15 +11,15 @@
                         Main
                     </a>
                     <div class="sb-sidenav-menu-heading">Editing</div>
-                    <a class="nav-link collapsed" href="editar" data-bs-toggle="collapse" data-bs-target="#collapseLayouts" aria-expanded="false" aria-controls="collapseLayouts">
+                    <a class="nav-link collapsed" href="{{route('admin.editar')}}" data-bs-toggle="collapse" data-bs-target="#collapseLayouts" aria-expanded="false" aria-controls="collapseLayouts">
                         <div class="sb-nav-link-icon"><i class="fa-solid fa-pen-to-square"></i></i></div>
                         Edit&nbsp; <span class="text-warning">products</span>
                         <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
                     </a>
                     <div class="collapse" id="collapseLayouts" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
                         <nav class="sb-sidenav-menu-nested nav">
-                            <a class="nav-link" href="editar"><span class="text-warning">Edit</span>&nbsp;a product</span></a>
-                            <a class="nav-link" href="borrar"><span class="text-warning">Delete</span>&nbsp;a product</span></a>
+                            <a class="nav-link" href="{{route('admin.editar')}}"><span class="text-warning">Edit</span>&nbsp;a product</span></a>
+                            <a class="nav-link" href="{{route('admin.borrar')}}"><span class="text-warning">Delete</span>&nbsp;a product</span></a>
                         </nav>
                     </div>
                     <a class="nav-link collapsed" href="editar" data-bs-toggle="collapse" data-bs-target="#collapseUser" aria-expanded="false" aria-controls="collapseLayouts">
@@ -29,8 +29,8 @@
                     </a>
                     <div class="collapse" id="collapseUser" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
                         <nav class="sb-sidenav-menu-nested nav">
-                            <a class="nav-link" href="editarUser"><span class="text-warning">Edit</span>&nbsp;a user</span></a>
-                            <a class="nav-link" href="borrarUser"><span class="text-warning">Delete</span>&nbsp;a user</span></a>
+                            <a class="nav-link" href="{{route('admin.editarUser')}}"><span class="text-warning">Edit</span>&nbsp;a user</span></a>
+                            <a class="nav-link" href="{{route('admin.borrarUser')}}"><span class="text-warning">Delete</span>&nbsp;a user</span></a>
                         </nav>
                     </div>
                     <div class="collapse" id="collapsePages" aria-labelledby="headingTwo" data-bs-parent="#sidenavAccordion">
@@ -60,11 +60,11 @@
                         </nav>
                     </div>
                     <div class="sb-sidenav-menu-heading">Insert</div>
-                    <a class="nav-link" href="insert">
+                    <a class="nav-link" href="{{route('admin.creacion')}}">
                         <div class="sb-nav-link-icon"><i class="fa-solid fa-file-plus"></i></div>
                         Insert&nbsp; <span class="text-warning">a product</span>
                     </a>
-                    <a class="nav-link" href="insertUser">
+                    <a class="nav-link" href="{{route('admin.creacionUser')}}">
                         <div class="sb-nav-link-icon"><i class="fa-solid fa-user-plus"></i></div>
                         Insert&nbsp; <span class="text-warning">a user</span>
                     </a>
@@ -79,10 +79,14 @@
         </nav>
     </div>
 
+
+
+
     <div id="layoutSidenav_content">
         <main>
             <div class="container-fluid px-4">
                 <h1 class="mt-4">Dashboard</h1>
+             
                 <ol class="breadcrumb mb-4">
                     <li class="breadcrumb-item active">Products</li>
                 </ol>
