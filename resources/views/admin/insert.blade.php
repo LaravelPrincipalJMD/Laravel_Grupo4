@@ -18,8 +18,8 @@
                         </a>
                         <div class="collapse" id="collapseLayouts" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
                             <nav class="sb-sidenav-menu-nested nav">
-                                <a class="nav-link" href="editar"><span class="text-warning">Edit</span>&nbsp;a product</span></a>
-                                <a class="nav-link" href="borrar"><span class="text-warning">Delete</span>&nbsp;a product</span></a>
+                                <a class="nav-link" href="{{route('admin.editar')}}"><span class="text-warning">Edit</span>&nbsp;a product</span></a>
+                                <a class="nav-link" href="{{route('admin.borrar')}}"><span class="text-warning">Delete</span>&nbsp;a product</span></a>
                             </nav>
                         </div>
                         <a class="nav-link collapsed" href="editar" data-bs-toggle="collapse" data-bs-target="#collapseUser" aria-expanded="false" aria-controls="collapseLayouts">
@@ -29,8 +29,8 @@
                         </a>
                         <div class="collapse" id="collapseUser" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
                             <nav class="sb-sidenav-menu-nested nav">
-                                <a class="nav-link" href="editarUser"><span class="text-warning">Edit</span>&nbsp;a user</span></a>
-                                <a class="nav-link" href="borrarUser"><span class="text-warning">Delete</span>&nbsp;a user</span></a>
+                                <a class="nav-link" href="{{route('admin.editarUser')}}"><span class="text-warning">Edit</span>&nbsp;a user</span></a>
+                                <a class="nav-link" href="{{route('admin.borrarUser')}}"><span class="text-warning">Delete</span>&nbsp;a user</span></a>
                             </nav>
                         </div>
                         <div class="collapse" id="collapsePages" aria-labelledby="headingTwo" data-bs-parent="#sidenavAccordion">
@@ -60,11 +60,11 @@
                             </nav>
                         </div>
                         <div class="sb-sidenav-menu-heading">Insert</div>
-                        <a class="nav-link" href="insert">
+                        <a class="nav-link" href="{{route('admin.creacion')}}">
                             <div class="sb-nav-link-icon"><i class="fa-solid fa-file-plus"></i></div>
                             Insert&nbsp; <span class="text-warning">a product</span>
                         </a>
-                        <a class="nav-link" href="insertUser">
+                        <a class="nav-link" href="{{route('admin.creacionUser')}}">
                             <div class="sb-nav-link-icon"><i class="fa-solid fa-user-plus"></i></div>
                             Insert&nbsp; <span class="text-warning">a user</span>
                         </a>
@@ -82,14 +82,14 @@
         <div id="layoutSidenav_content">
             <main>
                 <h2 class="px-5 pt-5 display-5">Inserting a <span class="text-warning">Product</span></h2>
-                <form class="p-5" action="{{ route('admin.crear') }}" method="GET">
-                    @method('PUT')
+                <form class="p-5" action="{{ route('admin.crear') }}" method="POST">
+                    @method('POST')
                     @csrf
 
                     <div class="mb-3">
                         <label for="exampleInputEmail1" class="form-label">Name:</label>
                         <input name="name" type="text" class="form-control" id="exampleInputEmail1"
-                            aria-describedby="emailHelp">
+                        aria-describedby="emailHelp">
                         <div id="emailHelp" class="form-text"></div>
                     </div>
                     <div class="mb-3">
@@ -107,14 +107,24 @@
                     <button type="submit" class="btn btn-primary">Save changes</button>
                 </form>
             </main>
-        @endsection
+            @if ($errors->any())
+            <div>
+                {!! implode('', $errors->all(':message'))!!}
+            </div>
+        @endif
+        @if (session('mensaje'))
+        <div class="alert alert-success mt-3">
+            {{session('mensaje')}}
+        </div>
+    @endif
+            @endsection
 
 
 
 
 
 
-        @section('footer')
+            @section('footer')
             <footer class="py-4 bg-light mt-auto">
                 <div class="container-fluid px-4">
                     <div class="d-flex align-items-center justify-content-between small">

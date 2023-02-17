@@ -29,14 +29,19 @@ class ProductsController extends Controller
     }
     public function crear(Request $request)
     {
-        $request->validate(['name' => 'required', 'description' => 'required', 'price' => 'required', 'stock' => 'required']);
-        $newProduct = new Product();
-        $newProduct->name = $request->name;
-        $newProduct->description = $request->description;
-        $newProduct->price = $request->price;
-        $newProduct->stock = $request->stock;
-        $newProduct->save();
+        try{
+            $request->validate(['name' => 'required', 'description' => 'required', 'price' => 'required', 'stock' => 'required']);
+            $newProduct = new Product();
+            $newProduct->name = $request->name;
+            $newProduct->description = $request->description;
+            $newProduct->price = $request->price;
+            $newProduct->stock = $request->stock;
+            $newProduct->save();
         return back()->with('mensaje', 'Product added successfully');
+        } catch(Exception $e){
+            return back()->with('mensaje', 'JODIENDA');
+        }
+
     }
     public function editar()
     {
@@ -75,7 +80,7 @@ class ProductsController extends Controller
     {
         $name = $request->name;
         $users = User::all();
-        $products = Product::where('name', '0LIKE', '%'. $name. '%')->get();
+        $products = Product::where('name', 'LIKE', '%'. $name. '%')->get();
         return view('admin', @compact('products', 'users'));
     }
 }
