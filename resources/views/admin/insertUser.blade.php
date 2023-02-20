@@ -84,7 +84,6 @@
                 <h2 class="px-5 pt-5 display-5">Inserting a <span class="text-warning">User</span></h2>
                 <form class="p-5" action="{{ route('admin.crearUser') }}" method="POST">
                     @csrf
-
                     <div class="mb-3">
                         <label for="exampleInputEmail1" class="form-label">Name:</label>
                         <input name="name" type="text" class="form-control" id="exampleInputEmail1"

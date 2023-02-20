@@ -18,7 +18,7 @@ use Illuminate\Support\Facades\Route;
 
 
 
-Route::get('/admin', [ ProductsController::class, 'products'])->middleware((['auth', 'isAdmin']));
+Route::get('/admin', [ ProductsController::class, 'products'])->middleware(['auth', 'isAdmin']);
 
 Route::get('editar', [ProductsController::class, 'editar']) -> name('admin.editar');
 
@@ -58,8 +58,8 @@ Route::get('borrarUser', [UsersController::class, 'borrarUser']) -> name('admin.
 Route::get('/', function () {
     return view('index');
 })->name('home');
-Route::get('/admin', [ ProductsController::class, 'products']);
-Route::post('admin', [ ProductsController::class, 'crear' ]) -> name('admin.crear');
+//Route::get('/admin', [ ProductsController::class, 'products'])->middleware(['auth', 'isAdmin']);
+Route::post('admin', [ ProductsController::class, 'crear' ]) -> name('admin.crear')->middleware(['auth', 'isAdmin']);;
 
 
 

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
 use App\Models\User;
 use App\Models\Product;
 use Exception;
@@ -23,13 +24,14 @@ class UsersController extends Controller
     }
     public function crearUser(Request $request)
     {
-        $request->validate(['name' => 'required', 'surname' => 'required', 'email' => 'required', 'points' => 'required', 'password' => 'required']);
+        $password = Hash::make($request['password']);
+        $request->validate(['name' => 'required', 'surname' => 'required', 'email' => 'required', 'password' => 'required']);
         $newUser = new User();
         $newUser->name = $request->name;
         $newUser->surname = $request->surname;
         $newUser->email = $request->email;
-        $newUser->points = $request->points;
-        $newUser->password = $request->password;
+        $newUser->points = null;
+        $newUser->password = $password;
         $newUser->save();
         return back()->with('mensaje', 'user added successfully');
     }
