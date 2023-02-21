@@ -29,8 +29,6 @@
 <body id="page-top">
     <!-- Navigation-->
 
-
-
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
         <div class="container">
             <a class="navbar-brand" href="#page-top"><img src="../assets/img/navbar-logo.svg" alt="..." /></a>
@@ -817,15 +815,10 @@
                     </div>
                 </div>
             </footer>
-            3d595da17309b4556c12c496d1a756dd35e49b70
-            <!-- Portfolio Modals-->
-            <!-- Portfolio item 1 modal popup-->
-            <div class="portfolio-modal modal fade" id="portfolioModal1" tabindex="-1" role="dialog" aria-hidden="true">
 
                 <!-- Products Modals-->
                 <!-- Products item 1 modal popup-->
                 <div class="products-modal modal fade" id="productsModal1" tabindex="-1" role="dialog" aria-hidden="true">
-                    >>>>>>> 339a85a82748f492d5f3c998d3f9b72df3940ae7
                     <div class="modal-dialog">
                         <div class="modal-content">
                             <div class="close-modal" data-bs-dismiss="modal"><img src="../assets/img/close-icon.svg" alt="Close modal" /></div>

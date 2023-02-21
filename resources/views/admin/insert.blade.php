@@ -104,6 +104,10 @@
                         <label for="exampleInputPassword1" class="form-label">Stock:</label>
                         <input name="stock" type="number" class="form-control" id="exampleInputPassword1">
                     </div>
+                    <div class="mb-3">
+                        <label for="exampleInputPassword1" class="form-label">Imagen:</label>
+                        <input name="image" type="file" class="form-control" id="exampleInputPassword1">
+                    </div>
                     <button type="submit" class="btn btn-primary">Save changes</button>
                 </form>
             </main>

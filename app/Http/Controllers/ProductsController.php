@@ -10,6 +10,8 @@ use Exception;
 
 use Illuminate\Http\Request;
 
+
+
 class ProductsController extends Controller
 {
     public function getAllProducts() {
@@ -30,16 +32,24 @@ class ProductsController extends Controller
     public function crear(Request $request)
     {
         try{
-            $request->validate(['name' => 'required', 'description' => 'required', 'price' => 'required', 'stock' => 'required']);
+            $request->validate(['name' => 'required', 'description' => 'required', 'price' => 'required', 'stock' => 'required', 'image' => 'required']);
             $newProduct = new Product();
             $newProduct->name = $request->name;
             $newProduct->description = $request->description;
             $newProduct->price = $request->price;
             $newProduct->stock = $request->stock;
+
+                $file = $request->file('image');
+                $extension = 'jpg';
+                $filename = time() . '.' . $extension;
+                $destination = 'img/Products_web/';
+                $file->move(public_path($destination));
+                $newProduct->image = $filename;
+
             $newProduct->save();
         return back()->with('mensaje', 'Product added successfully');
         } catch(Exception $e){
-            return back()->with('mensaje', 'JODIENDA');
+            return back()->with('mensaje', 'JODIENDA' .  $request, $filename);
         }
 
     }
