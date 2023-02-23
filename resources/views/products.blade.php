@@ -40,6 +40,7 @@
                         <li class="nav-item"><a class="nav-link" href="#services">PRODUCTS</a></li>
                         <li class="nav-item"><a class="nav-link" href="#about">ABOUT</a></li>
                         <li class="nav-item"><a class="nav-link" href="#team">TEAM</a></li>
+                        <li class="nav-item"><a class="nav-link" href="{{route('cartView')}}">CART</a></li>
                             @guest
                             <i class="fa-solid fa-user text-primary dropdown-toggle mt-2" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown"></i>
                             <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">

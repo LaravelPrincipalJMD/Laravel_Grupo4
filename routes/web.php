@@ -77,3 +77,4 @@ Route::get('/basicjuice', function () {
 
 
 Route::get('cartControll',[CartController::class, 'addToCart'])->name('Controll');
+Route::get('/cart',[CartController::class, 'getCart'])->name('cartView');

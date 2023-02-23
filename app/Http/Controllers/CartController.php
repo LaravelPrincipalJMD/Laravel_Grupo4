@@ -32,4 +32,19 @@ class CartController extends Controller
       return back()->with('message', $th->getMessage());
     }
   }
+  public function getCart(Request $request)
+  {
+    try {
+      $cart = Cart::where('user_id', $request->idUser)->first();
+      if($cart){
+        $cart->product()->attach($request->productId);
+      }else{
+        $newCart = new Cart();
+        $newCart->user_id = $request->idUser;
+      }
+    return view('cart');
+    } catch (\Throwable $th) {
+      return back()->with('message', $th->getMessage());
+    }
+  }
 }
