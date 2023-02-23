@@ -25,29 +25,32 @@
       <h1>JUICE <span class="text-primary">HUB</span></h1>
       <form action='{{route("login")}}' method='POST'>
         @csrf
-        @if (session('mensaje'))
-        <div class="alert alert-danger" role="alert">
-          <strong>{{session('mensaje')}}</strong>
-        </div>
-        @endif
+
         <div class="col-md-4 div-container">
           <div class="mb-3 email-sec">
             <label for="email" class="form-label">Email</label>
             <input type="email" class="form-control" name="email" id="email" aria-describedby="emailHelpId" placeholder="abc@gmail.com">
+            @error('email')
+
+            <p class="text-light">{{$message}}</p>
+
+            @enderror
           </div>
           <div class="mb-3 ps-sec">
             <label for="password" class="form-label">PASSWORD</label>
             <input type="password" class="form-control" name="password" id="password" placeholder="">
+            @error('password')
+
+            <p class="text-light">{{$message}}</p>
+
+            @enderror
           </div>
-          <button type="submit" class="btn btn-primary">SING IN</button>
+          <button type="submit" class="btn btn-primary text-light">Sign In</button>
           <a href="{{ route('register') }}">NOT HAVE ACCOUNT</a>
         </div>
       </form>
     </div>
   </header>
-  <script>
-    console.log(innerWidth)
-  </script>
   <!-- <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script> -->
 </body>
 
