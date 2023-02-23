@@ -80,7 +80,7 @@
         </div>
 
         <div id="layoutSidenav_content">
-            <main>
+            <main class="container">
                 <h2 class="px-5 pt-5 display-5">Editing <span class="text-warning">Users</span></h2>
                 <div class="table-responsive p-3">
                     <table class="table table-white">
@@ -99,7 +99,7 @@
                                         <td>{{ $user->email }}</td>
                                         <td>{{ $user->points }}</td>
                                         <td>{{ $user->password }}</td>
-                                    <td><button type="button" class="btn btn-primary" data-bs-toggle="modal"
+                                    <td><button type="button" class="btn btn-warning" data-bs-toggle="modal"
                                             data-bs-target="#exampleModal{{$user->id}}">
                                             Edit
                                         </button>
@@ -169,7 +169,9 @@
                             @endforeach
                         </tbody>
                     </table>
-
+                    <div class="container">
+                        {{ $users->links() }}
+                    </div>
                 </div>
                 @if ($errors->any())
                 <div>
@@ -181,6 +183,7 @@
                 {{session('mensaje')}}
             </div>
         @endif
+
             </main>
         @endsection
 

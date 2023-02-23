@@ -96,70 +96,67 @@
         <div id="layoutSidenav_content">
             <main>
                 <div class="container-fluid px-4">
-                    <h1 class="mt-4">Users</h1> <a class="text-decoration-none text-warning" href="{{ route('admin') }}">Volver</a>
+                    <h1 class="mt-4">Products</h1> <a class="text-decoration-none text-warning" href="{{ route('admin') }}">Volver</a>
                         <div class="w-25 card bg-warning text-white mb-4 mt-4">
-                            <div class="card-body">Search a user</div>
+                            <div class="card-body">Search a product</div>
                             <div class="card-footer d-flex align-items-center justify-content-between">
-                                <form action="{{ route('admin.detalleUser') }}" method="GET" class="d-inline">
+                                <form action="{{ route('admin.detalle') }}" method="GET" class="d-inline">
                                     <input type="text" name="name" id="name">
-                                    <button class="btn btn-dark btn-sm" type="submit">Search</button>
+                                    <button class="btn btn-warning btn-sm" type="submit">Search</button>
                                 </form>
                             </div>
                         </div>
 
 
                     <ol class="breadcrumb mb-4">
-                        <li class="breadcrumb-item active">Users</li>
+                        <li class="breadcrumb-item active">Products</li>
                     </ol>
 
                     <div class="card mb-4">
                         <div class="card-header">
                             <i class="fas fa-table me-1"></i>
-                            Users
+                            Products
                         </div>
                         <div class="table-responsive">
                             <table class="table table-white">
                                 <tbody>
                                     <tr>
                                         <th>Name:</th>
-                                        <th>Surname:</th>
-                                        <th>Email:</th>
-                                        <th>Password:</th>
-                                        <th>Rol:</th>
+                                        <th>Descriptión:</th>
+                                        <th>Stock:</th>
+
                                     </tr>
-                                    @foreach ($users as $user)
+                                    @foreach ($products as $product)
                                         <tr>
-                                            <td>{{ $user->name }}</td>
-                                            <td>{{ $user->surname }}</td>
-                                            <td>{{ $user->email }}</td>
-                                            <td>{{ $user->password }}</td>
-                                            <td>{{ $user->rol }}</td>
+                                            <td>{{ $product->name }}</td>
+                                            <td>{{ $product->description }}</td>
+                                            <td>{{ $product->stock }}</td>
                                             <td><button type="button" class="btn btn-warning" data-bs-toggle="modal"
-                                                    data-bs-target="#exampleModal{{ $user->id }}">
+                                                    data-bs-target="#exampleModal{{ $product->id }}">
                                                     Edit
                                                 </button>
                                             </td>
                                             <td>
-                                                <form action="{{ route('admin.eliminarUser', $user) }}" method="POST"
+                                                <form action="{{ route('admin.eliminar', $product) }}" method="POST"
                                                     class="d-inline">
                                                     @method('DELETE')
                                                     @csrf
                                                     <button class="btn btn-danger btn-sm" type="submit">Delete</button>
                                                 </form>
                                             </td>
-                                            <div class="modal fade" id="exampleModal{{ $user->id }}" tabindex="-1"
+                                            <div class="modal fade" id="exampleModal{{ $product->id }}" tabindex="-1"
                                                 aria-labelledby="exampleModalLabel" aria-hidden="true">
                                                 <div class="modal-dialog modal-dialog-centered">
                                                     <div class="modal-content">
                                                         <div class="modal-header">
                                                             <h5 class="modal-title" id="exampleModalLabel">Editing
-                                                                {{ $user->name }}</h5>
+                                                                {{ $product->name }}</h5>
                                                             <button type="button" class="btn-close"
                                                                 data-bs-dismiss="modal" aria-label="Close"></button>
                                                         </div>
                                                         <div class="modal-body">
                                                             <form method="POST"
-                                                                action="{{ route('admin.actualizarUser', $user->id) }}">
+                                                                action="{{ route('admin.actualizar', $product->id) }}">
                                                                 @method('PUT')
                                                                 @csrf
 
@@ -170,37 +167,38 @@
                                                                         class="form-control @error('name') is-invalid @enderror"
                                                                         id="exampleInputEmail1"
                                                                         aria-describedby="emailHelp"
-                                                                        value="{{ $user->name }}">
+                                                                        value="{{ $product->name }}">
                                                                     <div id="emailHelp" class="form-text"></div>
                                                                 </div>
                                                                 <div class="mb-3">
                                                                     <label for="exampleInputPassword1"
-                                                                        class="form-label">Surname:</label>
-                                                                    <input name="surname" type="text"
-                                                                        class="form-control @error('surname') is-invalid @enderror"
+                                                                        class="form-label">Description:</label>
+                                                                    <input name="description" type="description"
+                                                                        class="form-control @error('description') is-invalid @enderror"
                                                                         id="exampleInputPassword1"
-                                                                        value="{{ $user->surname }}">
+                                                                        value="{{ $product->description }}">
                                                                 </div>
                                                                 <div class="mb-3">
                                                                     <label for="exampleInputPassword1"
-                                                                        class="form-label">Email:</label>
-                                                                    <input name="email" type="email"
-                                                                        class="form-control @error('email') is-invalid @enderror"
+                                                                        class="form-label">Price:</label>
+                                                                    <input name="price" type="number"
+                                                                        class="form-control @error('price') is-invalid @enderror"
                                                                         id="exampleInputPassword1"
-                                                                        value="{{ $user->email }}">
+                                                                        value="{{ $product->price }}">
                                                                 </div>
                                                                 <div class="mb-3">
                                                                     <label for="exampleInputPassword1"
-                                                                        class="form-label">Password</label>
-                                                                    <input name="password" type="password"
-                                                                        class="form-control @error('password') is-invalid @enderror"
+                                                                        class="form-label">Stock:</label>
+                                                                    <input name="stock" type="number"
+                                                                        class="form-control @error('stock') is-invalid @enderror"
                                                                         id="exampleInputPassword1"
-                                                                        value="{{ $user->password }}">
+                                                                        value="{{ $product->stock }}">
                                                                 </div>
-
                                                                 <button type="submit" class="btn btn-warning">Save
                                                                     changes</button>
+
                                                             </form>
+
                                                         </div>
 
                                                     </div>
@@ -209,7 +207,9 @@
                                         </tr>
                                     @endforeach
                                 </tbody>
+
                             </table>
+
 
                             @if ($errors->any())
                                 <div>
@@ -226,9 +226,6 @@
                     </div>
 
                 </div>
-                <div class="container">
-                {{ $users->links() }}
-            </div>
             </main>
         @endsection
         @section('footer')

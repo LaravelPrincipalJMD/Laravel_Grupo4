@@ -14,16 +14,19 @@ use Illuminate\Http\Request;
 
 class ProductsController extends Controller
 {
-    public function admin() {
+    public function admin()
+    {
         return view('admin');
     }
-    public function getAllProducts() {
+    public function getAllProducts()
+    {
         $products = Product::all();
+        $products = Product::paginate(5);
         return view('products', @compact('products'));
     }
     public function products()
     {
-        $products = Product::all();
+        $products = Product::paginate(5);
         return view('adminProducts', @compact('products'));
     }
     public function creacion()
@@ -33,36 +36,34 @@ class ProductsController extends Controller
     }
     public function crear(Request $request)
     {
-        try{
-            $request->validate(['name' => 'required', 'description' => 'required', 'price' => 'required', 'stock' => 'required', 'image' => 'required']);
+        try {
+            $request->validate([
+                'name' => 'required',
+                'description' => 'required',
+                'price' => 'numeric|min:0|max:1000|required',
+                'stock' => 'numeric|min:0|max:1000|required'
+            ]);
             $newProduct = new Product();
             $newProduct->name = $request->name;
             $newProduct->description = $request->description;
             $newProduct->price = $request->price;
             $newProduct->stock = $request->stock;
-
-                $file = $request->file('image');
-                $extension = 'jpg';
-                $filename = time() . '.' . $extension;
-                $destination = 'img/Products_web/';
-                $file->move(public_path($destination));
-                $newProduct->image = $filename;
-
             $newProduct->save();
-        return back()->with('mensaje', 'Product added successfully');
-        } catch(Exception $e){
-            return back()->with('mensaje', 'JODIENDA' .  $request, $filename);
+            return back()->with('mensaje', 'Product added successfully');
+        } catch (Exception $e) {
+            return back()->with('mensaje', $e->getMessage());
         }
-
     }
     public function editar()
     {
         $products = Product::all();
+        $products = Product::paginate(5);
         return view('admin.editar', @compact('products'));
     }
     public function borrar()
     {
         $products = Product::all();
+        $products = Product::paginate(5);
         return view('admin.borrar', @compact('products'));
     }
     public function actualizar(Request $request, $id)
@@ -91,7 +92,7 @@ class ProductsController extends Controller
     public function buscar(Request $request)
     {
         $name = $request->name;
-        $products = Product::where('name', 'LIKE', '%'. $name. '%')->get();
-        return view('adminProducts', @compact('products'));
+        $products = Product::where('name', 'LIKE', '%' . $name . '%')->get();
+        return view('admin.adminProductsDetalle', @compact('products'));
     }
 }

@@ -226,9 +226,7 @@
                     </div>
 
                 </div>
-                <div class="container">
-                {{ $users->links() }}
-            </div>
+
             </main>
         @endsection
         @section('footer')

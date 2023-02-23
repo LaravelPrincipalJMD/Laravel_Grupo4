@@ -97,12 +97,12 @@
             <main>
                 <div class="container-fluid px-4">
                     <h1 class="mt-4">Products</h1> <a class="text-decoration-none text-warning" href="{{ route('admin') }}">Volver</a>
-                        <div class="w-25 card bg-primary text-white mb-4 mt-4">
+                        <div class="w-25 card bg-warning text-white mb-4 mt-4">
                             <div class="card-body">Search a product</div>
                             <div class="card-footer d-flex align-items-center justify-content-between">
                                 <form action="{{ route('admin.detalle') }}" method="GET" class="d-inline">
                                     <input type="text" name="name" id="name">
-                                    <button class="btn btn-info btn-sm" type="submit">Search</button>
+                                    <button class="btn btn-warning btn-sm" type="submit">Search</button>
                                 </form>
                             </div>
                         </div>
@@ -124,13 +124,14 @@
                                         <th>Name:</th>
                                         <th>Descriptión:</th>
                                         <th>Stock:</th>
+
                                     </tr>
                                     @foreach ($products as $product)
                                         <tr>
                                             <td>{{ $product->name }}</td>
                                             <td>{{ $product->description }}</td>
                                             <td>{{ $product->stock }}</td>
-                                            <td><button type="button" class="btn btn-primary" data-bs-toggle="modal"
+                                            <td><button type="button" class="btn btn-warning" data-bs-toggle="modal"
                                                     data-bs-target="#exampleModal{{ $product->id }}">
                                                     Edit
                                                 </button>
@@ -193,9 +194,11 @@
                                                                         id="exampleInputPassword1"
                                                                         value="{{ $product->stock }}">
                                                                 </div>
-                                                                <button type="submit" class="btn btn-primary">Save
+                                                                <button type="submit" class="btn btn-warning">Save
                                                                     changes</button>
+
                                                             </form>
+
                                                         </div>
 
                                                     </div>
@@ -204,7 +207,9 @@
                                         </tr>
                                     @endforeach
                                 </tbody>
+
                             </table>
+
 
                             @if ($errors->any())
                                 <div>
@@ -219,7 +224,9 @@
 
                         </div>
                     </div>
-
+                    <div class="container">
+                        {{ $products->links() }}
+                    </div>
                 </div>
             </main>
         @endsection

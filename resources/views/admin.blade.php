@@ -125,60 +125,34 @@
                         </a>
 
                     </div>
+                    <div class="d-flex justify-content-around align-items-center">
+                        <a class="text-decoration-none text-bold w-35" href="{{ route('admin.creacion') }}">
+                            <div class="card bg-black text-white mb-4">
+                                <div class="card-body hover">
+                                  <p class="em2"><span class="span">Insert</span> a product</p>
+                                  <p class="em1 text-light"><span class="span">Insert a </span> product  <span>into our database</span> </p>
+                                </div>
+                            </div>
+                        </a>
+
+                        <a class="text-decoration-none text-bold w-35" href="{{ route('admin.creacionUser') }}">
+                            <div class="card bg-black text-white mb-4">
+                                <div class="card-body hover">
+                                  <p class="em2"><span class="span">Insert</span> a user</p>
+                                  <p class="em1 text-light"><span class="span">Insert a </span> user  <span>into our database</span> </p>
+                                </div>
+                            </div>
+                        </a>
+
+                    </div>
                     <ol class="breadcrumb mb-4">
-                        <li class="breadcrumb-item active">Users</li>
+                        <li class="breadcrumb-item active">Orders</li>
                     </ol>
-                    <div class="row">
-                        <div class="col-xl-3 col-md-6">
-                            <div class="card bg-primary text-white mb-4">
-                                <div class="card-body">GO INTO USERS</div>
-                                <div class="card-footer d-flex align-items-center justify-content-between">
-                                    <form action="{{ route('admin.detalleUser') }}" method="GET" class="d-inline">
-                                        <input type="text" name="name" id="name">
-                                        <button class="btn btn-info btn-sm" type="submit">Search</button>
-                                    </form>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-xl-3 col-md-6">
-                            <div class="card bg-warning text-white mb-4">
-                                <div class="card-body">Edit user</div>
-                                <div class="card-footer d-flex align-items-center justify-content-between">
-                                    <a class="small text-white stretched-link"
-                                        href="{{ route('admin.editarUser') }}">Choose a product to edit</a>
-                                    <div class="small text-white"><i class="fas fa-angle-right"></i></div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-xl-3 col-md-6">
-                            <div class="card bg-success text-white mb-4">
-                                <div class="card-body">Insert user</div>
-                                <div class="card-footer d-flex align-items-center justify-content-between">
-                                    <a class="small text-white stretched-link" href="insertUser">Go to create</a>
-                                    <div class="small text-white"><i class="fas fa-angle-right"></i></div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-xl-3 col-md-6">
-                            <div class="card bg-danger text-white mb-4">
-                                <div class="card-body">Delete user</div>
-                                <div class="card-footer d-flex align-items-center justify-content-between">
-                                    <a class="small text-white stretched-link" href="borrarUser">Go to delete</a>
-                                    <div class="small text-white"><i class="fas fa-angle-right"></i></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+
                     <div class="card mb-4">
                         <div class="card-header">
                             <i class="fas fa-table me-1"></i>
-                            Productos
-                        </div>
-                    </div>
-                    <div class="card mb-4">
-                        <div class="card-header">
-                            <i class="fas fa-table me-1"></i>
-                            Users
+                            Orders
                         </div>
                     </div>
                 </div>

@@ -80,7 +80,7 @@
         </div>
 
         <div id="layoutSidenav_content">
-            <main>
+            <main class="container my-2">
                 <h2 class="px-5 pt-5 display-5">Inserting a <span class="text-warning">Product</span></h2>
                 <form class="p-5" action="{{ route('admin.crear') }}" method="POST">
                     @method('POST')
@@ -104,11 +104,7 @@
                         <label for="exampleInputPassword1" class="form-label">Stock:</label>
                         <input name="stock" type="number" class="form-control" id="exampleInputPassword1">
                     </div>
-                    <div class="mb-3">
-                        <label for="exampleInputPassword1" class="form-label">Imagen:</label>
-                        <input name="image" type="file" class="form-control" id="exampleInputPassword1">
-                    </div>
-                    <button type="submit" class="btn btn-primary">Save changes</button>
+                    <button type="submit" class="btn btn-warning">Save changes</button>
                 </form>
             </main>
             @if ($errors->any())

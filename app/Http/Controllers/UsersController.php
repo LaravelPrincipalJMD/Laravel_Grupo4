@@ -17,19 +17,25 @@ class UsersController extends Controller
     public function users()
     {
         $users = User::all();
+       $users = User::paginate(5);
         return view('adminUsers', @compact('users'));
     }
 
     public function creacionUser()
     {
         $users = User::all();
+       $users = User::paginate(5);
         return view('admin.insertUser', @compact('users'));
     }
     public function crearUser(Request $request)
     {
         $password = Hash::make($request['password']);
-        $request->validate(['name' => 'required', 'surname' => 'required', 'email' => 'required', 'password' => 'required']);
-        $newUser = new User();
+        $request->validate([
+            'name' => 'required',
+            'surname' => 'required',
+            'email' => 'required|regex:/(.+)@(.+)\.(.+)/i',
+            'password' => 'min:8|max:255|required'
+        ]);        $newUser = new User();
         $newUser->name = $request->name;
         $newUser->surname = $request->surname;
         $newUser->email = $request->email;
@@ -41,12 +47,14 @@ class UsersController extends Controller
     public function editarUser()
     {
         $users = User::all();
+       $users = User::paginate(5);
         return view('admin.editarUser', @compact('users'));
     }
 
     public function borrarUser()
     {
         $users = User::all();
+       $users = User::paginate(5);
         return view('admin.borrarUser', @compact('users'));
     }
     public function actualizarUser(Request $request, $id)
@@ -54,7 +62,7 @@ class UsersController extends Controller
         $request->validate([
             'name' => 'required',
             'surname' => 'required',
-            'email' => 'required|email',
+            'email' => 'required|regex:/(.+)@(.+)\.(.+)/i',
             'password' => 'min:8|max:255|required'
         ]);
         $userUpdate = User::findOrFail($id);
@@ -76,7 +84,7 @@ class UsersController extends Controller
     {
         $name = $request->name;
         $users = User::where('name', 'LIKE', '%'. $name. '%')->get();
-        return view('adminUsers', @compact('users'));
+        return view('admin.adminUsersDetalle', @compact('users'));
     }
 
 }
