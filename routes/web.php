@@ -20,6 +20,8 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/admin', [ ProductsController::class, 'products'])->middleware(['auth', 'isAdmin']);
 
+Route::get('/admin/adminProducts', [ ProductsController::class, 'products'])->middleware(['auth', 'isAdmin'])->name('admin.products');
+
 Route::get('editar', [ProductsController::class, 'editar']) -> name('admin.editar');
 
 

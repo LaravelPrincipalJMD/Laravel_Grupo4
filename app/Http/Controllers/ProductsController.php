@@ -21,8 +21,7 @@ class ProductsController extends Controller
     public function products()
     {
         $products = Product::all();
-        $users = User::all();
-        return view('admin', @compact('products', 'users'));
+        return view('adminProducts', @compact('products'));
     }
     public function creacion()
     {
@@ -69,8 +68,8 @@ class ProductsController extends Controller
         $request->validate([
             'name' => 'required',
             'description' => 'required',
-            'price' => 'required',
-            'stock' => 'required'
+            'price' => 'min:1|max:10000|required',
+            'stock' => 'min:1|max:10000|required'
         ]);
         $userUpdate = Product::findOrFail($id);
         $userUpdate->name = $request->name;

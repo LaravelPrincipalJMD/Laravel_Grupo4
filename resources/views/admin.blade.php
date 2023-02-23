@@ -91,26 +91,17 @@
                     <li class="breadcrumb-item active">Products</li>
                 </ol>
                 <div class="row">
+                    <a href="{{route('admin.products')}}">
                     <div class="col-xl-3 col-md-6">
                         <div class="card bg-primary text-white mb-4">
                             <div class="card-body">Search a product</div>
                             <div class="card-footer d-flex align-items-center justify-content-between">
-                                <form action="{{route('admin.detalle')}}" method="GET" class="d-inline">
-                                    <input type="text" name="name" id="name">
-                                    <button class="btn btn-info btn-sm" type="submit">Search</button>
-                                </form>
+
                             </div>
                         </div>
                     </div>
-                    <div class="col-xl-3 col-md-6">
-                        <div class="card bg-warning text-white mb-4">
-                            <div class="card-body">Edit products</div>
-                            <div class="card-footer d-flex align-items-center justify-content-between">
-                                <a class="small text-white stretched-link" href="{{route('admin.editar')}}">Choose a product to edit</a>
-                                <div class="small text-white"><i class="fas fa-angle-right"></i></div>
-                            </div>
-                        </div>
-                    </div>
+                </a>
+
                     <div class="col-xl-3 col-md-6">
                         <div class="card bg-success text-white mb-4">
                             <div class="card-body">Insert Products</div>
@@ -120,15 +111,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-xl-3 col-md-6">
-                        <div class="card bg-danger text-white mb-4">
-                            <div class="card-body">Delete products</div>
-                            <div class="card-footer d-flex align-items-center justify-content-between">
-                                <a class="small text-white stretched-link" href="borrar">Go to delete</a>
-                                <div class="small text-white"><i class="fas fa-angle-right"></i></div>
-                            </div>
-                        </div>
-                    </div>
+
                 </div>
                 <ol class="breadcrumb mb-4">
                     <li class="breadcrumb-item active">Users</li>
