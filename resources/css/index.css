@@ -7,9 +7,14 @@
       transition: padding-top 0.3s ease-in-out, padding-bottom 0.3s ease-in-out;
     }
 }
-
+#loader{
+  position: fixed;
+  top: 50%;
+  color: red;
+  z-index: 10;
+}
 header.masthead {
-
+      background-image: url('../assets/img/juice.gif');
       color: #212529;
 }
     

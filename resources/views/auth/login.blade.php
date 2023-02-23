@@ -39,15 +39,12 @@
             <label for="password" class="form-label">PASSWORD</label>
             <input type="password" class="form-control" name="password" id="password" placeholder="">
           </div>
-          <button type="submit" class="btn btn-primary">SING IN</button>
+          <button type="submit" class="btn btn-primary text-light">Sign In</button>
           <a href="{{ route('register') }}">NOT HAVE ACCOUNT</a>
         </div>
       </form>
     </div>
   </header>
-  <script>
-    console.log(innerWidth)
-  </script>
   <!-- <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script> -->
 </body>
 

@@ -130,14 +130,8 @@ label {
         padding: 0;
         margin: 0;
     }
-
-    @keyframes animateBg {
-        0%{
-            transform: rotate(0deg);
-        }
-        100%{
-            transform: rotate(360deg);
-        }
+    h1{
+        font-size: 4rem;
     }
     form {
         height: 80%;
