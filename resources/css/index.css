@@ -18,10 +18,12 @@
 }
 
 #mainNav{
-  height: 11rem;
+  height: 5rem;
 }
 #logo{
-  width: 10rem;
+  position: absolute;
+  top: -15%;
+  width: 8rem;
 }
 header.masthead {
       background-image: url('../assets/img/juice.gif');
