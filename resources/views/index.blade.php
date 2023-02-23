@@ -28,8 +28,8 @@
     <!-- Navigation-->
 
     <div id="load-container">
-        <div id="loader" class="spinner-border" role="status">
-            <span id="load" class="visually-hidden">Loading...</span>
+        <div id="loader" class="spinner-border bg-primary" role="status">
+            <span class="load"></span>
         </div>
     </div>
 
@@ -88,7 +88,7 @@
             </div>
         </header>
         <!-- Services-->
-        <section class="page-section" id="services">
+        <section class="page-section timeline-panel texto-desaparecer" id="services">
             <div class="container mb-5">
                 <div class="text-center">
                     <h2 class="section-heading text-uppercase">Services</h2>
@@ -140,7 +140,7 @@
                 <div class="row">
                     <div class="col-lg-4 col-sm-6 mb-4">
                         <!-- Products item 1-->
-                        <div class="products-item">
+                        <div class="products-item timeline-panel texto-desaparecer">
                             <a class="products-link" data-bs-toggle="modal" href="#productsModal1">
                                 <div class="products-hover">
                                     <div class="products-hover-content"><i class="fas fa-plus fa-3x"></i></div>
@@ -155,7 +155,7 @@
                     </div>
                     <div class="col-lg-4 col-sm-6 mb-4">
                         <!-- Products item 2-->
-                        <div class="products-item">
+                        <div class="products-item timeline-panel texto-desaparecer">
                             <a class="products-link" data-bs-toggle="modal" href="#productsModal2">
                                 <div class="products-hover">
                                     <div class="products-hover-content"><i class="fas fa-plus fa-3x"></i></div>
@@ -170,7 +170,7 @@
                     </div>
                     <div class="col-lg-4 col-sm-6 mb-4">
                         <!-- Products item 3-->
-                        <div class="products-item">
+                        <div class="products-item timeline-panel texto-desaparecer">
                             <a class="products-link" data-bs-toggle="modal" href="#productsModal3">
                                 <div class="products-hover">
                                     <div class="products-hover-content"><i class="fas fa-plus fa-3x"></i></div>
@@ -185,7 +185,7 @@
                     </div>
                     <div class="col-lg-4 col-sm-6 mb-4 mb-lg-0">
                         <!-- Products item 4-->
-                        <div class="products-item">
+                        <div class="products-item timeline-panel texto-desaparecer">
                             <a class="products-link" data-bs-toggle="modal" href="#productsModal4">
                                 <div class="products-hover">
                                     <div class="products-hover-content"><i class="fas fa-plus fa-3x"></i></div>
@@ -200,7 +200,7 @@
                     </div>
                     <div class="col-lg-4 col-sm-6 mb-4 mb-sm-0">
                         <!-- Products item 5-->
-                        <div class="products-item">
+                        <div class="products-item timeline-panel texto-desaparecer">
                             <a class="products-link" data-bs-toggle="modal" href="#productsModal5">
                                 <div class="products-hover">
                                     <div class="products-hover-content"><i class="fas fa-plus fa-3x"></i></div>
@@ -215,7 +215,7 @@
                     </div>
                     <div class="col-lg-4 col-sm-6">
                         <!-- Products item 6-->
-                        <div class="products-item">
+                        <div class="products-item timeline-panel texto-desaparecer">
                             <a class="products-link" data-bs-toggle="modal" href="#productsModal6">
                                 <div class="products-hover">
                                     <div class="products-hover-content"><i class="fas fa-plus fa-3x"></i></div>

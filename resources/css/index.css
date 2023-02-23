@@ -16,6 +16,10 @@
   align-items: center;
   z-index: 10;
 }
+#loader{
+  width: 15rem;
+  height: 15rem;
+}
 
 #mainNav{
   height: 5rem;
@@ -25,6 +29,8 @@
   top: -15%;
   width: 8rem;
 }
+
+
 header.masthead {
       background-image: url('../assets/img/juice.gif');
       color: #212529;
@@ -68,4 +74,15 @@ header.masthead {
 .dropdown-item:hover{
   color: #cca000;
   background-color: #212529;
+}
+
+body::-webkit-scrollbar {
+  width: 12px;               /* width of the entire scrollbar */
+}
+body::-webkit-scrollbar-track {
+  background: unset;        /* color of the tracking area */
+}
+body::-webkit-scrollbar-thumb {
+  background-color: orange;    /* color of the scroll thumb */
+  border-radius: 20px;       /* roundness of the scroll thumb */
 }
