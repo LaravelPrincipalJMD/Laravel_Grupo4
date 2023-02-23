@@ -3,6 +3,7 @@
 use App\Http\Controllers\ProductsController;
 use App\Http\Controllers\UsersController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\CartController;
 
 
 /*
@@ -68,3 +69,11 @@ Route::get('/basicjuice', function () {
     return view('products.basicjuice');
 })->name('basicjuice');
 
+
+
+
+// CART ROUTES
+
+
+
+Route::get('cartControll',[CartController::class, 'addToCart'])->name('Controll');
