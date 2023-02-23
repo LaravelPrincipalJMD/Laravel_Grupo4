@@ -27,13 +27,16 @@
 <body id="page-top">
     <!-- Navigation-->
 
-    <div id="loader" class="spinner-border" role="status">
-        <span class="visually-hidden">Loading...</span>
+    <div id="load-container">
+        <div id="loader" class="spinner-border" role="status">
+            <span id="load" class="visually-hidden">Loading...</span>
+        </div>
     </div>
+
     <div id="all">
         <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
             <div class="container">
-                <a class="navbar-brand" href="#page-top"><img src="../assets/img/navbar-logo.svg" alt="..." /></a>
+                <img id="logo" src="{{URL::asset('logo.png')}}" alt="..." />
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
                     Menu
                     <i class="fas fa-bars ms-1"></i>
@@ -99,7 +102,7 @@
                         </span>
                         <h4 class="my-3">E-Commerce</h4>
                         <p class="text-muted">
-                        For most orders, shipping costs are free of charge for orders of €25.90 or more. For purchases below this amount, shipping costs are €3.95. Delivery of products takes between 24/48 hours.
+                            For most orders, shipping costs are free of charge for orders of €25.90 or more. For purchases below this amount, shipping costs are €3.95. Delivery of products takes between 24/48 hours.
                         </p>
                     </div>
                     <div class="col-md-4">
@@ -109,7 +112,7 @@
                         </span>
                         <h4 class="my-3">Contact Us</h4>
                         <p class="text-muted">
-                        If you have any help or questions, you can contact our employees. They will help you with all your questions.
+                            If you have any help or questions, you can contact our employees. They will help you with all your questions.
                         </p>
                     </div>
                     <div class="col-md-4">
@@ -119,7 +122,7 @@
                         </span>
                         <h4 class="my-3">Web Security</h4>
                         <p class="text-muted">
-                        You will be able to save your data when you register and there will be a security of your data to avoid any kind of problem.
+                            You will be able to save your data when you register and there will be a security of your data to avoid any kind of problem.
                         </p>
 
                     </div>
