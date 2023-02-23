@@ -66,7 +66,7 @@
 
             @enderror
           </div>
-          <button type="submit" class="btn btn-primary">SING UP</button>
+          <button type="submit" class="btn btn-primary text-light">Sign Up</button>
           <a href="{{ route('login') }}">ALREADY HAVE ACCOUNT</a>
         </div>
       </form>
