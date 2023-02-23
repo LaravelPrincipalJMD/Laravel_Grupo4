@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -80,7 +81,7 @@
                 <div class="col mb-5">
                     <div class="card h-100">
                         <!-- Product image-->
-                        <img class="card-img-top" src="./ /asset/img/Products web/{{$p->id}}.png" alt="..." />
+                        <img class="card-img-top" src="{{URL::asset('img/Products_web/' . $p->image)}}" alt="..." />
                         <!-- Product details-->
                         <div class="card-body p-4">
 

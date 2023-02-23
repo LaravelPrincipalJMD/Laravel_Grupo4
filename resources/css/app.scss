@@ -1,1 +1,14 @@
 @import 'bootstrap/scss/bootstrap';
+
+.hover:hover{
+    background-color: #e9b526;
+    transition: .2s;
+    .em2, .em1{
+        color: black;
+        transition: .2s;
+    }
+    .span{
+        color: white;
+        transition: .2s;
+    }
+}

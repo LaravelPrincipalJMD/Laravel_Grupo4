@@ -80,7 +80,7 @@
         </div>
 
         <div id="layoutSidenav_content">
-            <main>
+            <main class="container">
                 <h2 class="px-5 pt-5 display-5">Deleting <span class="text-warning">Products</span></h2>
                 <div class="table-responsive p-3">
                     <table class="table table-white">
@@ -148,6 +148,9 @@
                     {{session('mensaje')}}
                 </div>
             @endif
+                </div>
+                <div class="container">
+                    {{ $products->links() }}
                 </div>
             </main>
         @endsection

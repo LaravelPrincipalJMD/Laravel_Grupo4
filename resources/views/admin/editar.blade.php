@@ -80,7 +80,7 @@
         </div>
 
         <div id="layoutSidenav_content">
-            <main>
+            <main class="container">
                 <h2 class="px-5 pt-5 display-5">Editing <span class="text-warning">Products</span></h2>
                 <div class="table-responsive p-3">
                     <table class="table table-white">
@@ -97,7 +97,7 @@
                                     <td>{{ $product->description }}</td>
                                     <td>{{ $product->price }}</td>
                                     <td>{{ $product->stock }}</td>
-                                    <td><button type="button" class="btn btn-primary" data-bs-toggle="modal"
+                                    <td><button type="button" class="btn btn-warning" data-bs-toggle="modal"
                                             data-bs-target="#exampleModal{{$product->id}}">
                                             Edit
                                         </button>
@@ -158,6 +158,7 @@
                                 </tr>
                             @endforeach
                         </tbody>
+
                     </table>
                     @if ($errors->any())
                     <div>
@@ -169,6 +170,9 @@
                     {{session('mensaje')}}
                 </div>
             @endif
+                </div>
+                <div class="container">
+                    {{ $products->links() }}
                 </div>
             </main>
         @endsection

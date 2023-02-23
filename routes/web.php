@@ -18,7 +18,9 @@ use Illuminate\Support\Facades\Route;
 
 
 
-Route::get('/admin', [ ProductsController::class, 'products'])->middleware(['auth', 'isAdmin']);
+Route::get('/admin', [ ProductsController::class, 'admin'])->middleware(['auth', 'isAdmin'])->name('admin');
+
+Route::get('/admin/adminProducts', [ ProductsController::class, 'products'])->middleware(['auth', 'isAdmin'])->name('admin.products');
 
 Route::get('editar', [ProductsController::class, 'editar']) -> name('admin.editar');
 
@@ -37,6 +39,8 @@ Route::put('insert', [ProductsController::class, 'crear']) -> name('admin.crear'
 
 
 //USERS
+
+Route::get('/admin/adminUsers', [ UsersController::class, 'users'])->middleware(['auth', 'isAdmin'])->name('admin.users');
 
 Route::get('editarUser', [UsersController::class, 'editarUser']) -> name('admin.editarUser');
 
