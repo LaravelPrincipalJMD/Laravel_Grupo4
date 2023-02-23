@@ -14,6 +14,9 @@ use Illuminate\Http\Request;
 
 class ProductsController extends Controller
 {
+    public function admin() {
+        return view('admin');
+    }
     public function getAllProducts() {
         $products = Product::all();
         return view('products', @compact('products'));
@@ -68,8 +71,8 @@ class ProductsController extends Controller
         $request->validate([
             'name' => 'required',
             'description' => 'required',
-            'price' => 'min:1|max:10000|required',
-            'stock' => 'min:1|max:10000|required'
+            'price' => 'numeric|min:0|max:1000|required',
+            'stock' => 'numeric|min:0|max:1000|required'
         ]);
         $userUpdate = Product::findOrFail($id);
         $userUpdate->name = $request->name;
@@ -88,8 +91,7 @@ class ProductsController extends Controller
     public function buscar(Request $request)
     {
         $name = $request->name;
-        $users = User::all();
         $products = Product::where('name', 'LIKE', '%'. $name. '%')->get();
-        return view('admin', @compact('products', 'users'));
+        return view('adminProducts', @compact('products'));
     }
 }

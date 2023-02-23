@@ -96,7 +96,17 @@
         <div id="layoutSidenav_content">
             <main>
                 <div class="container-fluid px-4">
-                    <h1 class="mt-4">Dashboard</h1>
+                    <h1 class="mt-4">Products</h1> <a class="text-decoration-none text-warning" href="{{ route('admin') }}">Volver</a>
+                        <div class="w-25 card bg-primary text-white mb-4 mt-4">
+                            <div class="card-body">Search a product</div>
+                            <div class="card-footer d-flex align-items-center justify-content-between">
+                                <form action="{{ route('admin.detalle') }}" method="GET" class="d-inline">
+                                    <input type="text" name="name" id="name">
+                                    <button class="btn btn-info btn-sm" type="submit">Search</button>
+                                </form>
+                            </div>
+                        </div>
+
 
                     <ol class="breadcrumb mb-4">
                         <li class="breadcrumb-item active">Products</li>
@@ -195,18 +205,17 @@
                                     @endforeach
                                 </tbody>
                             </table>
-                            @error('name')
-                                <div class="alert alert-danger">{{ $message }}</div>
-                            @enderror
-                            @error('description')
-                                <div class="alert alert-danger">{{ $message }}</div>
-                            @enderror
-                            @error('price')
-                                <div class="alert alert-danger">{{ $message }}</div>
-                            @enderror
-                            @error('stock')
-                                <div class="alert alert-danger">{{ $message }}</div>
-                            @enderror
+
+                            @if ($errors->any())
+                                <div>
+                                    {!! implode('', $errors->all(':message')) !!}
+                                </div>
+                            @endif
+                            @if (session('mensaje'))
+                                <div class="alert alert-success mt-3">
+                                    {{ session('mensaje') }}
+                                </div>
+                            @endif
 
                         </div>
                     </div>

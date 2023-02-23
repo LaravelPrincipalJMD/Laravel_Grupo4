@@ -11,10 +11,13 @@ use Exception;
 
 class UsersController extends Controller
 {
+    public function admin() {
+        return view('admin');
+    }
     public function users()
     {
         $users = User::all();
-        return view('admin', @compact('users'));
+        return view('adminUsers', @compact('users'));
     }
 
     public function creacionUser()
@@ -51,9 +54,8 @@ class UsersController extends Controller
         $request->validate([
             'name' => 'required',
             'surname' => 'required',
-            'email' => 'required',
-            'points' => 'required',
-            'password' => 'required'
+            'email' => 'required|email',
+            'password' => 'min:8|max:255|required'
         ]);
         $userUpdate = User::findOrFail($id);
         $userUpdate->name = $request->name;
@@ -73,9 +75,8 @@ class UsersController extends Controller
     public function buscarUser(Request $request)
     {
         $name = $request->name;
-        $products = Product::all();
         $users = User::where('name', 'LIKE', '%'. $name. '%')->get();
-        return view('admin', @compact('products', 'users'));
+        return view('adminUsers', @compact('users'));
     }
 
 }
