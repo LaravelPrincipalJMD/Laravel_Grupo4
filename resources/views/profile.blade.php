@@ -133,19 +133,29 @@
                               </div>
                               <h6>Other data</h6>
                               <hr class="mt-0 mb-4">
-                              <div class="row pt-1">
-                                <form action="{{route('password')}}?userId={{ Auth::user()->id }}" method='GET' class="mb-3">
-                                 
-                                <h6>Change password</h6>
-                                  <input name="password" type="password" class="text-muted">
-                                  <input type="submit" value="Save" class="btn btn-primary">
-                                  
-                                </form>     
-                              </div>
+                              
                             
                             </div>
                             
                         </form>
+                        <div class="row pt-1">
+                            <form action="{{route('user-password.update')}}" method='POST' class="mb-3 w-100 d-flex flex-column justify-content-center align-items-center">
+                            @method("PUT")
+                            @csrf
+                            <h6>Change password</h6>
+                            <label for="">Contraseña actual</label>
+                            <input name="current_password" type="password" class="text-muted">
+                            
+                            <label for="">Nueva contraseña</label>
+                            <input name="password" type="password" class="text-muted">
+                            
+                            <label for="">Repetir contraseña</label>
+                            <input name="password_confirmation" type="password" class="text-muted">
+
+                            <input type="submit" class="btn btn-primary">
+                              
+                            </form>     
+                          </div>
                           </div>
                         </div>
                       </div>
