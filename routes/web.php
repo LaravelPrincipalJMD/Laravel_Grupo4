@@ -68,3 +68,10 @@ Route::get('/basicjuice', function () {
     return view('products.basicjuice');
 })->name('basicjuice');
 
+
+Route::get('/profile', [ UsersController::class, 'userData'])->name('profile');
+
+
+Route::get('/password', [ UsersController::class, 'changePassword'])->name('password');
+
+

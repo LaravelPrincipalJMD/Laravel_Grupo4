@@ -21,17 +21,31 @@
 
 
 
-    @vite(['resources/css/app.scss', 'resources/js/app.js', 'resources/css/styles.css', 'resources/css/index.css', 'resources/js/about/about.js'])
+    @vite(['resources/css/app.scss', 'resources/js/app.js', 'resources/css/styles.css', 'resources/css/index.css', 'resources/css/loading.css','resources/js/about/about.js'])
 </head>
 
 <body id="page-top">
     <!-- Navigation-->
 
-    <div id="load-container">
-        <div id="loader" class="spinner-border bg-primary" role="status">
-            <span class="load"></span>
+
+    <!-- loading-->
+
+    <div id= "load-container">
+    <div class="box">
+        <div class="fruit">
+          <div class="leaf"></div>
         </div>
-    </div>
+        <div class="fruit right">
+          <div class="leaf"></div>
+        </div>
+        <div class="fruit bottom">
+          <div class="leaf"></div>
+        </div>
+        <div class="fruit bottom right">
+          <div class="leaf"></div>
+        </div>
+        </div>
+      </div>
 
     <div id="all">
         <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
@@ -43,9 +57,9 @@
                 </button>
                 <div class="collapse navbar-collapse" id="navbarResponsive">
                     <ul class="navbar-nav text-uppercase ms-auto py-4 py-lg-0">
-                        <li class="nav-item"><a class="nav-link" href="#services">WELCOME</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#">WELCOME</a></li>
                         <li class="nav-item"><a class="nav-link" href="#services">SERVICES</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#services">PRODUCTS</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#products">PRODUCTS</a></li>
                         <li class="nav-item"><a class="nav-link" href="#about">ABOUT</a></li>
                         <li class="nav-item"><a class="nav-link" href="#team">TEAM</a></li>
                         <div class="dropdown">
@@ -67,8 +81,11 @@
                                     {{ Auth::user()->name }}
                                 </button>
                                 <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                                    <li><a class="dropdown-item" href="{{ route('profile') }}?userId={{ Auth::user()->id }}">{{ __('profile')}}</a></li>
                                     <li><a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();  document.getElementById('logout-form').submit();">{{ __('Logout')}}</a></li>
+                                    
                                 </ul>
+
                                 <form id="logout-form" action="{{ route('logout')}}" method="POST" class="d-none">
                                     @csrf
                                     {{csrf_field()}}
