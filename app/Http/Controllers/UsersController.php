@@ -87,4 +87,18 @@ class UsersController extends Controller
         return view('admin.adminUsersDetalle', @compact('users'));
     }
 
+    public function userData (Request $request)
+    {
+        $user = User::find($request->userId );
+        return view("profile")->with("user", $user);
+    }
+
+    public function changePassword (Request $request)
+    {
+        $user = User::find($request->userId );
+        $user->password=$request->password;
+        $user->save();
+        return view("profile")->with("user", $user);
+    }
+
 }

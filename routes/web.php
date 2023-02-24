@@ -75,6 +75,14 @@ Route::get('/basicjuice', function () {
 
 
 
+Route::get('/profile', [ UsersController::class, 'userData'])->name('profile');
+
+
+Route::get('/password', [ UsersController::class, 'changePassword'])->name('password');
+
+
+
+
 
 // CART ROUTES
 
@@ -83,3 +91,4 @@ Route::get('/basicjuice', function () {
 Route::get('Controll',[CartController::class, 'addToCart'])->name('Controll');
 Route::get('cartControll',[CartController::class, 'deleteFromCart'])->name('delete');
 Route::get('/cart',[CartController::class, 'getCart'])->name('cartView');
+
