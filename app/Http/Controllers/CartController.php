@@ -32,6 +32,18 @@ class CartController extends Controller
       return back()->with('message', $th->getMessage());
     }
   }
+  public function deleteFromCart(Request $request)
+  {
+    try {
+      $cart = Cart::where('user_id', $request->idUser)->first();
+
+        $cart->product()->detach($request->productId);
+
+      return back()->with('message', 'DELETED');
+    } catch (\Throwable $th) {
+      return back()->with('message', $th->getMessage());
+    }
+  }
   public function getCart(Request $request)
   {
     try {

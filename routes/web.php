@@ -76,5 +76,6 @@ Route::get('/basicjuice', function () {
 
 
 
-Route::get('cartControll',[CartController::class, 'addToCart'])->name('Controll');
+Route::get('Controll',[CartController::class, 'addToCart'])->name('Controll');
+Route::get('cartControll',[CartController::class, 'deleteFromCart'])->name('delete');
 Route::get('/cart',[CartController::class, 'getCart'])->name('cartView');
