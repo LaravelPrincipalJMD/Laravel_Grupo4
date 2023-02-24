@@ -85,7 +85,9 @@
     @endif
     <!-- Section-->
     <section class="py-5">
-        <p>hola</p>
+        @foreach($products as $product)
+        <p>{{$product->name}}</p>
+        @endforeach
     </section>
     <!-- Footer-->
     <footer class="py-5 bg-dark">

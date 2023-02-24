@@ -19,15 +19,15 @@ class CartController extends Controller
   {
     try {
       $cart = Cart::where('user_id', $request->idUser)->first();
-      if($cart){
+      if ($cart) {
         $cart->product()->attach($request->productId);
-      }else{
+      } else {
         $newCart = new Cart();
         $newCart->user_id = $request->idUser;
         $newCart->save();
         $newCart->product()->attach($request->productId);
       }
-    return back()->with('message', 'ADDED TO CART');
+      return back()->with('message', 'ADDED TO CART');
     } catch (\Throwable $th) {
       return back()->with('message', $th->getMessage());
     }
@@ -35,14 +35,11 @@ class CartController extends Controller
   public function getCart(Request $request)
   {
     try {
-      $cart = Cart::where('user_id', $request->idUser)->first();
-      if($cart){
-        $cart->product()->attach($request->productId);
-      }else{
-        $newCart = new Cart();
-        $newCart->user_id = $request->idUser;
-      }
-    return view('cart');
+      
+      $cartUser = User::find($request->idUser);
+      $cart = Cart::find($cartUser->cart->id);
+      $products = $cart->product;
+      return view('cart',@compact('products'));
     } catch (\Throwable $th) {
       return back()->with('message', $th->getMessage());
     }
