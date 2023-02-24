@@ -80,7 +80,7 @@
         </div>
 
         <div id="layoutSidenav_content">
-            <main>
+            <main class="container my-2">
                 <h2 class="px-5 pt-5 display-5">Inserting a <span class="text-warning">User</span></h2>
                 <form class="p-5" action="{{ route('admin.crearUser') }}" method="POST">
                     @csrf
@@ -107,7 +107,12 @@
                         <input name="password" type="password" class="form-control" id="exampleInputPassword1">
                     </div>
 
-                    <button type="submit" class="btn btn-primary">Save changes</button>
+                    <button type="submit" class="btn btn-warning">Save changes</button>
+                    @if ($errors->any())
+                    <div>
+                        {!! implode('', $errors->all(':message'))!!}
+                    </div>
+                @endif
                     @if (session('mensaje'))
                         <div class="alert alert-success mt-3">
                             {{session('mensaje')}}

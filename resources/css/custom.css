@@ -1,0 +1,22 @@
+.hover:hover{
+    background-color: #e9b526;
+    transition: .2s;
+}
+.w-35{
+    width: 25%;
+    padding: 2em;
+}
+.em2{
+    font-size: 2em;
+}
+.em1 {
+    font-size: 1em;
+}
+
+.span{
+    color: #e9b526;
+}
+
+.w-25{
+    width: 25%;
+}

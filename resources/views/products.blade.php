@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -13,53 +14,65 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" />
     <!-- Core theme CSS (includes Bootstrap)-->
     <link href="css/stylesproducts.css" rel="stylesheet" />
-
-    @vite(['resources/css/app.scss', 'resources/js/app.js', 'resources/css/styles.css','resources/css/stylesproducts.css', 'resources/js/products/scripts.js'])
+    <script defer src="{{URL::asset('assets/products.js')}}"></script>
+    @vite(['resources/css/app.scss', 'resources/js/app.js', 'resources/css/styles.css','resources/css/stylesproducts.css', 'resources/js/products/scripts.js','resources/css/index.css'])
 
 </head>
 
 <body>
-    <!-- Navigation-->
-    <nav class="navbar navbar-expand-lg navbar-dark fixed-top bg-dark" id="mainNav">
-        <div class="container">
-            <a class="navbar-brand" href="#page-top"><img src="../assets/img/navbar-logo.svg" alt="..." /></a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-                Menu
-                <i class="fas fa-bars ms-1"></i>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarResponsive">
-                <ul class="navbar-nav text-uppercase ms-auto py-4 py-lg-0">
-                    <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#portfolio">Portfolio</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#team">Team</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
-                </ul>
-                @guest
-                <li class="nav-item">
-                    <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
-                </li>
-                @if (Route::has('register'))
-                <li class="nav-item">
-                    <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
-                </li>
-                @endif
-                @else
-                <div class="dropdown">
-                    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-                        {{ Auth::user()->name }}
-                    </button>
-                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                        <li><a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();  document.getElementById('logout-form').submit();">{{ __('Logout')}}</a></li>
+<div id="load-container">
+        <div id="loader" class="spinner-border bg-primary" role="status">
+            <span class="load"></span>
+        </div>
+    </div>
+
+    <div id="all">
+        <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
+            <div class="container">
+                <img id="logo" src="{{URL::asset('logo.png')}}" alt="..." />
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                    Menu
+                    <i class="fas fa-bars ms-1"></i>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarResponsive">
+                    <ul class="navbar-nav text-uppercase ms-auto py-4 py-lg-0">
+                        <li class="nav-item"><a class="nav-link" href="#services">WELCOME</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#services">SERVICES</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#services">PRODUCTS</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#about">ABOUT</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#team">TEAM</a></li>
+                        <li class="nav-item"><a class="nav-link" href="{{route('cartView')}}?idUser={{Auth::user()->id}}">CART</a></li>
+                            @guest
+                            <i class="fa-solid fa-user text-primary dropdown-toggle mt-2" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown"></i>
+                            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
+                                </li>
+                                @if (Route::has('register'))
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
+                                </li>
+                            </ul>
+                            @endif
+                            @else
+                            <div class="dropdown">
+                                <button class="btn btn-primary text-light dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                                    {{ Auth::user()->name }}
+                                </button>
+                                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                                    <li><a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();  document.getElementById('logout-form').submit();">{{ __('Logout')}}</a></li>
+                                </ul>
+                                <form id="logout-form" action="{{ route('logout')}}" method="POST" class="d-none">
+                                    @csrf
+                                    {{csrf_field()}}
+                                </form>
+                            </div>
+                            @endguest
+                        </div>
                     </ul>
-                    <form id="logout-form" action="{{ route('logout')}}" method="POST" class="d-none">
-                        @csrf
-                        {{csrf_field()}}
-                    </form>
-                    @endguest
                 </div>
             </div>
-    </nav>
+        </nav>
     <!-- Header-->
     <header class="bg-primary py-5">
         <div class="container px-4 px-lg-5 my-5">
@@ -69,8 +82,9 @@
             </div>
         </div>
     </header>
-
-
+    @if(session('message'))
+    <p>{{session('message')}}</p>
+    @endif
     <!-- Section-->
     <section class="py-5">
         <div class="container px-4 px-lg-5 mt-5">
@@ -80,7 +94,7 @@
                 <div class="col mb-5">
                     <div class="card h-100">
                         <!-- Product image-->
-                        <img class="card-img-top" src="./ /asset/img/Products web/{{$p->id}}.png" alt="..." />
+                        <img class="card-img-top" src="{{URL::asset('img/Products_web/' . $p->image)}}" alt="..." />
                         <!-- Product details-->
                         <div class="card-body p-4">
 
@@ -103,7 +117,7 @@
                         </div>
                         <!-- Product actions-->
                         <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                            <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#">ADD TO CART</a></div>
+                            <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="{{route('Controll')}}?idUser={{Auth::user()->id}}&productId={{$p->id}}">ADD TO CART</a></div>
                         </div>
                     </div>
                 </div>
@@ -117,6 +131,7 @@
             <p class="m-0 text-center text-white">Copyright &copy; Your Website 2022</p>
         </div>
     </footer>
+    </div>
     <!-- Bootstrap core JS-->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
     <!-- Core theme JS-->

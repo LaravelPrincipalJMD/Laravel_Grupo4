@@ -10,17 +10,24 @@ use Exception;
 
 use Illuminate\Http\Request;
 
+
+
 class ProductsController extends Controller
 {
-    public function getAllProducts() {
+    public function admin()
+    {
+        return view('admin');
+    }
+    public function getAllProducts()
+    {
         $products = Product::all();
+        $products = Product::paginate(5);
         return view('products', @compact('products'));
     }
     public function products()
     {
-        $products = Product::all();
-        $users = User::all();
-        return view('admin', @compact('products', 'users'));
+        $products = Product::paginate(5);
+        return view('adminProducts', @compact('products'));
     }
     public function creacion()
     {
@@ -29,28 +36,34 @@ class ProductsController extends Controller
     }
     public function crear(Request $request)
     {
-        try{
-            $request->validate(['name' => 'required', 'description' => 'required', 'price' => 'required', 'stock' => 'required']);
+        try {
+            $request->validate([
+                'name' => 'required',
+                'description' => 'required',
+                'price' => 'numeric|min:0|max:1000|required',
+                'stock' => 'numeric|min:0|max:1000|required'
+            ]);
             $newProduct = new Product();
             $newProduct->name = $request->name;
             $newProduct->description = $request->description;
             $newProduct->price = $request->price;
             $newProduct->stock = $request->stock;
             $newProduct->save();
-        return back()->with('mensaje', 'Product added successfully');
-        } catch(Exception $e){
-            return back()->with('mensaje', 'JODIENDA');
+            return back()->with('mensaje', 'Product added successfully');
+        } catch (Exception $e) {
+            return back()->with('mensaje', $e->getMessage());
         }
-
     }
     public function editar()
     {
         $products = Product::all();
+        $products = Product::paginate(5);
         return view('admin.editar', @compact('products'));
     }
     public function borrar()
     {
         $products = Product::all();
+        $products = Product::paginate(5);
         return view('admin.borrar', @compact('products'));
     }
     public function actualizar(Request $request, $id)
@@ -59,8 +72,8 @@ class ProductsController extends Controller
         $request->validate([
             'name' => 'required',
             'description' => 'required',
-            'price' => 'required',
-            'stock' => 'required'
+            'price' => 'numeric|min:0|max:1000|required',
+            'stock' => 'numeric|min:0|max:1000|required'
         ]);
         $userUpdate = Product::findOrFail($id);
         $userUpdate->name = $request->name;
@@ -79,8 +92,7 @@ class ProductsController extends Controller
     public function buscar(Request $request)
     {
         $name = $request->name;
-        $users = User::all();
-        $products = Product::where('name', 'LIKE', '%'. $name. '%')->get();
-        return view('admin', @compact('products', 'users'));
+        $products = Product::where('name', 'LIKE', '%' . $name . '%')->get();
+        return view('admin.adminProductsDetalle', @compact('products'));
     }
 }

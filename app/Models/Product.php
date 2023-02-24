@@ -8,9 +8,17 @@ use Illuminate\Database\Eloquent\Model;
 class Product extends Model
 {
     use HasFactory;
+    protected $table = 'products';
+    protected $fillable = [
+        'name',
+        'description',
+        'price',
+        'stock',
+        'image'
+    ];
     public function cart()
     {
-        return $this->belongsToMany(Cart::class)->withTimestamps();
+        return $this->belongsToMany(Cart::class)->withPivot('cart_id','products')->withTimestamps();
     }
     public function line()
     {
@@ -21,3 +29,5 @@ class Product extends Model
         return $this->hasMany(Order::class)->withTimestamps();
     }
 }
+
+
