@@ -19,6 +19,7 @@ return new class extends Migration
             $table->string('description');
             $table->float('price')->nullable(false);
             $table->integer('stock')->nullable(false);
+            $table->integer('amount')->nullable(false);
             $table->timestamps();
         });
     }

@@ -98,10 +98,12 @@
                         <p id="price">{{$p->price}}€</p>
                     </div>
                     <p>{{$p->description}}</p>
+                    <p>X{{$p->pivot->amount}}</p>
+                    {{$p->id}}
                 </div>
                 <div class="arrows-container">
-                    <i id="plus" class="bi bi-plus-circle-fill"></i>
-                    <i id="dash" class="bi bi-dash-circle"></i></a>
+                    <a href="{{route('plus')}}?idUser={{Auth::user()->id}}&productId={{$p->id}}"><i id="plus" class="bi bi-plus-circle-fill"></i></a>
+                    <a href="{{route('dash')}}?idUser={{Auth::user()->id}}&productId={{$p->id}}"><i id="dash" class="bi bi-dash-circle"></i></a></a>
                 </div>
                 <!-- Product actions-->
                 <div class="card-footer border-top-0 bg-transparent">
