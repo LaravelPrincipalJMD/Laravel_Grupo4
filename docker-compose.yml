@@ -4,9 +4,16 @@ services:
         build:
             context: ./
             dockerfile: Dockerfile
-        image: httpd:latest
         ports: 
             - "80:80"
+        volumes:
+            - ./:/var/www
+            - ./public:/var/www/html
+        networks:
+            laravel_prod_net:
+                ipv4_address: 172.21.100.10
+        depends_on:
+            - db
     db:
         image: mysql
         ports: 

@@ -14,16 +14,27 @@
     <!-- Core theme CSS (includes Bootstrap)-->
     <link href="css/stylesproducts.css" rel="stylesheet" />
     <script defer src="{{URL::asset('assets/products.js')}}"></script>
-    @vite(['resources/css/app.scss', 'resources/js/app.js', 'resources/css/styles.css','resources/css/stylesproducts.css', 'resources/js/products/scripts.js','resources/css/index.css','resources/css/cart.css'])
+    @vite(['resources/css/app.scss', 'resources/js/app.js', 'resources/css/styles.css','resources/css/stylesproducts.css', 'resources/js/products/scripts.js','resources/css/index.css','resources/css/cart.css','resources/css/loading.css'])
 
 </head>
 
 <body>
-    <div id="load-container">
-        <div id="loader" class="spinner-border bg-primary" role="status">
-            <span class="load"></span>
+<div id= "load-container">
+    <div class="box">
+        <div class="fruit">
+          <div class="leaf"></div>
         </div>
-    </div>
+        <div class="fruit right">
+          <div class="leaf"></div>
+        </div>
+        <div class="fruit bottom">
+          <div class="leaf"></div>
+        </div>
+        <div class="fruit bottom right">
+          <div class="leaf"></div>
+        </div>
+        </div>
+      </div>
 
     <div id="all">
         <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
@@ -41,7 +52,6 @@
                         <li class="nav-item"><a class="nav-link" href="{{route('home')}}#about">ABOUT</a></li>
                         <li class="dropdown">
                             @auth('web')
-                                <li class="nav-item"><a class="nav-link" href="{{route('cartView')}}?idUser={{Auth::user()->id}}">CART</a></li>
                                 <div class="dropdown">
                                 <button class="btn btn-primary text-light dropdown-toggle" type="button" id="dropdownMenuButton2" data-bs-toggle="dropdown" aria-expanded="false">
                                     {{ Auth::user()->name }}
@@ -87,7 +97,7 @@
         <div class="col mb-5 w-100" id="cart-product">
             <div class="card">
                 <!-- Product image-->
-                <img class="card-img" src="{{URL::asset('img/Products web/'.($product+1).'.png')}}" alt="..." />
+                <img class="card-img" src="{{URL::asset('img/Products_web/'.($product+1).'.png')}}" alt="..." />
                 <!-- Product details-->
                 <div class="card-body p-4" id="content">
                     <div id="body" class="text-center">

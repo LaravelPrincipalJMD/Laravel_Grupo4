@@ -7,6 +7,7 @@
   }
   
   .box {
+    z-index: 30;
     position: absolute;
     top: 50vh;
     left: 50vw;

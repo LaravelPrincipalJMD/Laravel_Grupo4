@@ -17,13 +17,21 @@ section{
 .card{
     text-shadow: 0rem 0rem 1rem orange;
     border-bottom: .4rem orange solid;
+    transform: scale(1);
+    transition: all .5s ease-out;
 }
 .card-img{
-    width: 60%;
+    width: 25%;
 }
 
 #cart-product{
     height: 50%;
+}
+
+.card:hover{
+    box-shadow: 0rem 0rem 1rem orange;
+    transform: scale(1.02);
+    transition: all .5s ease-out;
 }
 
 #cart-product,#cart-product > *{

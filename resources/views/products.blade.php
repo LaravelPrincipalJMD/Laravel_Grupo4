@@ -16,16 +16,27 @@
     <!-- Core theme CSS (includes Bootstrap)-->
     <link href="css/stylesproducts.css" rel="stylesheet" />
     <script defer src="{{URL::asset('assets/products.js')}}"></script>
-    @vite(['resources/css/app.scss', 'resources/js/app.js', 'resources/css/styles.css','resources/css/stylesproducts.css','resources/css/index.css'])
+    @vite(['resources/css/app.scss', 'resources/js/app.js', 'resources/css/styles.css','resources/css/loading.css','resources/css/stylesproducts.css','resources/css/index.css'])
 
 </head>
 
 <body>
-    <div id="load-container">
-        <div id="loader" class="spinner-border bg-primary" role="status">
-            <span class="load"></span>
+<div id= "load-container">
+    <div class="box">
+        <div class="fruit">
+          <div class="leaf"></div>
         </div>
-    </div>
+        <div class="fruit right">
+          <div class="leaf"></div>
+        </div>
+        <div class="fruit bottom">
+          <div class="leaf"></div>
+        </div>
+        <div class="fruit bottom right">
+          <div class="leaf"></div>
+        </div>
+        </div>
+      </div>
 
     <div id="all">
         <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
