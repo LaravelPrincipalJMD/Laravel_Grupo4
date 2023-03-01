@@ -11,22 +11,31 @@ use Exception;
 
 class UsersController extends Controller
 {
+    public function admin() {
+        return view('admin');
+    }
     public function users()
     {
         $users = User::all();
-        return view('admin', @compact('users'));
+       $users = User::paginate(5);
+        return view('adminUsers', @compact('users'));
     }
 
     public function creacionUser()
     {
         $users = User::all();
+       $users = User::paginate(5);
         return view('admin.insertUser', @compact('users'));
     }
     public function crearUser(Request $request)
     {
         $password = Hash::make($request['password']);
-        $request->validate(['name' => 'required', 'surname' => 'required', 'email' => 'required', 'password' => 'required']);
-        $newUser = new User();
+        $request->validate([
+            'name' => 'required',
+            'surname' => 'required',
+            'email' => 'required|regex:/(.+)@(.+)\.(.+)/i',
+            'password' => 'min:8|max:255|required'
+        ]);        $newUser = new User();
         $newUser->name = $request->name;
         $newUser->surname = $request->surname;
         $newUser->email = $request->email;
@@ -38,12 +47,14 @@ class UsersController extends Controller
     public function editarUser()
     {
         $users = User::all();
+       $users = User::paginate(5);
         return view('admin.editarUser', @compact('users'));
     }
 
     public function borrarUser()
     {
         $users = User::all();
+       $users = User::paginate(5);
         return view('admin.borrarUser', @compact('users'));
     }
     public function actualizarUser(Request $request, $id)
@@ -51,9 +62,8 @@ class UsersController extends Controller
         $request->validate([
             'name' => 'required',
             'surname' => 'required',
-            'email' => 'required',
-            'points' => 'required',
-            'password' => 'required'
+            'email' => 'required|regex:/(.+)@(.+)\.(.+)/i',
+            'password' => 'min:8|max:255|required'
         ]);
         $userUpdate = User::findOrFail($id);
         $userUpdate->name = $request->name;
@@ -73,9 +83,22 @@ class UsersController extends Controller
     public function buscarUser(Request $request)
     {
         $name = $request->name;
-        $products = Product::all();
         $users = User::where('name', 'LIKE', '%'. $name. '%')->get();
-        return view('admin', @compact('products', 'users'));
+        return view('admin.adminUsersDetalle', @compact('users'));
+    }
+
+    public function userData (Request $request)
+    {
+        $user = User::find($request->userId );
+        return view("profile")->with("user", $user);
+    }
+
+    public function changePassword (Request $request)
+    {
+        $user = User::find($request->userId );
+        $user->password=$request->password;
+        $user->save();
+        return view("profile")->with("user", $user);
     }
 
 }

@@ -19,7 +19,9 @@ use App\Http\Controllers\CartController;
 
 
 
-Route::get('/admin', [ ProductsController::class, 'products'])->middleware(['auth', 'isAdmin']);
+Route::get('/admin', [ ProductsController::class, 'admin'])->middleware(['auth', 'isAdmin'])->name('admin');
+
+Route::get('/admin/adminProducts', [ ProductsController::class, 'products'])->middleware(['auth', 'isAdmin'])->name('admin.products');
 
 Route::get('editar', [ProductsController::class, 'editar']) -> name('admin.editar');
 
@@ -38,6 +40,8 @@ Route::put('insert', [ProductsController::class, 'crear']) -> name('admin.crear'
 
 
 //USERS
+
+Route::get('/admin/adminUsers', [ UsersController::class, 'users'])->middleware(['auth', 'isAdmin'])->name('admin.users');
 
 Route::get('editarUser', [UsersController::class, 'editarUser']) -> name('admin.editarUser');
 
@@ -71,6 +75,14 @@ Route::get('/basicjuice', function () {
 
 
 
+Route::get('/profile', [ UsersController::class, 'userData'])->name('profile');
+
+
+Route::get('/password', [ UsersController::class, 'changePassword'])->name('password');
+
+
+
+
 
 // CART ROUTES
 
@@ -81,3 +93,4 @@ Route::get('cartControll',[CartController::class, 'deleteFromCart'])->name('dele
 Route::get('plus',[CartController::class, 'plusProduct'])->name('plus');
 Route::get('dash',[CartController::class, 'dashProduct'])->name('dash');
 Route::get('/cart',[CartController::class, 'getCart'])->name('cartView');
+
