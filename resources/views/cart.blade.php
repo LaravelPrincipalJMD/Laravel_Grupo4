@@ -35,50 +35,49 @@
                 </button>
                 <div class="collapse navbar-collapse" id="navbarResponsive">
                     <ul class="navbar-nav text-uppercase ms-auto py-4 py-lg-0">
-                        <li class="nav-item"><a class="nav-link" href="#services">WELCOME</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#services">SERVICES</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#services">PRODUCTS</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#about">ABOUT</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#team">TEAM</a></li>
-                        @guest
-                        <i class="fa-solid fa-user text-primary dropdown-toggle mt-2" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown"></i>
-                        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                            <li class="nav-item">
-                                <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
-                            </li>
-                            @if (Route::has('register'))
-                            <li class="nav-item">
-                                <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
-                            </li>
-                        </ul>
-                        @endif
-                        @else
-                        <div class="dropdown">
-                            <button class="btn btn-primary text-light dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-                                {{ Auth::user()->name }}
-                            </button>
-                            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                                <li><a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();  document.getElementById('logout-form').submit();">{{ __('Logout')}}</a></li>
-                            </ul>
-                            <form id="logout-form" action="{{ route('logout')}}" method="POST" class="d-none">
-                                @csrf
-                                {{csrf_field()}}
-                            </form>
-                        </div>
-                        @endguest
+                        <li class="nav-item"><a class="nav-link" href="{{route('home')}}">WELCOME</a></li>
+                        <li class="nav-item"><a class="nav-link" href="{{route('home')}}#services">SERVICES</a></li>
+                        <li class="nav-item"><a class="nav-link" href="{{route('products')}}">PRODUCTS</a></li>
+                        <li class="nav-item"><a class="nav-link" href="{{route('home')}}#about">ABOUT</a></li>
+                        <li class="dropdown">
+                            @auth('web')
+                                <li class="nav-item"><a class="nav-link" href="{{route('cartView')}}?idUser={{Auth::user()->id}}">CART</a></li>
+                                <div class="dropdown">
+                                <button class="btn btn-primary text-light dropdown-toggle" type="button" id="dropdownMenuButton2" data-bs-toggle="dropdown" aria-expanded="false">
+                                    {{ Auth::user()->name }}
+                                </button>
+                                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton2">
+                                    <li><a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();  document.getElementById('logout-form').submit();">{{ __('Logout')}}</a></li>
+                                </ul>
+                                <form id="logout-form" action="{{ route('logout')}}" method="POST" class="d-none">
+                                    @csrf
+                                    {{csrf_field()}}
+                                </form>
+                                </div>
+                            @endauth
+                            @guest
+                                @if (!Auth::user())
+                                    <i class="fa-solid fa-user text-primary dropdown-toggle mt-2" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown"></i>
+                                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
+                                        </li>
+                                    </ul>
+                                @endif
+                            @endguest
+                        </li>
+                    </ul>
                 </div>
-                </ul>
             </div>
-    </nav>
+        </nav>
     <!-- Header-->
-    <header class="bg-primary py-5">
-        <div class="container px-4 px-lg-5 my-5">
-            <div class="text-center text-white">
-                <h1 class="display-4 fw-bolder">CART HUB</h1>
-                <p class="lead fw-normal text-white mb-0">JUICY JUICE</p>
-            </div>
-        </div>
+    <header>
+            <h3 class="text-primary">CART HUB</h3>
     </header>
+    
     @if(session('message'))
     <p>{{session('message')}}</p>
     @endif
@@ -99,7 +98,6 @@
                     </div>
                     <p>{{$p->description}}</p>
                     <p>X{{$p->pivot->amount}}</p>
-                    {{$p->id}}
                 </div>
                 <div class="arrows-container">
                     <a href="{{route('plus')}}?idUser={{Auth::user()->id}}&productId={{$p->id}}"><i id="plus" class="bi bi-plus-circle-fill"></i></a>
@@ -107,10 +105,7 @@
                 </div>
                 <!-- Product actions-->
                 <div class="card-footer border-top-0 bg-transparent">
-                    <div class="text-center"><a class="btn btn-outline-danger mt-auto" href="{{route('delete')}}?idUser={{Auth::user()->id}}&productId={{$p->id}}"><i class="bi bi-x-circle-fill"></i></a></div>
-                    <div id="stock" class="text-center">
-                        <p>{{$p->stock}} left</p>
-                    </div>
+                    <div class="text-center"><a class="btn btn-outline-danger mt-auto" href="{{route('delete')}}?idUser={{Auth::user()->id}}&productId={{$p->id}}"><i class="bi bi-cart-x"></i></a></div>
                 </div>
             </div>
         </div>

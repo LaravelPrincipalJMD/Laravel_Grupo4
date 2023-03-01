@@ -30,6 +30,7 @@
         <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
             <div class="container">
                 <img id="logo" src="{{URL::asset('logo.png')}}" alt="..." />
+                
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
                     Menu
                     <i class="fas fa-bars ms-1"></i>
@@ -42,7 +43,7 @@
                         <li class="nav-item"><a class="nav-link" href="{{route('home')}}#about">ABOUT</a></li>
                         <li class="dropdown">
                             @auth('web')
-                                <li class="nav-item"><a class="nav-link" href="{{route('cartView')}}?idUser={{Auth::user()->id}}">CART</a></li>
+                                <li class="nav-item"><a class="nav-link" href="{{route('cartView')}}?idUser={{Auth::user()->id}}">CART <i class="bi bi-cart"></i></a></li>
                                 <div class="dropdown">
                                 <button class="btn btn-primary text-light dropdown-toggle" type="button" id="dropdownMenuButton2" data-bs-toggle="dropdown" aria-expanded="false">
                                     {{ Auth::user()->name }}
@@ -75,13 +76,8 @@
             </div>
         </nav>
         <!-- Header-->
-        <header class="bg-primary py-5">
-            <div class="container px-4 px-lg-5 my-5">
-                <div class="text-center text-white">
-                    <h1 class="display-4 fw-bolder">PRODUCTS HUB</h1>
-                    <p class="lead fw-normal text-white mb-0">JUICY JUICE</p>
-                </div>
-            </div>
+        <header>
+            <h3 class="text-primary">PRODUCTS HUB</h3>
         </header>
         @if(session('message'))
         <p>{{session('message')}}</p>
@@ -119,9 +115,13 @@
                             <!-- Product actions-->
                             <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
                                 @if (!Auth::user() == null)
-                                <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="{{route('Controll')}}?idUser={{Auth::user()->id}}&productId={{$p->id}}">ADD TO CART</a></div>
+                                @if($p->stock == 0)
+                                <div class="text-center"><a class="btn btn-outline-danger mt-auto">OUT OF STOCK <i class="bi bi-patch-exclamation-fill"></i></a></div>
                                 @else
-                                <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="{{ route('register') }}">ADD TO CART</a></div>
+                                <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="{{route('Controll')}}?idUser={{Auth::user()->id}}&productId={{$p->id}}">ADD TO CART <i class="bi bi-cart-plus fs-5"></i></a></div>
+                                @endif
+                                @else
+                                <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="{{ route('register') }}">ADD TO CART <i class="bi bi-cart-plus"></i></a></div>
                                 @endif
                             </div>
                         </div>
