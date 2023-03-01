@@ -20,14 +20,14 @@ class CartController extends Controller
     try {
       $cart = Cart::where('user_id', $request->idUser)->first();
       if ($cart) {
-        $cart->product()->attach($request->productId);
         $products = $cart->product;
         foreach ($products as $product) {
-          if($product->pivot->product_id = $request->productId){
-            $product->pivot->amount++;
-            break;
+          if($product->pivot->product_id == $request->productId){
+            $product->pivot->increment('amount',1);
+            return back()->with('message', 'AMOUNT +1');
           }
         }
+        $cart->product()->attach($request->productId);
       } else {
         $newCart = new Cart();
         $newCart->user_id = $request->idUser;
