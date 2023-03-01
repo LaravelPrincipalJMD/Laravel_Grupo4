@@ -87,7 +87,7 @@
         <div class="col mb-5 w-100" id="cart-product">
             <div class="card">
                 <!-- Product image-->
-                <img class="card-img-top" src="{{URL::asset('img/Products web/'.($product+1).'.png')}}" alt="..." />
+                <img class="card-img" src="{{URL::asset('img/Products web/'.($product+1).'.png')}}" alt="..." />
                 <!-- Product details-->
                 <div class="card-body p-4" id="content">
                     <div id="body" class="text-center">

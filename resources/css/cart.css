@@ -8,11 +8,18 @@ body{
 
 section{
     width: 100vw;
-    height: 100%;
+    height: auto;
     display: flex;
     flex-flow: column;
     justify-content: center; 
     align-items: center;
+}
+.card{
+    text-shadow: 0rem 0rem 1rem orange;
+    border-bottom: .4rem orange solid;
+}
+.card-img{
+    width: 60%;
 }
 
 #cart-product{
