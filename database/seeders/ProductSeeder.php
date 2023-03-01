@@ -71,7 +71,7 @@ class ProductSeeder extends Seeder
             $product->description = $des[$i];
             $product->price = $prices[$i];
             $product->stock = $stocks[$i];
-
+            $product->amount = 0;
             $product->save();
         }
     }

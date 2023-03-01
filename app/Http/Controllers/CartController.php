@@ -16,10 +16,17 @@ use App\Models\Cart;
 class CartController extends Controller
 {
   public function addToCart(Request $request)
-  {
+  { 
     try {
       $cart = Cart::where('user_id', $request->idUser)->first();
       if ($cart) {
+        $products = $cart->product;
+        foreach ($products as $product) {
+          if($product->pivot->product_id == $request->productId){
+            $product->pivot->increment('amount',1);
+            return back()->with('message', 'AMOUNT +1');
+          }
+        }
         $cart->product()->attach($request->productId);
       } else {
         $newCart = new Cart();
@@ -52,6 +59,45 @@ class CartController extends Controller
       $cart = Cart::find($cartUser->cart->id);
       $products = $cart->product;
       return view('cart',@compact('products'));
+    } catch (\Throwable $th) {
+      return back()->with('message', $th->getMessage());
+    }
+  }
+
+  public function plusProduct(Request $request)
+  {
+    try {
+      
+      $cartUser = User::find($request->idUser);
+      $cart = Cart::find($cartUser->cart->id);
+      $products = $cart->product;
+      foreach ($products as $product) {
+        if($product->pivot->product_id == $request->productId){
+          $product->pivot->increment('amount',1);
+          break;
+        }
+      }
+      return back();
+    } catch (\Throwable $th) {
+      return back()->with('message', $th->getMessage());
+    }
+  }
+  public function dashProduct(Request $request)
+  {
+    try {
+      
+      $cartUser = User::find($request->idUser);
+      $cart = Cart::find($cartUser->cart->id);
+      $products = $cart->product;
+      foreach ($products as $product) {
+        if($product->pivot->product_id == $request->productId){
+          $amount = $product->pivot;
+          $amount->amount--;
+          $product->pivot->update();
+          break;
+        }
+      }
+      return back();
     } catch (\Throwable $th) {
       return back()->with('message', $th->getMessage());
     }

@@ -57,9 +57,9 @@
                 </button>
                 <div class="collapse navbar-collapse" id="navbarResponsive">
                     <ul class="navbar-nav text-uppercase ms-auto py-4 py-lg-0">
-                        <li class="nav-item"><a class="nav-link" href="#">WELCOME</a></li>
+                        <li class="nav-item"><a class="nav-link" href="{{route('home')}}">WELCOME</a></li>
                         <li class="nav-item"><a class="nav-link" href="#services">SERVICES</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#products">PRODUCTS</a></li>
+                        <li class="nav-item"><a class="nav-link" href="{{route('products')}}">PRODUCTS</a></li>
                         <li class="nav-item"><a class="nav-link" href="#about">ABOUT</a></li>
                         <li class="nav-item"><a class="nav-link" href="#team">TEAM</a></li>
                         <div class="dropdown">
