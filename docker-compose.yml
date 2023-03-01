@@ -1,5 +1,12 @@
 version: "3.7"
 services:
+    www:
+        build:
+            context: ./
+            dockerfile: Dockerfile
+        image: httpd:latest
+        ports: 
+            - "80:80"
     db:
         image: mysql
         ports: 
@@ -20,7 +27,7 @@ services:
         links: 
             - db:db
         ports:
-            - 8000:80
+            - 8080:80
         environment:
             MYSQL_USER: root
             MYSQL_PASSWORD: test

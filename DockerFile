@@ -16,7 +16,7 @@ COPY --from=node_binaries /usr/local/bin/node /usr/local/bin/node
 COPY --from=node_binaries /opt/yarn-v1.22.5 /opt/yarn-v1.22.5
 RUN ln -s /opt/yarn-v1.22.5/bin/yarn /usr/local/bin/yarn
 USER tasks
-WORKDIR /app
+WORKDIR /var/www/html
 COPY --chown=tasks:tasks package.json .
 COPY --chown=tasks:tasks yarn.lock .
 RUN yarn install --frozen-lockfile && yarn cache clean
