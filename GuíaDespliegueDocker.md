@@ -49,8 +49,13 @@ y
 ```docker-compose exec php php /var/www/html/artisan db:seed```
 
 
-## POSIBLE FIX
+## POSIBLE FIX 
+
+Si al clonar el repositorio, el archivo *Dockerfile* tiene en su nombre la *f* mayuscula, debe cambiarse a minuscula para que quede así: *Dockerfile*
+
+## POSIBLE FIX 2
 
 En el caso de que no nos permita importar los seeds, probaremos con el siguiente comando antes de emplear el correspondiente:
 
 ```docker-compose exec php php /var/www/html/artisan config:clear```
+
