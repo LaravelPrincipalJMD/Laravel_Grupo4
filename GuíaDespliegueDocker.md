@@ -28,6 +28,10 @@ Desde la misma terminal, o desde otra, debemos situarnos dentro de la carpeta *s
 
 ## PASO nº 4
 
+Debemos crear dentro de *src* un archivo con nombre *.env* y compiaremos exactamente el contenido del archivo *.env.example*
+
+## PASO nº 5
+
 En este punto debemos instalar *npm* y correrlo. Reservaremos una terminal para esto:
 
 ```npm i```
