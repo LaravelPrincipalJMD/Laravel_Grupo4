@@ -11,6 +11,9 @@ Para ello ejecutaremos el siguiente comando en la consola:
 *```git clone https://github.com/LaravelPrincipalJMD/Laravel_Grupo4.git```
 
 ## PASO nº 2
+Debemos crear la carpeta *mysql* en la raiz del proyecto. La carpeta permanecerá vacía
+
+## PASO nº 3
 
 Debemos situarnos desde una terminal dentro de la carpeta Laravel_Group4 
 y ejecutar el siguiente comando:
