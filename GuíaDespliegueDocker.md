@@ -34,6 +34,8 @@ En este punto debemos instalar *npm* y correrlo. Reservaremos una terminal para 
 
 *```npm run dev```
 
+Es importante realizar estos pasos dentro de *src*
+
 ## PASO nº 5
 
 Nuestra aplicación ya estará corriendo. Pero necesitamos hacer las migraciones y utilizar los seeders. Para ello, desde una terminal accedermos a la raiz de la carpeta y ejecutaremos el siguiente comando:
