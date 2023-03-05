@@ -10,6 +10,9 @@ Para ello ejecutaremos el siguiente comando en la consola:
 
 ```git clone https://github.com/LaravelPrincipalJMD/Laravel_Grupo4.git```
 
+POSIBLE FIX: 
+Si al clonar el repositorio vemos que el archivo *Dockerfile* se muestra con la *f* en mayusculas: *DockerFile*, debemos cambiar el nombre del archivo por *Dockerfile*, con la *f minuscula*
+
 ## PASO nº 2
 Debemos crear la carpeta *mysql* en la raiz del proyecto. La carpeta permanecerá vacía
 
@@ -52,14 +55,12 @@ y
 
 ```docker-compose exec php php /var/www/html/artisan db:seed```
 
-
-## POSIBLE FIX 
-
-Si al clonar el repositorio, el archivo *Dockerfile* tiene en su nombre la *f* mayuscula, debe cambiarse a minuscula para que quede así: *Dockerfile*
-
-## POSIBLE FIX 2
+POSIBLE FIX:
 
 En el caso de que no nos permita importar los seeds, probaremos con el siguiente comando antes de emplear el correspondiente:
 
 ```docker-compose exec php php /var/www/html/artisan config:clear```
+
+
+## Seguidos estos pasos ya podremos disfrutar totalmente de JuiceHub!
 
